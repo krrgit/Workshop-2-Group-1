@@ -42,26 +42,12 @@ public class BulletHellSpawner : MonoBehaviour
         transform.rotation = Quaternion.Euler(0,0,spinTimer * spinSpeed);
     }
 
+    // Function called by other classes to update the spawner
     public void UpdateColumns()
     {
-        StopInvoke();
-        Summon();
-        StartInvoke();
-    }
-
-    void PauseAll()
-    {
-        foreach (var col in columnList)
-        {
-            col.Stop();
-        }
-    }
-
-    void PlayAll() {
-        foreach (var col in columnList)
-        {
-            col.Play();
-        }
+        StopInvoke(); // stop emission before change particle systems
+        Summon(); // update particle systems
+        StartInvoke(); // start emission
     }
 
     void Summon() {
@@ -85,12 +71,10 @@ public class BulletHellSpawner : MonoBehaviour
             // Create a green Particle System.
             system = GetColumn(i);
             var go = system.gameObject;
-            //var go = new GameObject("Particle System");
             go.transform.Rotate(angle*i + centerOffset, 90, 0); // Rotate so the system emits upwards.
             go.transform.parent = transform;
             go.transform.position = transform.position + (go.transform.forward * centerDist);
-            //system = go.AddComponent<ParticleSystem>();
-            
+
             // Set values
             go.GetComponent<ParticleSystemRenderer>().material = particleMaterial;
             var mainModule = system.main;
@@ -127,13 +111,15 @@ public class BulletHellSpawner : MonoBehaviour
         DisableUnusedColumns(i);
     }
 
+    // Stop emission of particle systems.
     void StopInvoke() {
         if (doEmit) {
             CancelInvoke();
             doEmit = false;
         }
     }
-
+    
+    // Starts the emission of the particle systems.
     void StartInvoke() {
         InvokeRepeating("DoEmit", 0, firerate);
         doEmit = true;
