@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletHellSpawner : MonoBehaviour
 {
     [Header("Spawner")]
+    [Range(1,25)]
     public int columns = 5;
     [Range(0,360)]
     public int spread = 360; // max angle between first and last column. 360 = max
@@ -46,7 +47,7 @@ public class BulletHellSpawner : MonoBehaviour
         }
         else {
             angle = (spread) * 1f / (columns-1);
-            centerOffset = -spread / 2f;
+            centerOffset = -90 - spread / 2f;
         }
         
         // Create Columns
@@ -66,7 +67,7 @@ public class BulletHellSpawner : MonoBehaviour
             mainModule.startColor = Color.green;
             mainModule.startSize = size;
             mainModule.startSpeed = speed;
-            mainModule.maxParticles = 100000;
+            mainModule.maxParticles = 10000;
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
 
             var emission = system.emission;
