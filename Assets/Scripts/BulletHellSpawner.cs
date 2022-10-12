@@ -6,8 +6,11 @@ public class BulletHellSpawner : MonoBehaviour
 {
     [Header("Spawner")]
     public int columns = 5;
-
+    [Range(0,360)]
+    public int spread = 360; // max angle between first and last column. 360 = max
+    public float centerDist = 0;
     public float spinSpeed = 0;
+    
     [Header("Bullet")]
     public float speed = 1;
     public float lifetime = 5;
@@ -35,7 +38,8 @@ public class BulletHellSpawner : MonoBehaviour
     }
 
     void Summon() {
-        angle = 360f / columns;
+        angle = spread * 1f / columns;
+        float offset = -spread / 2f * (angle == 360 ? 0 : 1);
         for (int i = 0; i < columns; ++i)
         {
             // A simple particle material with no texture.
@@ -43,9 +47,9 @@ public class BulletHellSpawner : MonoBehaviour
 
             // Create a green Particle System.
             var go = new GameObject("Particle System");
-            go.transform.Rotate(angle*i, 90, 0); // Rotate so the system emits upwards.
+            go.transform.Rotate(angle*i + offset, 90, 0); // Rotate so the system emits upwards.
             go.transform.parent = transform;
-            go.transform.position = transform.position;
+            go.transform.position = transform.position + (go.transform.forward * centerDist);
             system = go.AddComponent<ParticleSystem>();
             go.GetComponent<ParticleSystemRenderer>().material = particleMaterial;
             var mainModule = system.main;
