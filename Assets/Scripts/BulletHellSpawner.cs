@@ -9,34 +9,59 @@ public class BulletHellSpawner : MonoBehaviour
     public int columns = 5;
     [Range(0,360)]
     public int spread = 360; // max angle between first and last column. 360 = max
-    public float centerDist = 0;
+    [Range(-180,180)]
     public float spinSpeed = 0;
+    public float centerDist = 0;
+    public float firerate = 1;
     
     [Header("Bullet")]
     public float speed = 1;
     public float lifetime = 5;
-    public float firerate = 1;
     public float size = 1;
     public Color color;
     public Sprite sprite;
     public Material mtl;
-    
+
+    private List<ParticleSystem> columnList = new List<ParticleSystem>();
     
     private float angle; // angle between columns
     private float centerOffset; // angle offset so the center of spray is upwards
     private float spinTimer;
-    
+    private bool doEmit = false; // bool to check if emit is ran once
     
     public ParticleSystem system;
 
     void Awake() {
         Summon();
+        StartInvoke();
     }
 
     void FixedUpdate()
     {
         spinTimer += Time.fixedDeltaTime;
         transform.rotation = Quaternion.Euler(0,0,spinTimer * spinSpeed);
+    }
+
+    public void UpdateColumns()
+    {
+        StopInvoke();
+        Summon();
+        StartInvoke();
+    }
+
+    void PauseAll()
+    {
+        foreach (var col in columnList)
+        {
+            col.Stop();
+        }
+    }
+
+    void PlayAll() {
+        foreach (var col in columnList)
+        {
+            col.Play();
+        }
     }
 
     void Summon() {
@@ -51,17 +76,22 @@ public class BulletHellSpawner : MonoBehaviour
         }
         
         // Create Columns
-        for (int i = 0; i < columns; ++i)
+        int i;
+        for (i=0; i < columns; ++i)
         {
             // A simple particle material with no texture.
             Material particleMaterial = mtl;
 
             // Create a green Particle System.
-            var go = new GameObject("Particle System");
+            system = GetColumn(i);
+            var go = system.gameObject;
+            //var go = new GameObject("Particle System");
             go.transform.Rotate(angle*i + centerOffset, 90, 0); // Rotate so the system emits upwards.
             go.transform.parent = transform;
             go.transform.position = transform.position + (go.transform.forward * centerDist);
-            system = go.AddComponent<ParticleSystem>();
+            //system = go.AddComponent<ParticleSystem>();
+            
+            // Set values
             go.GetComponent<ParticleSystemRenderer>().material = particleMaterial;
             var mainModule = system.main;
             mainModule.startColor = Color.green;
@@ -90,10 +120,45 @@ public class BulletHellSpawner : MonoBehaviour
             coll.mode = ParticleSystemCollisionMode.Collision2D;
             coll.bounce = 0;
             coll.lifetimeLoss = 1;
+            
+            system.Play();
         }
 
-        // Every 2 secs we will emit.
+        DisableUnusedColumns(i);
+    }
+
+    void StopInvoke() {
+        if (doEmit) {
+            CancelInvoke();
+            doEmit = false;
+        }
+    }
+
+    void StartInvoke() {
         InvokeRepeating("DoEmit", 0, firerate);
+        doEmit = true;
+    }
+
+    ParticleSystem GetColumn(int i) {
+        if (i < columnList.Count) {
+            columnList[i].gameObject.SetActive(true);
+            columnList[i].transform.rotation = transform.rotation;
+            return columnList[i];
+        }
+        
+        var go = new GameObject("Particle System");
+        var sys = go.AddComponent<ParticleSystem>();
+        columnList.Add(sys);
+        return sys;
+    }
+
+    void DisableUnusedColumns(int i) {
+        if (i >= columnList.Count) { return; }
+
+        for (; i < columnList.Count; ++i)
+        {
+            columnList[i].gameObject.SetActive(false);
+        }
     }
 
     void DoEmit() {
@@ -105,7 +170,7 @@ public class BulletHellSpawner : MonoBehaviour
             emitParams.startColor = color;
             emitParams.startSize = size;
             emitParams.startLifetime = lifetime;
-            
+
             system.Emit(emitParams, 10);
         }
     }
