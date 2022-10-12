@@ -22,6 +22,7 @@ public class BulletHellSpawner : MonoBehaviour
     
     
     private float angle; // angle between columns
+    private float centerOffset; // angle offset so the center of spray is upwards
     private float spinTimer;
     
     
@@ -38,8 +39,17 @@ public class BulletHellSpawner : MonoBehaviour
     }
 
     void Summon() {
-        angle = spread * 1f / columns;
-        float offset = -spread / 2f * (angle == 360 ? 0 : 1);
+        // Calculate angle & offset differently if spread is 360 or not.
+        if (spread == 360) {
+            angle = (spread) * 1f / columns;
+            centerOffset = 0;
+        }
+        else {
+            angle = (spread) * 1f / (columns-1);
+            centerOffset = -spread / 2f;
+        }
+        
+        // Create Columns
         for (int i = 0; i < columns; ++i)
         {
             // A simple particle material with no texture.
@@ -47,7 +57,7 @@ public class BulletHellSpawner : MonoBehaviour
 
             // Create a green Particle System.
             var go = new GameObject("Particle System");
-            go.transform.Rotate(angle*i + offset, 90, 0); // Rotate so the system emits upwards.
+            go.transform.Rotate(angle*i + centerOffset, 90, 0); // Rotate so the system emits upwards.
             go.transform.parent = transform;
             go.transform.position = transform.position + (go.transform.forward * centerDist);
             system = go.AddComponent<ParticleSystem>();

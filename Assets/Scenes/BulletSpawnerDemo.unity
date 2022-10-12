@@ -266,9 +266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   columns: 5
-  spread: 360
+  spread: 180
   centerDist: 2
-  spinSpeed: 15
+  spinSpeed: 0
   speed: 2
   lifetime: 7
   firerate: 0.2
