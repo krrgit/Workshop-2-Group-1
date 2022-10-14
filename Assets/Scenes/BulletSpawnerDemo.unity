@@ -270,6 +270,7 @@ MonoBehaviour:
   ammo: 5
   maxAmmo: 5
   reloadDur: 0.5
+  isAutomatic: 0
   firerate: 0.2
 --- !u!212 &588448898
 SpriteRenderer:
@@ -378,7 +379,6 @@ MonoBehaviour:
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   mtl: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
   system: {fileID: 0}
-  emitCount: 0
 --- !u!4 &932630847
 Transform:
   m_ObjectHideFlags: 0
@@ -434,7 +434,6 @@ MonoBehaviour:
   sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   mtl: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
   system: {fileID: 0}
-  emitCount: 0
 --- !u!4 &1738310077
 Transform:
   m_ObjectHideFlags: 0
@@ -468,7 +467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1960315990
 MonoBehaviour:
   m_ObjectHideFlags: 0
