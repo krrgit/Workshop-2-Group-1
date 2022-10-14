@@ -31,9 +31,36 @@ public class BulletHellSpawner : MonoBehaviour
     
     public ParticleSystem system;
 
+    int emitCount;
+
+    public int EmitAmount
+    {
+        get { return emitCount; }
+    }
+    
+    
+    public bool IsEmitting
+    {
+        get { return doEmit; }
+    }
+
+    public void EmitOnce()
+    {
+        DoEmit();
+    }
+
+    public void ToggleEmit(bool toggleOn) {
+        if (toggleOn) {
+            StartInvoke();
+        } else {
+            StopInvoke();
+        }
+    }
+
+
     void Awake() {
         Summon();
-        StartInvoke();
+        //StartInvoke();
     }
 
     void FixedUpdate()
@@ -116,6 +143,7 @@ public class BulletHellSpawner : MonoBehaviour
         if (doEmit) {
             CancelInvoke();
             doEmit = false;
+            emitCount = 0;
         }
     }
     
@@ -159,5 +187,6 @@ public class BulletHellSpawner : MonoBehaviour
 
             system.Emit(emitParams, 10);
         }
+        ++emitCount;
     }
 }
