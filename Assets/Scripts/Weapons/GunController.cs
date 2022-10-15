@@ -1,18 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
+public enum WeaponState {
+    Ready,
+    Cooldown,
+    Empty
+}
 
 public class GunController : MonoBehaviour {
-    public BulletHellSpawner spawner;
+    public WeaponBulletSpawner spawner;
+    public WeaponSO w;
     public int ammo;
-    public int maxAmmo;
-    public float reloadDur;
-    public bool isAutomatic;
-    public float firerate;
 
     private bool isReloading;
     private float cooldown; // for semi auto firing
+    private bool isEmitting;
+
+    private WeaponState state;
+
+    public WeaponState State
+    {
+        get { return state; }
+    }
+
+    void Start()
+    {
+        ammo = w.maxAmmo;
+        spawner.WeaponInit(w);
+    }
 
     // Update is called once per frame
     void Update()
@@ -21,11 +38,12 @@ public class GunController : MonoBehaviour {
 
         CooldownTick();
         AutoAmmoTick();
+        StopAutoFireCheck();
     }
 
     void DebugControlTest() {
         if (Input.GetKeyDown(KeyCode.E)) {
-            if (isAutomatic) {
+            if (w.isAutomatic) {
                 AutoFire();
             }
             else {
@@ -34,60 +52,79 @@ public class GunController : MonoBehaviour {
         }
 
         if (Input.GetKeyUp(KeyCode.E)) {
-            StopFire();
+            StopAutoFire();
         }
 
         if (Input.GetKeyDown(KeyCode.Q)) {
             Reload();
         }
 
-        StopFireAutoCheck();
     }
 
     void CooldownTick() {
         if (cooldown > 0)
         {
             cooldown -= Time.deltaTime;
+
+            if (cooldown <= 5 * Time.deltaTime && ammo != 0)
+            {
+                state = WeaponState.Ready;
+            }
         }
     }
-
-    void AutoAmmoTick() {
-        if (!isAutomatic || !spawner.IsEmitting) return;
-        
-        ammo = maxAmmo - spawner.EmitAmount;
-        ammo = ammo >= 0 ? ammo : 0;
-    }
-
-    void StopFireAutoCheck() {
-        if (ammo == 0) {
-            StopFire();
-        }
-    }
-
+    
     void Fire() {
         if (ammo == 0) return;
 
         if (cooldown <= 0) {
             spawner.EmitOnce();
-            cooldown = firerate;
+            cooldown = w.fireRate;
             --ammo;
+            state = WeaponState.Cooldown;
+        }
+    }
+
+    void AutoAmmoTick() {
+        if (!w.isAutomatic || !spawner.IsEmitting) return;
+        
+        ammo = w.maxAmmo - spawner.EmitAmount;
+        ammo = ammo >= 0 ? ammo : 0;
+        if (ammo == 0)
+        {
+            state = WeaponState.Empty;
+        }
+    }
+
+    void StopAutoFireCheck() {
+        if (ammo == 0) {
+            StopAutoFire();
         }
     }
 
     void AutoFire() {
-        if (spawner.IsEmitting || ammo == 0) return;
-        
-        spawner.ToggleEmit(true);
+        if (isEmitting || ammo == 0) return;
+
+        isEmitting = true;
+        InvokeRepeating("DoAutoEmit", 0, w.fireRate);
     }
 
-    void StopFire() {
-        if (spawner.IsEmitting) {
-            spawner.ToggleEmit(false);
+    void DoAutoEmit()
+    {
+        spawner.EmitOnce();
+        state = WeaponState.Cooldown;
+        --ammo;
+        cooldown = w.fireRate;
+    }
+
+    void StopAutoFire() {
+        if (isEmitting) {
+            CancelInvoke();
+            isEmitting = false;
         }
     }
 
     void Reload() {
-        if (ammo == maxAmmo || isReloading) return;
+        if (ammo == w.maxAmmo || isReloading) return;
 
         StartCoroutine(IReload());
     }
@@ -95,8 +132,9 @@ public class GunController : MonoBehaviour {
     IEnumerator IReload()
     {
         isReloading = true;
-        yield return new WaitForSeconds(reloadDur);
-        ammo = maxAmmo;
+        yield return new WaitForSeconds(w.reloadDur);
+        ammo = w.maxAmmo;
         isReloading = false;
+        state = WeaponState.Ready;
     }
 }
