@@ -66,7 +66,7 @@ public class GunController : MonoBehaviour {
         {
             cooldown -= Time.deltaTime;
 
-            if (cooldown <= 5 * Time.deltaTime && ammo != 0)
+            if (cooldown <= 6 * Time.deltaTime && ammo != 0)
             {
                 state = WeaponState.Ready;
             }
