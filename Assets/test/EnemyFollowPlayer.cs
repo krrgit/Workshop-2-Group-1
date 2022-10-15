@@ -8,7 +8,7 @@ public class EnemyFollowPlayer : MonoBehaviour
     public float speed;
     private Transform player;
     private float canAttack;
-    [SerializeField] private float attackSpeed = 1f;
+    [SerializeField] private float attackSpeed = 1f;    
     [SerializeField] private float attackDamage = 10f;
     //lets enemy move towards player
     private void Update()
@@ -38,7 +38,8 @@ public class EnemyFollowPlayer : MonoBehaviour
             player = null;
         }
     }
-    //calls health function from player health script to update player health    
+    //calls health function from player health script to update player health
+    //check for health function name
     private void OnCollisionStay2D(Collision2D other)
     { 
         if (other.gameObject.CompareTag("Player"))
