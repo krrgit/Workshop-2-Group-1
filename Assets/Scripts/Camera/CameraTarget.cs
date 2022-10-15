@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class CameraTarget : MonoBehaviour {
     public Transform player;
-    public float speed = 1;
+    public float speed = 4; // Speed at which to lerp to the new position
 
     private Vector3 direction;
     Vector3 pointerPos;
-    private Vector2 pointerPerc;
+    private Vector2 pointerPerc; // Percentage the pointer is away from center. 100% = edges. 0% = center.
 
-    private Vector3 targetPos;
+    private Vector3 targetPos; // The position this target lerps to.
 
     void Update()
     {
