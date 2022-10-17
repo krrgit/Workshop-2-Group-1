@@ -293,15 +293,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327053551}
-  m_LocalRotation: {x: -0, y: -0, z: 0.08660651, w: 0.9962426}
-  m_LocalPosition: {x: 0.30899996, y: -1.252, z: 0}
+  m_LocalRotation: {x: -0, y: 0, z: -0.99002373, w: -0.14090109}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1588181368}
-  m_Father: {fileID: 1345520795}
+  m_Father: {fileID: 625136507}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 9.937}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -196.2}
 --- !u!212 &327053553
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -668,6 +668,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &625136506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 625136507}
+  - component: {fileID: 625136508}
+  m_Layer: 0
+  m_Name: FrontLegRPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &625136507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625136506}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9991944, w: 0.040131874}
+  m_LocalPosition: {x: 0.30900034, y: -1.2520013, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 327053552}
+  m_Father: {fileID: 1345520795}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -175.4}
+--- !u!114 &625136508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625136506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37aaa18f748494af0ad06d2ea07eee0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  calf: {fileID: 1588181368}
+  tip: {fileID: 586404702}
+  target: {fileID: 708314621}
+  length0: 0
+  length1: 0
+  ankleDir: -1
 --- !u!1 &676161634
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +912,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 726732060}
-  - component: {fileID: 726732061}
   m_Layer: 0
   m_Name: FrontHipRPivot
   m_TagString: Untagged
@@ -885,24 +935,6 @@ Transform:
   m_Father: {fileID: 676161635}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -142.462}
---- !u!114 &726732061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726732059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37aaa18f748494af0ad06d2ea07eee0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  calf: {fileID: 1588181368}
-  tip: {fileID: 586404702}
-  target: {fileID: 708314621}
-  length0: 0
-  length1: 0
-  ankleDir: -1
 --- !u!1 &743664395
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,7 +1543,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 327053552}
+  - {fileID: 625136507}
   m_Father: {fileID: 726732060}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 169}
