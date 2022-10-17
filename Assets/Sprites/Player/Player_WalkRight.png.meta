@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb6f82f0031b0a247aa4605f09909d90
+guid: 224a3d51d2e98d34480924b7a2085926
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,12 +105,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MC_idle_0
+      name: Player_WalkRight_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 1
         y: 0
-        width: 13
+        width: 17
         height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 881ce743b1662e841a7de6e0114ff9c8
-      internalID: -914420497
+      spriteID: 80331c5bac57b27498c7367c01caf079
+      internalID: 1321982599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_idle_1
+      name: Player_WalkRight_1
       rect:
         serializedVersion: 2
         x: 25
@@ -140,19 +140,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f475104bb2889a49b0bfa77c235ae50
-      internalID: 66685209
+      spriteID: 1b49bcad3dca1194ab1aeeb2aeed3e0b
+      internalID: -1741573226
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_idle_2
+      name: Player_WalkRight_2
       rect:
         serializedVersion: 2
-        x: 47
+        x: 46
         y: 0
-        width: 16
+        width: 18
         height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -161,19 +161,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e83187ddc0776fd42a5966f126964d3a
-      internalID: -1510490766
+      spriteID: 232f1fc5b96c88441ab118125d9c2c17
+      internalID: -935949543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_idle_3
+      name: Player_WalkRight_3
       rect:
         serializedVersion: 2
-        x: 71
+        x: 69
         y: 0
-        width: 16
+        width: 14
         height: 47
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b590c3002f39f548905398b3bc7bc3b
-      internalID: -1365590154
+      spriteID: e37d682583e29e54697fa9f73be4224a
+      internalID: 1732918883
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MC_idle_1: 66685209
-      MC_idle_0: -914420497
-      MC_idle_3: -1365590154
-      MC_idle_2: -1510490766
+      Player_WalkRight_2: -935949543
+      Player_WalkRight_1: -1741573226
+      Player_WalkRight_0: 1321982599
+      Player_WalkRight_3: 1732918883
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
