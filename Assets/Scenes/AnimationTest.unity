@@ -1420,6 +1420,7 @@ GameObject:
   m_Component:
   - component: {fileID: 676161635}
   - component: {fileID: 676161636}
+  - component: {fileID: 676161637}
   m_Layer: 0
   m_Name: SpiderController
   m_TagString: Untagged
@@ -1473,6 +1474,19 @@ MonoBehaviour:
   - {fileID: 2136111737}
   rPair: 0
   lPair: 1
+--- !u!114 &676161637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 676161634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e9ff860cb5b477da63675152551cd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 4
 --- !u!1 &692959791
 GameObject:
   m_ObjectHideFlags: 0
