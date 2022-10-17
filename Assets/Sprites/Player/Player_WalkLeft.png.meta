@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb6f82f0031b0a247aa4605f09909d90
+guid: bc00c85062660bc4e959a71b7d42ef10
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,85 +105,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MC_idle_0
+      name: Player_WalkLeft_0
       rect:
         serializedVersion: 2
-        x: 4
+        x: 2
         y: 0
         width: 13
         height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 881ce743b1662e841a7de6e0114ff9c8
-      internalID: -914420497
+      spriteID: e8a9e73b6cd2c3546995ead7097be98a
+      internalID: -185701122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_idle_1
+      name: Player_WalkLeft_1
       rect:
         serializedVersion: 2
-        x: 25
+        x: 22
         y: 0
-        width: 14
+        width: 17
         height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f475104bb2889a49b0bfa77c235ae50
-      internalID: 66685209
+      spriteID: 3377d4bc22f4780498ef22db93276ebd
+      internalID: 1117381729
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_idle_2
+      name: Player_WalkLeft_2
       rect:
         serializedVersion: 2
-        x: 47
+        x: 50
         y: 0
-        width: 16
+        width: 13
         height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e83187ddc0776fd42a5966f126964d3a
-      internalID: -1510490766
+      spriteID: 6b206a048b72de3478bd28833bb9fcb6
+      internalID: 868577670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_idle_3
+      name: Player_WalkLeft_3
       rect:
         serializedVersion: 2
-        x: 71
+        x: 72
         y: 0
-        width: 16
+        width: 17
         height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b590c3002f39f548905398b3bc7bc3b
-      internalID: -1365590154
+      spriteID: a73c955dfe00bc1469c22c988d5aa0d9
+      internalID: -829082821
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MC_idle_1: 66685209
-      MC_idle_0: -914420497
-      MC_idle_3: -1365590154
-      MC_idle_2: -1510490766
+      Player_WalkLeft_2: 868577670
+      Player_WalkLeft_3: -829082821
+      Player_WalkLeft_0: -185701122
+      Player_WalkLeft_1: 1117381729
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1996f4ee560c75a4bb4e0e853ab61b02
+guid: a3c1537013b61de4993dd3093e0bdf9a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,52 +105,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MC_walk1_0
+      name: Player_WalkUp_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 17
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5445548b92ec60040b2b759ddd50e8b4
-      internalID: 1227483013
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_walk1_1
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 0
-        width: 18
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d148ad9e25214041aca20f48c8420c7
-      internalID: 1130288659
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MC_walk1_2
-      rect:
-        serializedVersion: 2
-        x: 47
+        x: 5
         y: 0
         width: 16
         height: 47
@@ -161,14 +119,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7149f49922756d24dbf89e10b4c3abd3
-      internalID: -493291165
+      spriteID: 004afe4a68a48864abf7fbf2d5dfbfc1
+      internalID: 1526409401
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MC_walk1_3
+      name: Player_WalkUp_1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 0
+        width: 16
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79bf1de672d573a429b8e041bc38ee45
+      internalID: -1865912963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_WalkUp_2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 0
+        width: 16
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e037076f8c855f14c93e458832d3ec5e
+      internalID: 404228753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player_WalkUp_3
       rect:
         serializedVersion: 2
         x: 71
@@ -182,8 +182,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5131987146dcf534194c82d94c53d9fd
-      internalID: 576945188
+      spriteID: dffbcdca09d54304baacb298dee7e2ef
+      internalID: -733974677
       vertices: []
       indices: 
       edges: []
@@ -199,10 +199,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      MC_walk1_0: 1227483013
-      MC_walk1_3: 576945188
-      MC_walk1_1: 1130288659
-      MC_walk1_2: -493291165
+      Player_WalkUp_0: 1526409401
+      Player_WalkUp_3: -733974677
+      Player_WalkUp_2: 404228753
+      Player_WalkUp_1: -1865912963
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
