@@ -6,9 +6,10 @@ using UnityEngine;
 public class EnemyFollow : MonoBehaviour
 {
     public float speed;
-    private Transform target;
+    private Transform target; //target is player
     public float stoppingDistance;
 
+    //follows player
     private void Update()
     {
         if (target != null)
@@ -20,6 +21,7 @@ public class EnemyFollow : MonoBehaviour
             }
         }
     }
+    //player is in range, enemy follows
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -28,6 +30,7 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
+    //player is out of enemy range, doesnt follow
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
