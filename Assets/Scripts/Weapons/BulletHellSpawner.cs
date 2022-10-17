@@ -13,7 +13,7 @@ public class BulletHellSpawner : MonoBehaviour
     public float spinSpeed = 0;
     public float centerDist = 0;
     public float fireRate = 1;
-    
+
     [Header("Bullet")]
     public float speed = 1;
     public float lifetime = 5;
@@ -32,6 +32,7 @@ public class BulletHellSpawner : MonoBehaviour
     public ParticleSystem system;
 
     int emitCount;
+    
 
     public int EmitAmount
     {
@@ -102,7 +103,7 @@ public class BulletHellSpawner : MonoBehaviour
         StartInvoke(); // start emission
     }
 
-    void Summon() {
+    public void Summon() {
         // Calculate angle & offset differently if spread is 360 or not.
         if (spread == 0)
         {
@@ -192,7 +193,7 @@ public class BulletHellSpawner : MonoBehaviour
     }
     
     // Starts the emission of the particle systems.
-    void StartInvoke() {
+    public void StartInvoke() {
         InvokeRepeating("DoEmit", 0, fireRate);
         doEmit = true;
     }
@@ -233,4 +234,5 @@ public class BulletHellSpawner : MonoBehaviour
         }
         ++emitCount;
     }
+    
 }
