@@ -1,0 +1,777 @@
+fileFormatVersion: 2
+guid: 57877f264f767ac43a57931fe02be181
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 919801657380222919
+    second: SpiderBoss_Parts_LeftLeg3
+  - first:
+      213: -1829579094226413072
+    second: SpiderBoss_Parts_LeftLeg2
+  - first:
+      213: 6318933691064372348
+    second: SpiderBoss_Parts_LeftLeg1
+  - first:
+      213: 1612389798201452192
+    second: SpiderBoss_Parts_LeftPedipalp
+  - first:
+      213: -8844471488063258560
+    second: SpiderBoss_Parts_RightPedipalp
+  - first:
+      213: -8375306485016174671
+    second: SpiderBoss_Parts_RightLeg1
+  - first:
+      213: -2000714132968215034
+    second: SpiderBoss_Parts_RightLeg2
+  - first:
+      213: 8162600764583857984
+    second: SpiderBoss_Parts_RightLeg3
+  - first:
+      213: -1398439851812121918
+    second: SpiderBoss_Parts_RightLeg4
+  - first:
+      213: 552554044919581752
+    second: SpiderBoss_Parts_Torso
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Leftleg4
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 301
+        width: 53
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84ac1409bbae59750800000000000000
+      internalID: -6926933857066299644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_LeftLeg3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 243
+        width: 107
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c7b6fbebbac3cc00800000000000000
+      internalID: 919801657380222919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_LeftLeg2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 171
+        width: 118
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f95720e1870c96e0800000000000000
+      internalID: -1829579094226413072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_LeftLeg1
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 13
+        width: 47
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7cc32f76bc51b750800000000000000
+      internalID: 6318933691064372348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_LeftPedipalp
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 120
+        width: 23
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6e2498afb506610800000000000000
+      internalID: 1612389798201452192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_RightPedipalp
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 117
+        width: 33
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0404be7aa00224580800000000000000
+      internalID: -8844471488063258560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_RightLeg1
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 14
+        width: 49
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bfd59b402fe4cb80800000000000000
+      internalID: -8375306485016174671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_RightLeg2
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 166
+        width: 114
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60e6357a8190c34e0800000000000000
+      internalID: -2000714132968215034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_RightLeg3
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 246
+        width: 105
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones:
+      - name: bone_1
+        guid: 
+        position: {x: 12.560699, y: 11.611481, z: 0}
+        rotation: {x: 0, y: 0, z: -0.0042003538, w: 0.9999912}
+        length: 33.176304
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_2
+        guid: 
+        position: {x: 33.176304, y: 0.000013361176, z: 0}
+        rotation: {x: 0, y: 0, z: 0.26792058, w: 0.963441}
+        length: 30.121326
+        parentId: 0
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_3
+        guid: 
+        position: {x: 30.121326, y: -0.000004740858, z: 0}
+        rotation: {x: 0, y: 0, z: 0.06481065, w: 0.9978976}
+        length: 35.747173
+        parentId: 1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_4
+        guid: 
+        position: {x: 8.378967, y: -34.38759, z: 0}
+        rotation: {x: 0, y: 0, z: -0.33769047, w: 0.94125724}
+        length: 24.558147
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_5
+        guid: 
+        position: {x: 24.558147, y: 0.00000083017665, z: 0}
+        rotation: {x: 0, y: 0, z: 0.23520748, w: 0.9719452}
+        length: 45.93229
+        parentId: 3
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_6
+        guid: 
+        position: {x: 45.932285, y: -0.0000021324204, z: 0}
+        rotation: {x: 0, y: 0, z: -0.024028048, w: 0.99971133}
+        length: 35.502876
+        parentId: 4
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_7
+        guid: 
+        position: {x: 3.0116882, y: -95.31325, z: 0}
+        rotation: {x: 0, y: 0, z: -0.6032867, w: 0.7975244}
+        length: 43.04588
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_8
+        guid: 
+        position: {x: 43.04588, y: -0.000001637696, z: 0}
+        rotation: {x: 0, y: 0, z: -0.006389772, w: 0.9999796}
+        length: 50.585777
+        parentId: 6
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_9
+        guid: 
+        position: {x: 50.58579, y: -0.000008692045, z: 0}
+        rotation: {x: 0, y: 0, z: -0.05204166, w: 0.99864495}
+        length: 43.395184
+        parentId: 7
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_10
+        guid: 
+        position: {x: -24.412415, y: -92.1709, z: 0}
+        rotation: {x: 0, y: 0, z: -0.5424081, w: 0.84011513}
+        length: 19.433813
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_11
+        guid: 
+        position: {x: 19.433811, y: 0.000004442672, z: 0}
+        rotation: {x: 0, y: 0, z: -0.32837945, w: 0.9445459}
+        length: 12.956221
+        parentId: 9
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_12
+        guid: 
+        position: {x: -106.9704, y: -92.1709, z: 0}
+        rotation: {x: 0, y: 0, z: -0.86437917, w: 0.5028406}
+        length: 16.759708
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_13
+        guid: 
+        position: {x: 16.759699, y: -0.00000015921023, z: 0}
+        rotation: {x: 0, y: 0, z: 0.34966564, w: 0.93687457}
+        length: 16.022877
+        parentId: 11
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_14
+        guid: 
+        position: {x: -136.10852, y: -95.02757, z: 0}
+        rotation: {x: 0, y: 0, z: -0.7891691, w: 0.61417603}
+        length: 44.203808
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_15
+        guid: 
+        position: {x: 44.203804, y: 0.0000036143938, z: 0}
+        rotation: {x: 0, y: 0, z: -0.008817838, w: 0.99996114}
+        length: 50.03425
+        parentId: 13
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_16
+        guid: 
+        position: {x: 50.03425, y: -0.000009510991, z: 0}
+        rotation: {x: 0, y: 0, z: 0.05472153, w: 0.99850166}
+        length: 42.22184
+        parentId: 14
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_17
+        guid: 
+        position: {x: -138.39386, y: -34.75171, z: 0}
+        rotation: {x: 0, y: 0, z: -0.9458732, w: 0.32453638}
+        length: 26.056902
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_18
+        guid: 
+        position: {x: 26.056894, y: 0.0000023423918, z: 0}
+        rotation: {x: 0, y: 0, z: -0.22735527, w: 0.9738119}
+        length: 45.49208
+        parentId: 16
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_19
+        guid: 
+        position: {x: 45.492073, y: 0.00000797641, z: 0}
+        rotation: {x: 0, y: 0, z: 0.030919366, w: 0.999522}
+        length: 36.10393
+        parentId: 17
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_20
+        guid: 
+        position: {x: -143.82155, y: 12.097809, z: 0}
+        rotation: {x: 0, y: 0, z: -0.99996084, w: 0.008851488}
+        length: 32.285484
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_21
+        guid: 
+        position: {x: 32.28549, y: 0.0000016811254, z: 0}
+        rotation: {x: 0, y: 0, z: -0.25058103, w: 0.96809566}
+        length: 30.415329
+        parentId: 19
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_22
+        guid: 
+        position: {x: 30.41533, y: 0.0000015560661, z: 0}
+        rotation: {x: 0, y: 0, z: -0.10022591, w: 0.9949648}
+        length: 35.91812
+        parentId: 20
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_23
+        guid: 
+        position: {x: -138.67952, y: 63.23233, z: 0}
+        rotation: {x: 0, y: 0, z: 0.88963705, w: 0.45666832}
+        length: 32.344856
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_24
+        guid: 
+        position: {x: 32.344845, y: -0.0000015440583, z: 0}
+        rotation: {x: 0, y: 0, z: -0.27644333, w: 0.96103024}
+        length: 59.81992
+        parentId: 22
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_25
+        guid: 
+        position: {x: 59.819923, y: 0.000000668024, z: 0}
+        rotation: {x: 0, y: 0, z: -0.09331464, w: 0.9956367}
+        length: 34.819824
+        parentId: 23
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_26
+        guid: 
+        position: {x: 5.868347, y: 62.66101, z: 0}
+        rotation: {x: 0, y: 0, z: 0.45894036, w: 0.8884671}
+        length: 32.577454
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_27
+        guid: 
+        position: {x: 32.577457, y: -0.0000043496498, z: 0}
+        rotation: {x: 0, y: 0, z: 0.26675588, w: 0.96376413}
+        length: 59.309616
+        parentId: 25
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_28
+        guid: 
+        position: {x: 59.30962, y: 0.0000003753014, z: 0}
+        rotation: {x: 0, y: 0, z: 0.098127544, w: 0.99517393}
+        length: 35.964622
+        parentId: 26
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_29
+        guid: 
+        position: {x: -86.5184, y: -41.758667, z: 0}
+        rotation: {x: 0, y: 0, z: -0.5093331, w: 0.86056954}
+        length: 34.85587
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_30
+        guid: 
+        position: {x: -45.164673, y: -41.52893, z: 0}
+        rotation: {x: 0, y: 0, z: -0.8641008, w: 0.5033188}
+        length: 35.392326
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      - name: bone_31
+        guid: 
+        position: {x: -66.99025, y: -49.569916, z: 0}
+        rotation: {x: 0, y: 0, z: 0.7064146, w: 0.7077983}
+        length: 117.39882
+        parentId: -1
+        color:
+          serializedVersion: 2
+          rgba: 0
+      spriteID: 04f4a58e522674170800000000000000
+      internalID: 8162600764583857984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_RightLeg4
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 302
+        width: 46
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c21df03d5eb79ce0800000000000000
+      internalID: -1398439851812121918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Torso
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 166
+        width: 99
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c03aee9f01ba700800000000000000
+      internalID: 552554044919581752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -77, y: -69}
+      - {x: -104, y: -133}
+      - {x: -104, y: -210}
+      - {x: -97, y: -210}
+      - {x: -96, y: -209}
+      - {x: -64, y: -97}
+      - {x: -64, y: -72}
+      - {x: -65, y: -69}
+    - - {x: 64, y: -69}
+      - {x: 64, y: -84}
+      - {x: 66, y: -99}
+      - {x: 96, y: -209}
+      - {x: 98, y: -210}
+      - {x: 104, y: -210}
+      - {x: 104, y: -152}
+      - {x: 78, y: -69}
+    - - {x: -44, y: -67}
+      - {x: -51, y: -70}
+      - {x: -54, y: -82}
+      - {x: -54, y: -95}
+      - {x: -47, y: -105}
+      - {x: -43, y: -105}
+      - {x: -36, y: -82}
+      - {x: -36, y: -67}
+    - - {x: 36, y: -67}
+      - {x: 36, y: -79}
+      - {x: 38, y: -93}
+      - {x: 43, y: -105}
+      - {x: 50, y: -105}
+      - {x: 55, y: -98}
+      - {x: 55, y: -79}
+      - {x: 50, y: -67}
+    - - {x: 37, y: 92}
+      - {x: -22, y: 92}
+      - {x: -45, y: 79}
+      - {x: -45, y: -7}
+      - {x: -15, y: -56}
+      - {x: 30, y: -56}
+      - {x: 44, y: -10}
+      - {x: 44, y: 87}
+    - - {x: -82, y: -8}
+      - {x: -176, y: -46}
+      - {x: -176, y: -50}
+      - {x: -175, y: -52}
+      - {x: -131, y: -52}
+      - {x: -67, y: -33}
+      - {x: -67, y: -12}
+      - {x: -69, y: -8}
+    - - {x: 72, y: -8}
+      - {x: 68, y: -9}
+      - {x: 68, y: -23}
+      - {x: 85, y: -37}
+      - {x: 161, y: -52}
+      - {x: 177, y: -52}
+      - {x: 177, y: -46}
+      - {x: 176, y: -44}
+      - {x: 121, y: -28}
+      - {x: 84, y: -8}
+    - - {x: -4, y: -34}
+      - {x: -6, y: -34}
+      - {x: -9, y: -32}
+      - {x: -8, y: -33}
+      - {x: 6, y: -33}
+      - {x: 8, y: -31}
+      - {x: 5, y: -34}
+      - {x: 0, y: -36}
+      - {x: -1, y: -38}
+      - {x: 0, y: -38}
+    - - {x: -161, y: 73}
+      - {x: -168, y: 73}
+      - {x: -168, y: 66}
+      - {x: -157, y: 49}
+      - {x: -110, y: 24}
+      - {x: -76, y: 24}
+      - {x: -72, y: 26}
+      - {x: -72, y: 38}
+      - {x: -75, y: 44}
+    - - {x: 73, y: 25}
+      - {x: 74, y: 24}
+      - {x: 125, y: 24}
+      - {x: 169, y: 58}
+      - {x: 169, y: 73}
+      - {x: 139, y: 73}
+      - {x: 73, y: 54}
+    - - {x: -100, y: 209}
+      - {x: -101, y: 201}
+      - {x: -101, y: 98}
+      - {x: -88, y: 78}
+      - {x: -67, y: 78}
+      - {x: -66, y: 80}
+      - {x: -66, y: 105}
+      - {x: -85, y: 209}
+    - - {x: 85, y: 209}
+      - {x: 67, y: 122}
+      - {x: 66, y: 114}
+      - {x: 66, y: 78}
+      - {x: 101, y: 78}
+      - {x: 108.72095, y: 100.09134}
+      - {x: 101, y: 209}
+    - - {x: 87, y: 170}
+      - {x: 87, y: 183}
+      - {x: 93, y: 183}
+      - {x: 93, y: 170}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpiderBoss_Parts_RightLeg1: -8375306485016174671
+      SpiderBoss_Parts_Torso: 552554044919581752
+      SpiderBoss_Parts_RightLeg3: 8162600764583857984
+      SpiderBoss_Parts_LeftLeg3: 919801657380222919
+      SpiderBoss_Parts_LeftLeg2: -1829579094226413072
+      SpiderBoss_Parts_RightLeg4: -1398439851812121918
+      SpiderBoss_Parts_RightLeg2: -2000714132968215034
+      SpiderBoss_Parts_Leftleg4: -6926933857066299644
+      SpiderBoss_Parts_LeftPedipalp: 1612389798201452192
+      SpiderBoss_Parts_LeftLeg1: 6318933691064372348
+      SpiderBoss_Parts_RightPedipalp: -8844471488063258560
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
