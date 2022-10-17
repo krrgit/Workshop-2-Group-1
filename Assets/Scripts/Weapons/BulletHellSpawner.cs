@@ -1,9 +1,15 @@
+/*
+ * How to Use:
+ * First call Initialize()
+ * Call ToggleEmit(bool) When you would like to start/stop emitting bullets
+ * Call DoEmitOnce() When you would like to emit once
+ * Call LoadSo(BulletHellSpawner bhs) when you would like to load a scriptable object
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletHellSpawner : MonoBehaviour
-{
+public class BulletHellSpawner : MonoBehaviour {
     [Header("Spawner")]
     [Range(1,25)]
     public int columns = 5;
@@ -29,15 +35,7 @@ public class BulletHellSpawner : MonoBehaviour
     private float spinTimer;
     private bool doEmit = false; // bool to check if emit is ran once
     
-    public ParticleSystem system;
-
-    int emitCount;
-
-    public int EmitAmount
-    {
-        get { return emitCount; }
-    }
-    
+    private ParticleSystem system;
     
     public bool IsEmitting
     {
@@ -49,6 +47,29 @@ public class BulletHellSpawner : MonoBehaviour
         DoEmit();
     }
 
+    public void Initialize()
+    {
+        Summon();
+    }
+
+    public void LoadSO(BulletHellSpawner bhs)
+    {
+        columns = bhs.columns;
+        spread = bhs.spread;
+        spinSpeed = bhs.spinSpeed;
+        centerDist = bhs.centerDist;
+        fireRate = bhs.fireRate;
+    
+        speed = bhs.speed;
+        lifetime = bhs.lifetime;
+        size = bhs.size;
+        color = bhs.color;
+        sprite = bhs.sprite;
+        mtl = bhs.mtl;
+        
+        UpdateColumns();
+    }
+
     public void ToggleEmit(bool toggleOn) {
         if (toggleOn) {
             StartInvoke();
@@ -57,31 +78,6 @@ public class BulletHellSpawner : MonoBehaviour
         }
     }
     
-    
-    // Sets all variables, then initializes spawner
-    public void WeaponInit(WeaponSO w)
-    {
-        columns = w.columns;
-        spread = w.spread;
-        centerDist = w.centerDist;
-        fireRate = w.fireRate;
-
-        speed = w.speed;
-        lifetime = w.lifetime;
-        size = w.size;
-        color = w.color;
-        sprite = w.sprite;
-        mtl = w.mtl;
-        
-        Summon();
-    }
-
-
-    void Awake() {
-        //Summon();
-        //StartInvoke();
-    }
-
     void FixedUpdate()
     {
         SpinSpawner();
@@ -187,7 +183,6 @@ public class BulletHellSpawner : MonoBehaviour
         if (doEmit) {
             CancelInvoke();
             doEmit = false;
-            emitCount = 0;
         }
     }
     
@@ -231,6 +226,5 @@ public class BulletHellSpawner : MonoBehaviour
 
             system.Emit(emitParams, 10);
         }
-        ++emitCount;
     }
 }
