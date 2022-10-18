@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void LoadGame()
     {
-        // Insert Scene to load here
-        //SceneManager.LoadScene("");
+        // Load Hub Scene
+        SceneManager.LoadScene(1);
     }
 }
