@@ -64,7 +64,7 @@ public class SpiderLegIK : MonoBehaviour {
         // Middle vector points to 2nd IK joint perpendicular to targetToJoint vector
         // Clamp length so it doesn't bend backwards
         midLength = length0+length1 - targetToJoint.magnitude;
-        midLength = Mathf.Clamp(midLength,0,length1);
+        midLength = Mathf.Clamp(midLength,0.01f,length1);
         // Get length of 2nd IK leg projected onto targetToJoint.
         // Used to compute 2nd IK Joint position
         parallelLength = Mathf.Sqrt((length1*length1)-(midLength*midLength));
@@ -81,7 +81,7 @@ public class SpiderLegIK : MonoBehaviour {
         // Mid Segment
         leg.up = (Vector3)midPoint - leg.position;
         // Calf Segment
-        calf.up = target.position - calf.position;
+        calf.up = (Vector2)(target.position - calf.position);
         
         Debug.DrawRay(target.position, targetToJoint);
         Debug.DrawRay(target.position + ((Vector3)targetToJoint.normalized*parallelLength), midVector);
