@@ -28,6 +28,11 @@ public class SpiderLegManager : MonoBehaviour {
         }
     }
 
+    public void StationaryAdjust()
+    {
+        
+    }
+
     IEnumerator MoveLegs()
     {
         isMoving = true;
