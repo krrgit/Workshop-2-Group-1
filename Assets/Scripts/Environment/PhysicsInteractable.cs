@@ -5,6 +5,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PhysicsInteractable : MonoBehaviour {
@@ -51,11 +52,14 @@ public class PhysicsInteractable : MonoBehaviour {
         
         while (rb.velocity.magnitude > 2*Time.deltaTime)
         {
-            rb.velocity -= rb.velocity.normalized * Time.deltaTime*velocity;
+            rb.velocity -= rb.velocity.normalized * Time.deltaTime * velocity;
             yield return new WaitForEndOfFrame();
         }
         
         rb.velocity = Vector2.zero;
+        gameObject.AddComponent<BoxCollider2D>();
+        rb.drag = 2;
+        Destroy(this);
     }
 
 }
