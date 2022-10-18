@@ -21,7 +21,7 @@ public class SpiderLegIK : MonoBehaviour {
     public Transform tip;
     public Transform target;
     public Transform ideal;
-    public Vector3 hipTargetOffset;
+    public Vector2 hipTargetOffset;
     public float bendDir = -1;
     
     float length0;
@@ -77,9 +77,9 @@ public class SpiderLegIK : MonoBehaviour {
     void RotateSegments()
     {
         // Hip segment
-        transform.up = target.position - transform.position + hipTargetOffset;
+        transform.up = (Vector2)(target.position - transform.position) + hipTargetOffset;
         // Mid Segment
-        leg.up = (Vector3)midPoint - leg.position;
+        leg.up = midPoint - (Vector2)leg.position;
         // Calf Segment
         calf.up = (Vector2)(target.position - calf.position);
         
