@@ -117,9 +117,10 @@ public class WeaponBulletSpawner : MonoBehaviour {
             coll.mode = ParticleSystemCollisionMode.Collision2D;
             coll.bounce = 0;
             coll.lifetimeLoss = 1;
-            
-            
-            
+
+            // 191 specifically makes sure player does not collide with particles
+            coll.collidesWith = 191;
+
             system.Play();
         }
 
