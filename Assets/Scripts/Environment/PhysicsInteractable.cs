@@ -12,6 +12,8 @@ public class PhysicsInteractable : MonoBehaviour {
     public float velocity = 2;
     public float halfHeight = 1.25f;
     public int hitsToFly = 1; //Amount of hits left for this object to fly
+    public bool flipSprite;
+    public float drag = 2;
     public Rigidbody2D rb;
     public HitsunAnimation hsAnim;
 
@@ -76,6 +78,8 @@ public class PhysicsInteractable : MonoBehaviour {
 
     void FlipSprite()
     {
+        if (!flipSprite) return;
+        
         transform.localScale = new Vector3(transform.localScale.x, -Mathf.Abs(transform.localScale.y),
             transform.localScale.z);
         transform.localScale *= 1.05f;
@@ -96,7 +100,7 @@ public class PhysicsInteractable : MonoBehaviour {
         
         rb.velocity = Vector2.zero;
         gameObject.AddComponent<BoxCollider2D>();
-        rb.drag = 2;
+        rb.drag = drag;
         Destroy(this);
     }
 
