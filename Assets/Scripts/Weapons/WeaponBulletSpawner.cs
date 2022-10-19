@@ -96,6 +96,7 @@ public class WeaponBulletSpawner : MonoBehaviour {
             
             var renderer = system.GetComponent<ParticleSystemRenderer>();
             renderer.alignment = ParticleSystemRenderSpace.Velocity;
+            renderer.sortingLayerName = "Bullets";
 
             var emission = system.emission;
             emission.enabled = false;

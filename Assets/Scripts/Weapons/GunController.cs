@@ -12,6 +12,7 @@ public enum WeaponState {
 public class GunController : MonoBehaviour {
     public WeaponBulletSpawner spawner;
     public WeaponSO w;
+    public WeaponAnimator wAnim;
     public int ammo;
 
     private bool isReloading;
@@ -29,6 +30,7 @@ public class GunController : MonoBehaviour {
     {
         ammo = w.maxAmmo;
         spawner.WeaponInit(w);
+        wAnim.SetSprites(w.wpnReady,w.wpnEmpty);
     }
 
     // Update is called once per frame
@@ -69,6 +71,7 @@ public class GunController : MonoBehaviour {
             if (cooldown <= 6 * Time.deltaTime && ammo != 0)
             {
                 state = WeaponState.Ready;
+                wAnim.UpdateState(state);
             }
         }
     }
@@ -81,6 +84,8 @@ public class GunController : MonoBehaviour {
             cooldown = w.fireRate;
             --ammo;
             state = WeaponState.Cooldown;
+            wAnim.PlayRecoil(w.fireRate - 0.05f);
+            wAnim.UpdateState(state);
         }
     }
 
@@ -92,6 +97,7 @@ public class GunController : MonoBehaviour {
         if (ammo == 0)
         {
             state = WeaponState.Empty;
+            wAnim.UpdateState(state);;
         }
     }
 
@@ -106,14 +112,18 @@ public class GunController : MonoBehaviour {
 
         isEmitting = true;
         InvokeRepeating("DoAutoEmit", 0, w.fireRate);
+        
     }
 
     void DoAutoEmit()
     {
         spawner.EmitOnce();
         state = WeaponState.Cooldown;
+        wAnim.UpdateState(state);
         --ammo;
         cooldown = w.fireRate;
+        wAnim.UpdateState(state);
+        wAnim.PlayRecoil(w.fireRate * 0.5f);
     }
 
     void StopAutoFire() {
@@ -136,5 +146,6 @@ public class GunController : MonoBehaviour {
         ammo = w.maxAmmo;
         isReloading = false;
         state = WeaponState.Ready;
+        wAnim.UpdateState(state);
     }
 }

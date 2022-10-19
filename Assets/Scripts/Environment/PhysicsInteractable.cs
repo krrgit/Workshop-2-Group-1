@@ -15,6 +15,7 @@ public class PhysicsInteractable : MonoBehaviour {
     public bool flipSprite;
     public float drag = 2;
     public Rigidbody2D rb;
+    public Collider2D coll;
     public HitsunAnimation hsAnim;
 
     private Vector2 direction;
@@ -34,7 +35,7 @@ public class PhysicsInteractable : MonoBehaviour {
     {
         startPos = transform.position;
         hsAnim.SetToWhite();
-
+        coll.enabled = false;
         if (hsAnim.wiggle)
         {
             float timer = hsAnim.Duration;
@@ -50,7 +51,7 @@ public class PhysicsInteractable : MonoBehaviour {
         {
             yield return new WaitForSeconds(hsAnim.Duration);
         }
-
+        coll.enabled = true;
         hsAnim.RevertSprite();
         
         if (hitsToFly <= 0)
@@ -100,6 +101,7 @@ public class PhysicsInteractable : MonoBehaviour {
         
         rb.velocity = Vector2.zero;
         gameObject.AddComponent<BoxCollider2D>();
+        gameObject.layer = 8;
         rb.drag = drag;
         Destroy(this);
     }
