@@ -46,11 +46,11 @@ public class WeaponParent : MonoBehaviour {
         if (direction.y < 0)
         {
             wpnRenderer.sortingOrder = charRenderer.sortingOrder + 1;
-            playerArms.InfrontOfPlayer(charRenderer.sortingOrder);
+            playerArms.SetSpriteSortingOrder(charRenderer.sortingOrder+2);
         } else if (direction.y >= 0)
         {
-            wpnRenderer.sortingOrder = charRenderer.sortingOrder - 1;
-            playerArms.BehindPlayer(charRenderer.sortingOrder);
+            wpnRenderer.sortingOrder = charRenderer.sortingOrder - 2;
+            playerArms.SetSpriteSortingOrder(charRenderer.sortingOrder - 1);
         }
     }
     

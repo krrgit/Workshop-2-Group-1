@@ -39,16 +39,9 @@ public class PlayerArmAnimator : MonoBehaviour {
         }
     }
 
-    public void BehindPlayer(int playerLayer)
+    public void SetSpriteSortingOrder(int newLayer)
     {
-        rightArm.sortingOrder = playerLayer - 1;
-        leftArm.sortingOrder = playerLayer - 1;
+        rightArm.sortingOrder = newLayer;
+        leftArm.sortingOrder = newLayer;
     }
-
-    public void InfrontOfPlayer(int playerLayer)
-    {
-        rightArm.sortingOrder = playerLayer + 1;
-        leftArm.sortingOrder = playerLayer + 1;
-    }
-
 }

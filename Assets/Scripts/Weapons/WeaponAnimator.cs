@@ -7,11 +7,20 @@ public class WeaponAnimator : MonoBehaviour {
     public SpriteRenderer sr;
     private Sprite sprReady;
     private Sprite sprEmpty;
+    private Sprite sprReload;
+
+    public delegate void ReloadDelegate(float duration);
+    public ReloadDelegate reloadDel;
+
+    private float returnSpeed;
+    private float angle;
     
-    public void SetSprites(Sprite ready, Sprite empty)
+    
+    public void SetSprites(Sprite ready, Sprite empty, Sprite reload)
     {
         sprReady = ready;
         sprEmpty = empty;
+        sprReload = reload;
     }
 
     public void UpdateState(WeaponState state)
@@ -22,22 +31,26 @@ public class WeaponAnimator : MonoBehaviour {
                 sr.sprite = sprReady;
                 break;
             case WeaponState.Cooldown:
+                sr.sprite = sprReload;
+                break;
             case WeaponState.Empty:
                 sr.sprite = sprEmpty;
                 break;
         }
     }
 
-    public void PlayRecoil(float duration)
+    public void PlayRecoil(float duration, bool isEmpty)
     {
+        if (!isEmpty) reloadDel(duration);
         StartCoroutine(Recoil(duration));
+        
     }
 
     IEnumerator Recoil(float duration)
     {
-        float returnSpeed = 22.5f / duration;
-        transform.localRotation = Quaternion.Euler(0,0,45);
-        float angle = 45f;
+        returnSpeed = 22.5f / duration;
+        transform.localRotation = Quaternion.Euler(0,0,22.5f);
+        angle = 45f;
         while (duration > 0)
         {
             transform.localRotation = Quaternion.Euler(0,0,angle);

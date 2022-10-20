@@ -13,6 +13,7 @@ public class WeaponSO : ScriptableObject {
     public float fireRate = 0.5f;
     public Sprite wpnReady;
     public Sprite wpnEmpty;
+    public Sprite wpnReload;
     
     // Bullet Spawner Params
     [Header("Spawner Parameters")] 

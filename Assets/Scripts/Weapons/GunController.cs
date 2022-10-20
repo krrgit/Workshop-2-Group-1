@@ -30,7 +30,7 @@ public class GunController : MonoBehaviour {
     {
         ammo = w.maxAmmo;
         spawner.WeaponInit(w);
-        wAnim.SetSprites(w.wpnReady,w.wpnEmpty);
+        wAnim.SetSprites(w.wpnReady,w.wpnEmpty,w.wpnReload);
     }
 
     // Update is called once per frame
@@ -84,7 +84,7 @@ public class GunController : MonoBehaviour {
             cooldown = w.fireRate;
             --ammo;
             state = WeaponState.Cooldown;
-            wAnim.PlayRecoil(w.fireRate - 0.05f);
+            wAnim.PlayRecoil(w.fireRate - 0.05f, ammo == 0);
             wAnim.UpdateState(state);
         }
     }
@@ -123,7 +123,7 @@ public class GunController : MonoBehaviour {
         --ammo;
         cooldown = w.fireRate;
         wAnim.UpdateState(state);
-        wAnim.PlayRecoil(w.fireRate * 0.5f);
+        wAnim.PlayRecoil(w.fireRate * 0.5f, ammo == 0);
     }
 
     void StopAutoFire() {
