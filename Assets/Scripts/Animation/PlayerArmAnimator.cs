@@ -11,6 +11,7 @@ public class PlayerArmAnimator : MonoBehaviour {
 
     public void PointArm()
     {
+        if (weapon??true) return;
         if (usingRight)
         {
             rightArm.transform.parent.up = rightArm.transform.parent.position - weapon.position;
@@ -23,12 +24,15 @@ public class PlayerArmAnimator : MonoBehaviour {
 
     public void SwitchArms(bool isRight)
     {
+        if (weapon??true) return;
         usingRight = isRight;
         ResetArm(!isRight);
     }
 
     void ResetArm(bool isRight)
     {
+        if (weapon??true) return;
+        
         if (isRight)
         {
             rightArm.transform.parent.up = Vector3.up;

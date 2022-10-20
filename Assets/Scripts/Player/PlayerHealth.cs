@@ -7,6 +7,22 @@ public class PlayerHealth : MonoBehaviour
     private float health = 0f;
     [SerializeField] private float maxHealth = 100f;
 
+    public static PlayerHealth Instance;
+
+    void Awake()
+    {
+        // This only allows one instance of PlayerHealth to exist in any scene
+        // This is to avoid the need for GetComponent Calls. Use PlayerHealth.Instance instead.
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
     private void Start()
     {
         health = maxHealth; //allows to change health easily
