@@ -14,8 +14,8 @@ TagManager:
   - Character
   - CharacterCollision
   - FloorObjects
-  - 
-  - 
+  - Interactable
+  - Environment
   - 
   - 
   - 

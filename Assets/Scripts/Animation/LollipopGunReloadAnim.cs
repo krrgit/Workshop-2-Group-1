@@ -27,9 +27,9 @@ public class LollipopGunReloadAnim : MonoBehaviour {
     IEnumerator Play(float duration)
     {
         spriteObject.SetActive(true);
-        rotSpeed = 180f / duration;
-        angle = 180;
-        transform.localRotation = Quaternion.Euler(0,0,180);
+        angle = 135;
+        rotSpeed = angle / duration;
+        transform.localRotation = Quaternion.Euler(0,0,angle);
         while (duration > 0)
         {
             transform.localRotation = Quaternion.Euler(0,0,angle);

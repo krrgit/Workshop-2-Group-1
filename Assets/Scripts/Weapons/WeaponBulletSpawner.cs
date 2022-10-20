@@ -120,7 +120,7 @@ public class WeaponBulletSpawner : MonoBehaviour {
             coll.lifetimeLoss = 1;
 
             // 191 specifically makes sure player does not collide with particles
-            coll.collidesWith = 191;
+            coll.collidesWith = 1983;
 
             system.Play();
         }
