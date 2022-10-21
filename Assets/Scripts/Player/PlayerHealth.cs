@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    private float health = 0f;
+    [SerializeField] private float health = 0f;
     [SerializeField] private float maxHealth = 100f;
 
     public static PlayerHealth Instance;
@@ -22,7 +22,6 @@ public class PlayerHealth : MonoBehaviour
             Destroy(this);
         }
     }
-
     private void Start()
     {
         health = maxHealth; //allows to change health easily
@@ -32,13 +31,14 @@ public class PlayerHealth : MonoBehaviour
     public void UpdateHealth(float change)
     {
         health += change;
+        print("Health: " + health);
         if (health > maxHealth)
         {
             health = maxHealth;
         } else if (health <= 0)
         {
             health = 0f;
-            Debug.Log("Player Respawn");
+            Debug.Log("Player Dead");
         }
     }
 

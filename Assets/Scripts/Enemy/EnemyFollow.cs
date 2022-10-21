@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyFollow : MonoBehaviour
 {
     public float speed;
-    private Transform target; //target is player
+    [SerializeField] private Transform target; //target is player
     public float stoppingDistance;
 
     //follows player

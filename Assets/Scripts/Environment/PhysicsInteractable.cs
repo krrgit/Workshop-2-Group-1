@@ -17,7 +17,7 @@ public class PhysicsInteractable : MonoBehaviour {
     public float drag = 2;
     public Rigidbody2D rb;
     public Collider2D coll;
-    public HitsunAnimation hsAnim;
+    public HitstunAnimation hsAnim;
 
     private Vector2 direction;
     private Vector2 startPos;
