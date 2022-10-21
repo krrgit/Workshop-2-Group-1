@@ -108,7 +108,7 @@ public class GunController : MonoBehaviour {
     }
 
     void AutoFire() {
-        if (isEmitting || ammo == 0) return;
+        if (isEmitting || ammo == 0 || cooldown > 0) return;
 
         isEmitting = true;
         InvokeRepeating("DoAutoEmit", 0, w.fireRate);

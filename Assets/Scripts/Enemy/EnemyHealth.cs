@@ -14,22 +14,27 @@ public class EnemyHealth : MonoBehaviour
     void Start() 
     {
         currentHealth = maxHealth;
-        healthBar.SetEnemyMaxHealth(maxHealth);
+        if (healthBar) healthBar.SetEnemyMaxHealth(maxHealth);
     }
 
     //how much damage they take(see player script)
     void Update()
     {
+        DebugDealDamage();
+    }
+
+   //attacks deplete health
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        //healthBar.SetEnemyHealth(currentHealth);
+    }
+
+    void DebugDealDamage()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
         }
-    }
-
-   //attacks deplete health
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        healthBar.SetEnemyHealth(currentHealth);
     }
 }

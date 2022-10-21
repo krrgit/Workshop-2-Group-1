@@ -116,6 +116,7 @@ public class BulletHellSpawner : MonoBehaviour {
         
         // Create Columns
         int i;
+        int layer = 0;
         for (i=0; i < columns; ++i)
         {
             // A simple particle material with no texture.
@@ -148,6 +149,11 @@ public class BulletHellSpawner : MonoBehaviour {
             
             var renderer = system.GetComponent<ParticleSystemRenderer>();
             renderer.alignment = ParticleSystemRenderSpace.Velocity;
+            
+            //Set Sprite Layer to Bullet(layer 3)
+            renderer.sortingLayerID = SortingLayer.NameToID("Bullets");
+            renderer.sortingOrder = layer;
+            ++layer;
 
             var emission = system.emission;
             emission.enabled = false;
@@ -169,8 +175,8 @@ public class BulletHellSpawner : MonoBehaviour {
             coll.mode = ParticleSystemCollisionMode.Collision2D;
             coll.bounce = 0;
             coll.lifetimeLoss = 1;
-            
-            
+
+            coll.collidesWith = 2047;
             
             system.Play();
         }

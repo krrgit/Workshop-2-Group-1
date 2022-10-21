@@ -8,10 +8,15 @@ public class PlayerArmAnimator : MonoBehaviour {
     public Transform weapon;
 
     private bool usingRight;
+    private bool isActive = true;
 
+    public void SetActive(bool state)
+    {
+        isActive = state;
+    }
     public void PointArm()
     {
-        if (weapon??true) return;
+        if (!isActive) return;
         if (usingRight)
         {
             rightArm.transform.parent.up = rightArm.transform.parent.position - weapon.position;
@@ -24,15 +29,14 @@ public class PlayerArmAnimator : MonoBehaviour {
 
     public void SwitchArms(bool isRight)
     {
-        if (weapon??true) return;
+        if (!isActive) return;
         usingRight = isRight;
         ResetArm(!isRight);
     }
 
     void ResetArm(bool isRight)
     {
-        if (weapon??true) return;
-        
+        if (!isActive) return;
         if (isRight)
         {
             rightArm.transform.parent.up = Vector3.up;
