@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HubScene.unity
     guid: b0a4812c95b9f4b92a65f1fda45cdff7
+  - enabled: 1
+    path: Assets/Scenes/BattleMechanicsDemo.unity
+    guid: 9e7f23e012bd0aa4e9f7c1e8d03347c4
   m_configObjects: {}

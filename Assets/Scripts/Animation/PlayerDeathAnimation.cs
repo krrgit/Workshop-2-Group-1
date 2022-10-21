@@ -8,8 +8,6 @@ public class PlayerDeathAnimation : MonoBehaviour {
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Sprite deadSprite;
     
-    
-
     public void Play()
     {
         arms.gameObject.SetActive(false);

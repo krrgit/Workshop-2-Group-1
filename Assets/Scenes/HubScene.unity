@@ -2448,14 +2448,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 283727450}
     m_Modifications:
-    - target: {fileID: 2056713364, guid: 3eb7c1c25ce1f42bfbf4126f75ef6401, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.725
-      objectReference: {fileID: 0}
-    - target: {fileID: 2056713364, guid: 3eb7c1c25ce1f42bfbf4126f75ef6401, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.422
-      objectReference: {fileID: 0}
     - target: {fileID: 7407956274927586912, guid: 3eb7c1c25ce1f42bfbf4126f75ef6401, type: 3}
       propertyPath: m_Name
       value: LollipopGun

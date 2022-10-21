@@ -42,11 +42,11 @@ public class WeaponAnimator : MonoBehaviour {
     public void PlayRecoil(float duration,float delay, bool isEmpty)
     {
         if (!isEmpty) reloadDel(duration, delay);
-        StartCoroutine(Recoil(duration));
+        StartCoroutine(Recoil(duration, isEmpty));
         
     }
 
-    IEnumerator Recoil(float duration)
+    IEnumerator Recoil(float duration, bool isEmpty)
     {
         returnSpeed = 22.5f / duration;
         transform.localRotation = Quaternion.Euler(0,0,22.5f);
@@ -59,7 +59,7 @@ public class WeaponAnimator : MonoBehaviour {
             yield return new WaitForEndOfFrame();
         }
 
-        UpdateState(WeaponState.Ready);
+        if (!isEmpty) UpdateState(WeaponState.Ready);
         transform.localRotation = Quaternion.identity;
     }
 }
