@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28971b95dd49b4affa437e299b9f8392, type: 3}
+  m_Name: AttackPattern1
+  m_EditorClassIdentifier: 
+  columns: 5
+  spread: 90
+  spinSpeed: 0
+  centerDist: 0
+  fireRate: 3
+  speed: 4
+  lifetime: 5
+  size: 5
+  color: {r: 1, g: 1, b: 1, a: 0}
+  sprite: {fileID: 21300000, guid: c914801947c2a414bb0582518b616428, type: 3}
+  mtl: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}

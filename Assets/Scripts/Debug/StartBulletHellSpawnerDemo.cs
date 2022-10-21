@@ -16,6 +16,5 @@ public class StartBulletHellSpawnerDemo : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
