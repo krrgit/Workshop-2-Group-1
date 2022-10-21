@@ -31,15 +31,16 @@ public class PlayerHealth : MonoBehaviour
     public void UpdateHealth(float change)
     {
         health += change;
-        print("Health: " + health);
+        
         if (health > maxHealth)
         {
             health = maxHealth;
         } else if (health <= 0)
         {
             health = 0f;
-            Debug.Log("Player Dead");
+            GameStateManager.Instance.Death();
         }
+        print("Health: " + health);
     }
 
 }

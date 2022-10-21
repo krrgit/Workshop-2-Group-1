@@ -13,6 +13,20 @@ public class CameraTarget : MonoBehaviour {
     private Vector2 pointerPerc; // Percentage the pointer is away from center. 100% = edges. 0% = center.
 
     private Vector3 targetPos; // The position this target lerps to.
+
+    public static CameraTarget Instance;
+    
+    
+    void Awake()
+    {
+        // This only allows one instance of this Component to exist in any scene
+        if (Instance == null) {
+            Instance = this;
+        }else {
+            Destroy(this);
+        }
+    }
+
     
     void Update()
     {
