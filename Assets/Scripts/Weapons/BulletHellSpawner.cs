@@ -52,7 +52,7 @@ public class BulletHellSpawner : MonoBehaviour {
         Summon();
     }
 
-    public void LoadSO(BulletHellSpawner bhs)
+    public void LoadSO(BulletHellSpawnerSO bhs)
     {
         columns = bhs.columns;
         spread = bhs.spread;
