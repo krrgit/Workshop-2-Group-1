@@ -14,7 +14,7 @@ public class EnemyHealth : MonoBehaviour
     void Start() 
     {
         currentHealth = maxHealth;
-        if (healthBar) healthBar.SetEnemyMaxHealth(maxHealth);
+        healthBar.SetEnemyMaxHealth(maxHealth);
     }
 
     //how much damage they take(see player script)
@@ -27,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        //healthBar.SetEnemyHealth(currentHealth);
+        healthBar.SetEnemyHealth(currentHealth);
     }
 
     void DebugDealDamage()
