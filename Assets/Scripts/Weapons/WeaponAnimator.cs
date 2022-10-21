@@ -9,7 +9,7 @@ public class WeaponAnimator : MonoBehaviour {
     private Sprite sprEmpty;
     private Sprite sprReload;
 
-    public delegate void ReloadDelegate(float duration);
+    public delegate void ReloadDelegate(float duration, float delay);
     public ReloadDelegate reloadDel;
 
     private float returnSpeed;
@@ -39,9 +39,9 @@ public class WeaponAnimator : MonoBehaviour {
         }
     }
 
-    public void PlayRecoil(float duration, bool isEmpty)
+    public void PlayRecoil(float duration,float delay, bool isEmpty)
     {
-        if (!isEmpty) reloadDel(duration);
+        if (!isEmpty) reloadDel(duration, delay);
         StartCoroutine(Recoil(duration));
         
     }

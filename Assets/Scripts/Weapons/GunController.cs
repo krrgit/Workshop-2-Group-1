@@ -81,11 +81,7 @@ public class GunController : MonoBehaviour {
 
         if (cooldown <= 0) {
             spawner.EmitOnce();
-            cooldown = w.fireRate;
-            --ammo;
-            state = WeaponState.Cooldown;
-            wAnim.PlayRecoil(w.fireRate - 0.05f, ammo == 0);
-            wAnim.UpdateState(state);
+            SetCooldownValues();
         }
     }
 
@@ -115,15 +111,19 @@ public class GunController : MonoBehaviour {
         
     }
 
-    void DoAutoEmit()
+    void SetCooldownValues()
     {
-        spawner.EmitOnce();
         state = WeaponState.Cooldown;
-        wAnim.UpdateState(state);
         --ammo;
         cooldown = w.fireRate;
         wAnim.UpdateState(state);
-        wAnim.PlayRecoil(w.fireRate * 0.5f, ammo == 0);
+        wAnim.PlayRecoil(w.fireRate * 0.5f, w.fireRate * 0.5f, ammo == 0);
+    }
+
+    void DoAutoEmit()
+    {
+        spawner.EmitOnce();
+        SetCooldownValues();
     }
 
     void StopAutoFire() {

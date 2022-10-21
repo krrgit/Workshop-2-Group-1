@@ -19,12 +19,12 @@ public class LollipopGunReloadAnim : MonoBehaviour {
         wAnim.reloadDel -= PlayAnim;
     }
 
-    public void PlayAnim(float duration)
+    public void PlayAnim(float duration,float delay)
     {
-        StartCoroutine(Play(duration));
+        StartCoroutine(Play(duration, delay));
     }
 
-    IEnumerator Play(float duration)
+    IEnumerator Play(float duration,float delay)
     {
         spriteObject.SetActive(true);
         angle = 135;
@@ -37,6 +37,7 @@ public class LollipopGunReloadAnim : MonoBehaviour {
             angle -= rotSpeed * Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+        yield return new WaitForSeconds(delay);
         spriteObject.SetActive(false);
     }
 }

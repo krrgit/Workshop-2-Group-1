@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDeathAnimation : MonoBehaviour {
     [SerializeField] private PlayerArmAnimator arms;
     [SerializeField] private WeaponParent weaponParent;
-    [SerializeField] private SpriteRenderer renderer;
+    [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Sprite deadSprite;
     
     
@@ -14,6 +14,6 @@ public class PlayerDeathAnimation : MonoBehaviour {
     {
         arms.gameObject.SetActive(false);
         weaponParent.enabled = false;
-        renderer.sprite = deadSprite;
+        sr.sprite = deadSprite;
     }
 }
