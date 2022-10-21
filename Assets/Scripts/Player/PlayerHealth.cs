@@ -43,4 +43,11 @@ public class PlayerHealth : MonoBehaviour
         print("Health: " + health);
     }
 
+    public void DealDamage(float change)
+    {
+        UpdateHealth(change);
+        
+        SoundManager.Instance.PlayPlayerHit();
+    }
+
 }

@@ -7,6 +7,6 @@ public class PlayerDamage : MonoBehaviour
 {
     private void OnParticleCollision(GameObject other)
     {
-        PlayerHealth.Instance.UpdateHealth(-1);
+        PlayerHealth.Instance.DealDamage(-1);
     }
 }

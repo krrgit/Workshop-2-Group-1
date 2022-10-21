@@ -28,6 +28,8 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetEnemyHealth(currentHealth);
+        
+        SoundManager.Instance.PlayEnemyHit();
     }
 
     void DebugDealDamage()

@@ -82,6 +82,8 @@ public class GunController : MonoBehaviour {
         if (cooldown <= 0) {
             spawner.EmitOnce();
             SetCooldownValues();
+            
+            SoundManager.Instance.PlayShoot();
         }
     }
 
@@ -124,6 +126,8 @@ public class GunController : MonoBehaviour {
     {
         spawner.EmitOnce();
         SetCooldownValues();
+        
+        SoundManager.Instance.PlayShoot();
     }
 
     void StopAutoFire() {

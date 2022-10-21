@@ -12,7 +12,6 @@ public class GameStateManager : MonoBehaviour
     public static GameStateManager Instance;
 
     private bool enableRestart = false;
-    
 
     void Awake()
     {
