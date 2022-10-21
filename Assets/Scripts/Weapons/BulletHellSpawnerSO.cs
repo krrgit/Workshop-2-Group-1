@@ -6,7 +6,7 @@ using UnityEngine;
 public class BulletHellSpawnerSO : ScriptableObject
 {
     [Header("Spawner")]
-    [Range(1,25)]
+    [Range(1,100)]
     public int columns = 5;
     [Range(0,360)]
     public int spread = 360; // max angle between first and last column. 360 = max

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28971b95dd49b4affa437e299b9f8392, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  columns: 5
+  columns: 29
   spread: 360
   spinSpeed: 0
   centerDist: 0
-  fireRate: 1
-  speed: 1
-  lifetime: 5
-  size: 1
-  color: {r: 0, g: 0, b: 0, a: 0}
-  sprite: {fileID: 0}
-  mtl: {fileID: 0}
+  fireRate: 0.5
+  speed: 2
+  lifetime: 60
+  size: 1.75
+  color: {r: 1, g: 1, b: 1, a: 1}
+  sprite: {fileID: 21300000, guid: c914801947c2a414bb0582518b616428, type: 3}
+  mtl: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}

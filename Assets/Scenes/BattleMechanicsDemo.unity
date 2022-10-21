@@ -1015,6 +1015,20 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 734429438}
+--- !u!114 &998980608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998980601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920462fe894914a8babf1d799fdcdc09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 682781169}
+  pattern: {fileID: 11400000, guid: a989c441193d742f4ae86fbe81c5aaa2, type: 2}
 --- !u!1 &1263515796
 GameObject:
   m_ObjectHideFlags: 0
