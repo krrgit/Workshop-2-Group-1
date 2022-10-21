@@ -93,7 +93,7 @@ public class GunController : MonoBehaviour {
         if (ammo == 0)
         {
             state = WeaponState.Empty;
-            wAnim.UpdateState(state);;
+            wAnim.UpdateState(state);
         }
     }
 
@@ -117,7 +117,7 @@ public class GunController : MonoBehaviour {
         --ammo;
         cooldown = w.fireRate;
         wAnim.UpdateState(state);
-        wAnim.PlayRecoil(w.fireRate * 0.5f, w.fireRate * 0.5f, ammo == 0);
+        wAnim.PlayRecoil(w.fireRate * 0.5f, w.fireRate * 0.4f, ammo == 0);
     }
 
     void DoAutoEmit()

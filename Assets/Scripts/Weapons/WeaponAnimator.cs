@@ -58,7 +58,8 @@ public class WeaponAnimator : MonoBehaviour {
             angle -= returnSpeed * Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
-        
+
+        UpdateState(WeaponState.Ready);
         transform.localRotation = Quaternion.identity;
     }
 }
