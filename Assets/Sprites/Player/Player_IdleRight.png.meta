@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 57044788063bf3a4a811e960dcf63b42
+guid: 0dc1178693962404ba488c20bc230cbe
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,9 +45,9 @@ TextureImporter:
   spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  alignment: 7
+  spritePivot: {x: 0.5, y: 0}
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,85 +105,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_WalkDown_0
+      name: Player_IdleRight_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 16
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 26
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fcd28d5bc2bfd24d959693d884e944f
-      internalID: -1845213899
+      spriteID: 08b73c771094425418e3b26e8ea8222d
+      internalID: 1331143156
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_WalkDown_1
+      name: Player_IdleRight_1
       rect:
         serializedVersion: 2
-        x: 25
+        x: 36
         y: 0
-        width: 16
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 26
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbe7cf37b721c8147a68c34a659b813f
-      internalID: 2024310049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_WalkDown_2
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 0
-        width: 16
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12f8beda07c383e4d9bbafcc21355dab
-      internalID: -921993146
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_WalkDown_3
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 0
-        width: 16
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91ae336c2d5cc8d4abd5d5723a22f65f
-      internalID: 1576900094
+      spriteID: c2f75af8f3807744fbf077590c5d62a9
+      internalID: 188000504
       vertices: []
       indices: 
       edges: []
@@ -199,10 +157,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_WalkDown_3: 1576900094
-      Player_WalkDown_1: 2024310049
-      Player_WalkDown_2: -921993146
-      Player_WalkDown_0: -1845213899
+      Player_IdleRight_0: 1331143156
+      Player_IdleRight_1: 188000504
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
