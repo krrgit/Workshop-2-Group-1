@@ -3,12 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerArmAnimator : MonoBehaviour {
-    [SerializeField] private SpriteRenderer rightArm;
-    [SerializeField] private SpriteRenderer leftArm;
+    [SerializeField] private SpriteRenderer rightHand;
+    [SerializeField] private SpriteRenderer leftHand;
     public Transform weapon;
 
     private bool usingRight;
     private bool isActive = true;
+
+    private Vector2 defaultHandPosR;
+    private Vector2 defaultHandPosL;
+
+    void Start()
+    {
+        defaultHandPosL = leftHand.transform.localPosition;
+        defaultHandPosR = rightHand.transform.localPosition;
+    }
 
     public void SetActive(bool state)
     {
@@ -19,11 +28,11 @@ public class PlayerArmAnimator : MonoBehaviour {
         if (!isActive) return;
         if (usingRight)
         {
-            rightArm.transform.parent.up = rightArm.transform.parent.position - weapon.position;
+            rightHand.transform.position = weapon.position;
         }
         else
         {
-            leftArm.transform.parent.up = leftArm.transform.parent.position - weapon.position;
+            leftHand.transform.position = weapon.position;
         }
     }
 
@@ -39,17 +48,17 @@ public class PlayerArmAnimator : MonoBehaviour {
         if (!isActive) return;
         if (isRight)
         {
-            rightArm.transform.parent.up = Vector3.up;
+            rightHand.transform.localPosition = defaultHandPosR;
         }
         else
         {
-            leftArm.transform.parent.up = Vector3.up;
+            leftHand.transform.localPosition = defaultHandPosL;
         }
     }
 
     public void SetSpriteSortingOrder(int newLayer)
     {
-        rightArm.sortingOrder = newLayer;
-        leftArm.sortingOrder = newLayer;
+        rightHand.sortingOrder = newLayer;
+        leftHand.sortingOrder = newLayer;
     }
 }
