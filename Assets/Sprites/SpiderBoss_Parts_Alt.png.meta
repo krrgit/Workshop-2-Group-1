@@ -1,0 +1,717 @@
+fileFormatVersion: 2
+guid: 8c2bf1cd34bdd4028b597fd303f70b77
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_0
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 405
+        width: 9
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb9e9092556a643139da271c2679b263
+      internalID: 133969532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_1
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 405
+        width: 9
+        height: 37
+      alignment: 9
+      pivot: {x: 0.6242947, y: 0.022314947}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d0bbb874fa248318f51172ef63d91e
+      internalID: 183337685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_2
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 339
+        width: 12
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc6cc3c81ecf64de69d04e01399839b9
+      internalID: -1480066480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_3
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 339
+        width: 12
+        height: 65
+      alignment: 9
+      pivot: {x: 0.12712097, y: 0.02845506}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fca8927a1a95495e81a0380e1fff7ca
+      internalID: -14789930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_4
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 281
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f6f826a30aac49d8b459b80ca3a938b
+      internalID: -192103487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_5
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 300
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85e4dba9f6e64d6781b1398a6cec84c
+      internalID: -1217021669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_6
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 171
+        width: 85
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e0c96bd008c140c3af47e95ff533a79
+      internalID: -1978314551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_7
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 300
+        width: 26
+        height: 37
+      alignment: 9
+      pivot: {x: 0.19022545, y: 0.11301567}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da0639611aab745ad8c1ef08565b3998
+      internalID: -1041480348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_8
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 281
+        width: 32
+        height: 26
+      alignment: 9
+      pivot: {x: 0.052549362, y: 0.08696806}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0932412d70c6405b9440f017caadaef
+      internalID: -46331938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_9
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 260
+        width: 32
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2348990ed2c54709b2b736767fed39a
+      internalID: -432843759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_10
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 251
+        width: 39
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386f7e3f991cb44188d4265c1989a84d
+      internalID: -952191289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_11
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 251
+        width: 39
+        height: 14
+      alignment: 9
+      pivot: {x: 0.12138797, y: 0.45205906}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc6cf5429d7646619b6735fec63c44f
+      internalID: -1540224210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_12
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 260
+        width: 32
+        height: 21
+      alignment: 9
+      pivot: {x: 0.0036087036, y: 0.19104585}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc985e6abc84c4a9ba2272572dd79f6b
+      internalID: -67895231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_13
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 183
+        width: 47
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a06b27ce71354fd8ba52bf52ddf3aea
+      internalID: -1645497031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_14
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 191
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc767936a0ad842ce94b28168379fa5b
+      internalID: -1366799112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_15
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 191
+        width: 26
+        height: 24
+      alignment: 9
+      pivot: {x: 0.12999314, y: 0.8542328}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e03be9f41a2a4a47b4a0a93f1b3c7dc
+      internalID: 711074783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_16
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 183
+        width: 47
+        height: 19
+      alignment: 9
+      pivot: {x: -0.014093926, y: 0.75905085}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ef8a42eb165b45a7ad42648dc1cb656
+      internalID: -774604464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_17
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 174
+        width: 36
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7a897cb24e745cb9e1c74ccb495152
+      internalID: 1355228139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_18
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 174
+        width: 36
+        height: 13
+      alignment: 9
+      pivot: {x: 0.021475898, y: 0.8097745}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab6592b992e684bd6acdddb0972af7e5
+      internalID: -645035620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_19
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 107
+        width: 18
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9744fad26ecb5405ca50b09fe48dacb5
+      internalID: -723367167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_20
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 122
+        width: 14
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d3492f1de2b4a97a9dac80ae8614ae
+      internalID: 1145731179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_21
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 122
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 965e0f45cdbc5467885e06a7f84629ff
+      internalID: -2056227498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_22
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 107
+        width: 18
+        height: 47
+      alignment: 9
+      pivot: {x: 0.18927002, y: 0.90937024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d5d7d3ac02f6441a9043da0783a13bd
+      internalID: -988458143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_23
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 53
+        width: 19
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ada0a1c5ec940b9adb80ac3e514297
+      internalID: 238876450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_24
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 53
+        width: 19
+        height: 52
+      alignment: 9
+      pivot: {x: 0.12319785, y: 0.994778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24a3fe1a5837489584a359ffce52b3c
+      internalID: 1043135019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_25
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 5
+        width: 11
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ddd2ddde87f24aaea61a02145c12fd6
+      internalID: 2054483085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBoss_Parts_Alt_26
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 5
+        width: 11
+        height: 43
+      alignment: 9
+      pivot: {x: 0.2355957, y: 0.9994805}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39c653dc362040408ad6c514314c68d
+      internalID: -2051070050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      SpiderBoss_Parts_Alt_19: -723367167
+      SpiderBoss_Parts_Alt_26: -2051070050
+      SpiderBoss_Parts_Alt_17: 1355228139
+      SpiderBoss_Parts_Alt_23: 238876450
+      SpiderBoss_Parts_Alt_11: -1540224210
+      SpiderBoss_Parts_Alt_3: -14789930
+      SpiderBoss_Parts_Alt_16: -774604464
+      SpiderBoss_Parts_Alt_0: 133969532
+      SpiderBoss_Parts_Alt_18: -645035620
+      SpiderBoss_Parts_Alt_14: -1366799112
+      SpiderBoss_Parts_Alt_20: 1145731179
+      SpiderBoss_Parts_Alt_2: -1480066480
+      SpiderBoss_Parts_Alt_8: -46331938
+      SpiderBoss_Parts_Alt_7: -1041480348
+      SpiderBoss_Parts_Alt_12: -67895231
+      SpiderBoss_Parts_Alt_6: -1978314551
+      SpiderBoss_Parts_Alt_5: -1217021669
+      SpiderBoss_Parts_Alt_25: 2054483085
+      SpiderBoss_Parts_Alt_4: -192103487
+      SpiderBoss_Parts_Alt_15: 711074783
+      SpiderBoss_Parts_Alt_24: 1043135019
+      SpiderBoss_Parts_Alt_9: -432843759
+      SpiderBoss_Parts_Alt_21: -2056227498
+      SpiderBoss_Parts_Alt_13: -1645497031
+      SpiderBoss_Parts_Alt_22: -988458143
+      SpiderBoss_Parts_Alt_10: -952191289
+      SpiderBoss_Parts_Alt_1: 183337685
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
