@@ -231,6 +231,8 @@ public class BulletHellSpawner : MonoBehaviour {
             emitParams.startLifetime = lifetime;
 
             system.Emit(emitParams, 10);
+            
+            
         }
     }
 }

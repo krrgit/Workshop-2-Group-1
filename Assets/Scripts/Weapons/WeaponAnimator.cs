@@ -8,6 +8,7 @@ public class WeaponAnimator : MonoBehaviour {
     private Sprite sprReady;
     private Sprite sprEmpty;
     private Sprite sprReload;
+    [SerializeField] private ParticleSystem muzzleFlash;
 
     public delegate void ReloadDelegate(float duration, float delay);
     public ReloadDelegate reloadDel;
@@ -29,9 +30,11 @@ public class WeaponAnimator : MonoBehaviour {
         {
             case WeaponState.Ready:
                 sr.sprite = sprReady;
+                
                 break;
             case WeaponState.Cooldown:
                 sr.sprite = sprReload;
+                muzzleFlash.Emit(25);
                 break;
             case WeaponState.Empty:
                 sr.sprite = sprEmpty;
