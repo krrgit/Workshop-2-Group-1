@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Weapon", order = 1)]
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/BulletPattern", order = 1)]
 public class BulletHellSpawnerSO : ScriptableObject
 {
     [Header("Spawner")]
