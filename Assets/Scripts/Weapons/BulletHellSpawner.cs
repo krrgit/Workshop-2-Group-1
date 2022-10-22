@@ -175,6 +175,7 @@ public class BulletHellSpawner : MonoBehaviour {
             coll.mode = ParticleSystemCollisionMode.Collision2D;
             coll.bounce = 0;
             coll.lifetimeLoss = 1;
+            coll.radiusScale = 0.5f;
 
             coll.collidesWith = 2047;
             
