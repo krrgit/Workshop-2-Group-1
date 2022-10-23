@@ -77,6 +77,15 @@ public class BulletHellSpawner : MonoBehaviour {
             StopInvoke();
         }
     }
+
+    public void DestroyAllParticles()
+    {
+        for (int i = 0; i < columns; ++i)
+        {
+            columnList[i].Stop();
+
+        }
+    }
     
     void FixedUpdate()
     {
@@ -138,6 +147,7 @@ public class BulletHellSpawner : MonoBehaviour {
             mainModule.startSpeed = speed;
             mainModule.maxParticles = 10000;
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
+            mainModule.stopAction = ParticleSystemStopAction.Destroy;
             
             // Make particles align with velocity
             mainModule.startRotation3D = true;

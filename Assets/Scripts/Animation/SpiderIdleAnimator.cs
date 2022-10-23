@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpiderIdleAnimator : MonoBehaviour {
+
+    [SerializeField] private bool isEnabled = true;
      public float endDuration = 0.25f;
      public float midDuration = 0.05f;
      public float displaceY = 0.05f;
 
      private float displacement;
      private int dir = 1;
+
+     public void SetEnabled(bool state)
+     {
+         isEnabled = state;
+     }
     
     
     // Start is called before the first frame update
@@ -25,7 +32,7 @@ public class SpiderIdleAnimator : MonoBehaviour {
 
     IEnumerator Animate()
     {
-        while (true)
+        while (isEnabled)
         {
             transform.localPosition = Vector3.up * displacement;
             yield return new WaitForSeconds(midDuration);

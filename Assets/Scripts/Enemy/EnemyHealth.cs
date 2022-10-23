@@ -9,7 +9,10 @@ public class EnemyHealth : MonoBehaviour
 
     public EnemyHealthBar healthBar;
     
-    
+    public delegate void EnemyDeath();
+    public EnemyDeath enemyDeathDel;
+
+
     //starts current health to max health
     void Start() 
     {
@@ -27,8 +30,14 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        healthBar.SetEnemyHealth(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            currentHealth = 0;
+            enemyDeathDel();
+        }
         
+        healthBar.SetEnemyHealth(currentHealth);
         SoundManager.Instance.PlayEnemyHit();
     }
 
