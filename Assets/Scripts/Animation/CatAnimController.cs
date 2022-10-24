@@ -29,7 +29,7 @@ public class CatAnimController : MonoBehaviour {
       
       SetAnimVariables();
       Move();
-      Turn();
+      Rotate();
    }
 
 
@@ -51,9 +51,19 @@ public class CatAnimController : MonoBehaviour {
       transform.position += transform.up * -moveSpeed * moveForward * Time.deltaTime;
    }
 
-   void Turn()
+   void Rotate()
    {
       transform.Rotate(0,0,turnDir * turnSpeed * Time.deltaTime);
+   }
+
+   public void Turn(float duration, int direction)
+   {
+      
+   }
+
+   public void Walk(float duration)
+   {
+      
    }
 
 }
