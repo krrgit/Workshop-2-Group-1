@@ -12,7 +12,27 @@ public class CatAnimController : MonoBehaviour {
    private int moveForward;
    private int turnDir;
    
+      
+   public void Turn(float duration, int direction)
+   {
+      StartCoroutine(ITurn(duration, direction));
+   }
+   
+   public void Walk(float duration)
+   {
+      StartCoroutine(IMove(duration));
+   }
+
    void Update()
+   {
+      DemoInputs();
+      
+      SetAnimVariables();
+      Move();
+      Rotate();
+   }
+   
+   void DemoInputs()
    {
       if (Input.GetKey(KeyCode.A))
       {
@@ -24,17 +44,7 @@ public class CatAnimController : MonoBehaviour {
          turnCounter = Input.GetKey(KeyCode.D);
          turnClockwise = false;
       }
-
-      DemoInputs();
       
-      SetAnimVariables();
-      Move();
-      Rotate();
-   }
-
-
-   void DemoInputs()
-   {
       moveForward = Input.GetKey(KeyCode.W) ? 1 : 0;
       turnDir = (Input.GetKey(KeyCode.A) ? -1 : 0) + (Input.GetKey(KeyCode.D) ? 1 : 0);
    }
@@ -56,14 +66,40 @@ public class CatAnimController : MonoBehaviour {
       transform.Rotate(0,0,turnDir * turnSpeed * Time.deltaTime);
    }
 
-   public void Turn(float duration, int direction)
+   void SetTurnValues(int direction)
    {
-      
+      if (direction == 1)
+      {
+         turnClockwise = true;
+         turnCounter = false;
+      } else if (direction == -1)
+      {
+         turnCounter = true;
+         turnClockwise = false;
+      }
+      else
+      {
+         turnCounter = false;
+         turnClockwise = false;
+      }
    }
 
-   public void Walk(float duration)
+   IEnumerator ITurn(float duration, int direction)
    {
+      turnDir = direction;
+      SetTurnValues(direction);
+
+      yield return new WaitForSeconds(duration);
       
+      turnDir = 0;
+      SetTurnValues(0);
+   }
+   
+   IEnumerator IMove(float duration)
+   {
+      moveForward = 1;
+      yield return new WaitForSeconds(duration);
+      moveForward = 0;
    }
 
 }
