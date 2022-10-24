@@ -61,7 +61,7 @@ public class SpiderDeathAnimator : MonoBehaviour {
             fallDir = shadowPos - (Vector2)body.position;
         }
         Instantiate(system, transform.position, Quaternion.identity);
-        CameraShake.Instance.Shake(20, 0.015f);
+        CameraShake.Instance.Shake(13, 0.015f);
     }
     
     // This function disables other animators that would interfere with this one
