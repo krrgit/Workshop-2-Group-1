@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3e764ce2-389c-4139-8a2d-aa67e83b5162" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleMechanicsDemo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleMechanicsDemo.unity" afterDir="false" />
-    </list>
+    <list default="true" id="3e764ce2-389c-4139-8a2d-aa67e83b5162" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animation/CatAnimController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animation/SpiderDeathAnimator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraShake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
