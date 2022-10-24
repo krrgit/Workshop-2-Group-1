@@ -34,7 +34,7 @@ public class CatAttackController : MonoBehaviour {
         spawner.transform.position = position;
         spawner.EmitOnce();
         
-        print("Emit");
+        CameraShake.Instance.Shake(0.2f,0.05f);
     }
 
 

@@ -23,6 +23,11 @@ public class CatAnimController : MonoBehaviour {
       StartCoroutine(IMove(duration));
    }
 
+   public float ComputeTurnTime(float angle)
+   {
+      return angle / turnSpeed;
+   }
+
    void Update()
    {
       DemoInputs();
