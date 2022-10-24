@@ -10,6 +10,10 @@ public class WeaponAnimator : MonoBehaviour {
     private Sprite sprReload;
     [SerializeField] private ParticleSystem muzzleFlash;
 
+    [Header("Camera Shake Values")] 
+    [SerializeField] private float shakeDuration;
+    [SerializeField] private float shakePower;
+
     public delegate void ReloadDelegate(float duration, float delay);
     public ReloadDelegate reloadDel;
 
@@ -45,6 +49,7 @@ public class WeaponAnimator : MonoBehaviour {
     public void PlayRecoil(float duration,float delay, bool isEmpty)
     {
         if (!isEmpty) reloadDel(duration, delay);
+        CameraShake.Instance.Shake(shakeDuration, shakePower);
         StartCoroutine(Recoil(duration, isEmpty));
         
     }

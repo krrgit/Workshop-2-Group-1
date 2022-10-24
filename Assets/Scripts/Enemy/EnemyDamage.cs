@@ -7,8 +7,7 @@ public class EnemyDamage : MonoBehaviour {
     [SerializeField] private HitstunAnimation hsAnim;
     [SerializeField] private EnemyHealth health;
     [SerializeField] private Collider2D coll;
-
-
+    
     private void OnParticleCollision(GameObject other)
     {
         hsAnim.PlayAnimation(coll);
