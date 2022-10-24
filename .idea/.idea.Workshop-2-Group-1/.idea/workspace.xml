@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e764ce2-389c-4139-8a2d-aa67e83b5162" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleMechanicsDemo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleMechanicsDemo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animation/SpiderDeathAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/SpiderDeathAnimator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyDamage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/WeaponAnimator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
