@@ -725,6 +725,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7407956274927586916, guid: 3eb7c1c25ce1f42bfbf4126f75ef6401, type: 3}
+      propertyPath: shakePower
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7407956274927586916, guid: 3eb7c1c25ce1f42bfbf4126f75ef6401, type: 3}
+      propertyPath: shakeDuration
+      value: 0.167
+      objectReference: {fileID: 0}
     - target: {fileID: 8435638902457842800, guid: 3eb7c1c25ce1f42bfbf4126f75ef6401, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.5
