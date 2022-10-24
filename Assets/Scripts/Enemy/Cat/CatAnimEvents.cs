@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CatAnimEvents : MonoBehaviour {
-   [SerializeField] private Vector2 wRPawPos;
-   [SerializeField] private Vector2 wLPawPos;
-   [SerializeField] private Vector2 tCRPawPos;
-   [SerializeField] private Vector2 tCLPawPos;
-   [SerializeField] private Vector2 tCCRPawPos;
-   [SerializeField] private Vector2 tCCLPawPos;
-
+   [SerializeField] private Transform leftPawPoint;
+   [SerializeField] private Transform rightPawPoint;
 
    public delegate void LandPawDelegate(Vector2 Position);
 
@@ -17,31 +12,11 @@ public class CatAnimEvents : MonoBehaviour {
 
    public void WalkLandRightPawEvent()
    {
-      landPawDel(wRPawPos);
+      landPawDel(rightPawPoint.position);
    }
    
    public void WalkLandLeftPawEvent()
    {
-      landPawDel(wLPawPos);
-   }
-   
-   public void TurnCLandRightPawEvent()
-   {
-      landPawDel(tCRPawPos);
-   }
-   
-   public void TurnCLandLeftPawEvent()
-   {
-      landPawDel(tCLPawPos);
-   }
-   
-   public void TurnCCLandRightPawEvent()
-   {
-      landPawDel(tCCRPawPos);
-   }
-   
-   public void TurnCCLandLeftPawEvent()
-   {
-      landPawDel(tCCLPawPos);
+      landPawDel(leftPawPoint.position);
    }
 }

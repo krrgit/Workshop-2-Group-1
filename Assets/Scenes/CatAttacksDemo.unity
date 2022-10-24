@@ -173,7 +173,7 @@ MonoBehaviour:
   centerDist: 0
   fireRate: 1
   speed: 1
-  lifetime: 10
+  lifetime: 40
   size: 1
   color: {r: 1, g: 1, b: 1, a: 1}
   sprite: {fileID: 21300000, guid: c914801947c2a414bb0582518b616428, type: 3}
@@ -319,6 +319,37 @@ Transform:
   - {fileID: 1180406009}
   m_Father: {fileID: 1355697896}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &612563807
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 612563808}
+  m_Layer: 0
+  m_Name: LeftPawSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &612563808
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612563807}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.31, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1890690286}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &642434912
 GameObject:
@@ -473,7 +504,8 @@ Transform:
   m_LocalPosition: {x: 0.1769753, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1797387842}
   m_Father: {fileID: 1355697896}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -855,12 +887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13cb3557d2c8946f28d8b0ec7d6bcd8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wRPawPos: {x: 1.2, y: -7.25}
-  wLPawPos: {x: -1.5, y: -7.25}
-  tCRPawPos: {x: -0.6, y: -7.35}
-  tCLPawPos: {x: -3.3, y: -6.4}
-  tCCRPawPos: {x: 3.15, y: -5.75}
-  tCCLPawPos: {x: 0.33, y: -6.75}
+  leftPawPoint: {fileID: 612563808}
+  rightPawPoint: {fileID: 1797387842}
 --- !u!1 &1522933634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,6 +1032,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1797387841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1797387842}
+  m_Layer: 0
+  m_Name: RightPawSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1797387842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797387841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.31, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1055032898}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1890690285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1090,8 @@ Transform:
   m_LocalPosition: {x: -0.3222051, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 612563808}
   m_Father: {fileID: 1355697896}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

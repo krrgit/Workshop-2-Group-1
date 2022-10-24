@@ -31,7 +31,7 @@ public class CatAttackController : MonoBehaviour {
 
     void AttackPattern1(Vector2 position)
     {
-        spawner.transform.localPosition = position;
+        spawner.transform.position = position;
         spawner.EmitOnce();
         
         print("Emit");

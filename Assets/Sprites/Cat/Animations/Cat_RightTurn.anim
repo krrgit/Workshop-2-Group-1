@@ -13240,28 +13240,28 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: TurnCCLandLeftPawEvent
+    functionName: WalkLandLeftPawEvent
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.6166667
-    functionName: TurnCCLandRightPawEvent
+    functionName: WalkLandRightPawEvent
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.1666666
-    functionName: TurnCCLandLeftPawEvent
+    functionName: WalkLandLeftPawEvent
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 1.8
-    functionName: TurnCCLandRightPawEvent
+    functionName: WalkLandRightPawEvent
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
