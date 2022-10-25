@@ -13,14 +13,27 @@ public class CatAnimController : MonoBehaviour {
    private int turnDir;
 
    private bool isMoving;
+   private bool isTurning;
    
    public void Turn(float duration, int direction)
    {
+      if (isTurning) return;
       StartCoroutine(ITurn(duration, direction));
+   }
+
+   public void TurnToDir(Vector2 dir)
+   {
+      if (isTurning) return;
+
+      var duration = ComputeTurnTime(Vector2.Angle(dir, -transform.up));
+      int direction = Vector3.Project(dir, -transform.up).x > 0 ? 1 : -1;
+      
+      StartCoroutine(ITurn(duration,direction));
    }
    
    public void Walk(float duration)
    {
+      if (isMoving) return;
       StartCoroutine(IMove(duration));
    }
 
@@ -89,9 +102,10 @@ public class CatAnimController : MonoBehaviour {
          turnClockwise = false;
       }
    }
-
+   
    IEnumerator ITurn(float duration, int direction)
    {
+      isTurning = true;
       turnDir = direction;
       moveForward = 1;
       SetTurnValues(direction);
@@ -101,6 +115,7 @@ public class CatAnimController : MonoBehaviour {
       turnDir = 0;
       moveForward = isMoving ? moveForward : 0;
       SetTurnValues(0);
+      isTurning = false;
    }
    
    IEnumerator IMove(float duration)

@@ -30,6 +30,21 @@ public class CatAttackController : MonoBehaviour {
     private bool butterflyAttackActive;
     
     private Vector3 localPos;
+
+    public void DoStompAttack(float duration)
+    {
+        StartCoroutine(IStompAttack(duration));
+    }
+
+    public void DoStaffAttack()
+    {
+        StaffCharge();
+    }
+
+    public void DoButterflyAttack()
+    {
+        ButterflyAttack();
+    }
     
     private void OnEnable()
     {
@@ -76,6 +91,20 @@ public class CatAttackController : MonoBehaviour {
         if (staffAttackActive) return;
         StartCoroutine(IStaffAttack());
     }
+    
+    void ButterflyAttack()
+    {
+        if (butterflyAttackActive) return;
+        StartCoroutine(IButterflyAttack(7));
+    }
+
+
+    IEnumerator IStompAttack(float duration)
+    {
+        useStomp = true;
+        yield return new WaitForSeconds(duration);
+        useStomp = false;
+    }
 
     IEnumerator IStaffAttack()
     {
@@ -100,14 +129,7 @@ public class CatAttackController : MonoBehaviour {
         staffSpawner.ToggleEmit(false);
         staffAttackActive = false;
     }
-
-    void ButterflyAttack()
-    {
-        if (butterflyAttackActive) return;
-        
-        StartCoroutine(IButterflyAttack(7));
-    }
-
+    
     IEnumerator IButterflyAttack(float duration)
     {
         butterflyAttackActive = true;
