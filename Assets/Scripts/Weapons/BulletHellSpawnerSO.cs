@@ -14,6 +14,7 @@ public class BulletHellSpawnerSO : ScriptableObject
     public float spinSpeed = 0;
     public float centerDist = 0;
     public float fireRate = 1;
+   
     
     [Header("Bullet")]
     public float speed = 1;

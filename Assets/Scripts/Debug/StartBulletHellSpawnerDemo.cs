@@ -9,8 +9,8 @@ public class StartBulletHellSpawnerDemo : MonoBehaviour {
     void Start()
     {
         spawner.Initialize();
-        spawner.ToggleEmit(true);
 
+        spawner.EmitOnce();
     }
 
     // Update is called once per frame

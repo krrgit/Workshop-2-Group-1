@@ -44,12 +44,12 @@ public class BulletHellSpawner : MonoBehaviour {
 
     public void EmitOnce()
     {
-        DoEmit();
+        DoEmit(); 
     }
 
     public void Initialize()
     {
-        Summon();
+       Summon();
     }
 
     public void LoadSO(BulletHellSpawnerSO bhs)
