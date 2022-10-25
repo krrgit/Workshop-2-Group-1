@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,18 +12,12 @@ public class StaffParticleAnimator : MonoBehaviour {
     private ParticleSystem.ShapeModule shape;
     
     // Start is called before the first frame update
-    void Awake()
+    void OnEnable()
     {
         shape = system.shape;
 
         StartCoroutine(PlayAnim());
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator PlayAnim()

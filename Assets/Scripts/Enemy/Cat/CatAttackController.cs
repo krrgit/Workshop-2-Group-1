@@ -68,7 +68,7 @@ public class CatAttackController : MonoBehaviour {
         // Attack
         staffSpawner.ToggleEmit(true);
         float timer = staffAttkDur;
-        CameraShake.Instance.Shake(staffAttkDur, 0.02f);
+        CameraShake.Instance.Shake(staffAttkDur, 0.1f);
         while (timer > 0)
         {
             staffSpawner.transform.position = staffPoint.position;
@@ -78,14 +78,4 @@ public class CatAttackController : MonoBehaviour {
         
         staffSpawner.ToggleEmit(false);
     }
-
-    void StaffAttack()
-    {
-        staffSpawner.transform.position = staffPoint.position;
-        staffSpawner.EmitOnce();
-        
-        CameraShake.Instance.Shake(0.5f, 0.1f);
-    }
-
-
 }
