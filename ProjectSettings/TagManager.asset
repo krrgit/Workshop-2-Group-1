@@ -13,10 +13,10 @@ TagManager:
   - UI
   - Character
   - CharacterCollision
-  - 
-  - 
-  - 
-  - 
+  - FloorObjects
+  - Interactable
+  - Environment
+  - Boss
   - 
   - 
   - 
@@ -41,6 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Bullets
+    uniqueID: 41095441
+    locked: 0
   - name: Boss
     uniqueID: 2700525477
+    locked: 0
+  - name: Player
+    uniqueID: 2993727009
     locked: 0

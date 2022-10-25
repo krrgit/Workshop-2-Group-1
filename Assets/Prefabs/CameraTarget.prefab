@@ -45,8 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d25dea629fef547ffaee982bdb5901be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnabled: 1
   player: {fileID: 0}
   speed: 4
+  panDist: 10
+  posOffset: {x: 0, y: 1.5, z: 0}
 --- !u!1 &4354346322047489040
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +93,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -107,7 +110,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

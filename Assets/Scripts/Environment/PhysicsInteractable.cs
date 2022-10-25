@@ -13,9 +13,11 @@ public class PhysicsInteractable : MonoBehaviour {
     public float halfHeight = 1.25f;
     public int hitsToFly = 1; //Amount of hits left for this object to fly
     public bool flipSprite;
+    public bool addForce;
     public float drag = 2;
     public Rigidbody2D rb;
-    public HitsunAnimation hsAnim;
+    public Collider2D coll;
+    public HitstunAnimation hsAnim;
 
     private Vector2 direction;
     private Vector2 startPos;
@@ -27,14 +29,25 @@ public class PhysicsInteractable : MonoBehaviour {
     private void OnParticleCollision(GameObject other)
     {
         --hitsToFly;
+        if (addForce)
+        {
+            ComputeDirection(other.transform.position);
+            AddForce();
+        }
+
         StartCoroutine(HitStun(other));
+    }
+
+    void AddForce()
+    {
+        rb.velocity += direction * velocity;
     }
 
     IEnumerator HitStun(GameObject other)
     {
         startPos = transform.position;
         hsAnim.SetToWhite();
-
+        coll.enabled = false;
         if (hsAnim.wiggle)
         {
             float timer = hsAnim.Duration;
@@ -50,7 +63,7 @@ public class PhysicsInteractable : MonoBehaviour {
         {
             yield return new WaitForSeconds(hsAnim.Duration);
         }
-
+        coll.enabled = true;
         hsAnim.RevertSprite();
         
         if (hitsToFly <= 0)
@@ -100,6 +113,7 @@ public class PhysicsInteractable : MonoBehaviour {
         
         rb.velocity = Vector2.zero;
         gameObject.AddComponent<BoxCollider2D>();
+        gameObject.layer = 8;
         rb.drag = drag;
         Destroy(this);
     }

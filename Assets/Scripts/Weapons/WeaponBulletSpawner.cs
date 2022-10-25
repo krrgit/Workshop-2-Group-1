@@ -96,6 +96,7 @@ public class WeaponBulletSpawner : MonoBehaviour {
             
             var renderer = system.GetComponent<ParticleSystemRenderer>();
             renderer.alignment = ParticleSystemRenderSpace.Velocity;
+            renderer.sortingLayerName = "Bullets";
 
             var emission = system.emission;
             emission.enabled = false;
@@ -118,8 +119,8 @@ public class WeaponBulletSpawner : MonoBehaviour {
             coll.bounce = 0;
             coll.lifetimeLoss = 1;
 
-            // 191 specifically makes sure player does not collide with particles
-            coll.collidesWith = 191;
+            // 1983 specifically makes sure player does not collide with particles
+            coll.collidesWith = 4031;
 
             system.Play();
         }

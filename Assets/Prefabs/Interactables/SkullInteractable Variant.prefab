@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2624397405111874269
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1729289821146613090, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_Name
+      value: String
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289821751176998, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_Name
+      value: SkullInteractable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289821751177001, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289821751177001, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289821751177001, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289821751177001, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289821751177001, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289821751177001, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289821751177001, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289821751177001, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289821751177001, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289821751177001, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289821751177001, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289822624541077, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_Name
+      value: Skull
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729289822624541079, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 83d1d951874ef49bf9c8967ef98111ca, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d95ea940b85b6478095f1b061fd1a845, type: 3}

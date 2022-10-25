@@ -10,6 +10,8 @@ public class SpiderLegManager : MonoBehaviour {
     public int lPair = 1;
 
     private bool isMoving;
+
+    private bool neutralAdjust;
     
     // Start is called before the first frame update
     void Start()

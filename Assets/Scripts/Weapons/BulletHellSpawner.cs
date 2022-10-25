@@ -11,7 +11,7 @@ using UnityEngine;
 
 public class BulletHellSpawner : MonoBehaviour {
     [Header("Spawner")]
-    [Range(1,25)]
+    [Range(1,100)]
     public int columns = 5;
     [Range(0,360)]
     public int spread = 360; // max angle between first and last column. 360 = max
@@ -52,7 +52,7 @@ public class BulletHellSpawner : MonoBehaviour {
         Summon();
     }
 
-    public void LoadSO(BulletHellSpawner bhs)
+    public void LoadSO(BulletHellSpawnerSO bhs)
     {
         columns = bhs.columns;
         spread = bhs.spread;
@@ -75,6 +75,15 @@ public class BulletHellSpawner : MonoBehaviour {
             StartInvoke();
         } else {
             StopInvoke();
+        }
+    }
+
+    public void DestroyAllParticles()
+    {
+        for (int i = 0; i < columns; ++i)
+        {
+            columnList[i].Stop();
+
         }
     }
     
@@ -116,6 +125,7 @@ public class BulletHellSpawner : MonoBehaviour {
         
         // Create Columns
         int i;
+        int layer = 0;
         for (i=0; i < columns; ++i)
         {
             // A simple particle material with no texture.
@@ -137,6 +147,7 @@ public class BulletHellSpawner : MonoBehaviour {
             mainModule.startSpeed = speed;
             mainModule.maxParticles = 10000;
             mainModule.simulationSpace = ParticleSystemSimulationSpace.World;
+            mainModule.stopAction = ParticleSystemStopAction.Destroy;
             
             // Make particles align with velocity
             mainModule.startRotation3D = true;
@@ -148,6 +159,11 @@ public class BulletHellSpawner : MonoBehaviour {
             
             var renderer = system.GetComponent<ParticleSystemRenderer>();
             renderer.alignment = ParticleSystemRenderSpace.Velocity;
+            
+            //Set Sprite Layer to Bullet(layer 3)
+            renderer.sortingLayerID = SortingLayer.NameToID("Bullets");
+            renderer.sortingOrder = layer;
+            ++layer;
 
             var emission = system.emission;
             emission.enabled = false;
@@ -169,8 +185,9 @@ public class BulletHellSpawner : MonoBehaviour {
             coll.mode = ParticleSystemCollisionMode.Collision2D;
             coll.bounce = 0;
             coll.lifetimeLoss = 1;
-            
-            
+            coll.radiusScale = 0.5f;
+
+            coll.collidesWith = 2047;
             
             system.Play();
         }
@@ -225,6 +242,8 @@ public class BulletHellSpawner : MonoBehaviour {
             emitParams.startLifetime = lifetime;
 
             system.Emit(emitParams, 10);
+            
+            
         }
     }
 }

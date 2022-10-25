@@ -7,11 +7,26 @@ public class CameraTarget : MonoBehaviour {
     public Transform player;
     public float speed = 4; // Speed at which to lerp to the new position
     public float panDist = 3; // The max amount the camera pans toward the cursor
+    public Vector3 posOffset = new Vector3(0,1.5f,0);
     private Vector3 direction;
     Vector3 pointerPos;
     private Vector2 pointerPerc; // Percentage the pointer is away from center. 100% = edges. 0% = center.
 
     private Vector3 targetPos; // The position this target lerps to.
+
+    public static CameraTarget Instance;
+    
+    
+    void Awake()
+    {
+        // This only allows one instance of this Component to exist in any scene
+        if (Instance == null) {
+            Instance = this;
+        }else {
+            Destroy(this);
+        }
+    }
+
     
     void Update()
     {
@@ -31,7 +46,7 @@ public class CameraTarget : MonoBehaviour {
 
     void UpdatePosition()
     {
-        targetPos = player.position +
+        targetPos = player.position + posOffset +
                     new Vector3(direction.x * Mathf.Abs(pointerPerc.x) * panDist, direction.y * Mathf.Abs(pointerPerc.y) * panDist, 0);
         transform.position = Vector3.Lerp(transform.position, targetPos, speed * Time.deltaTime);
     }
