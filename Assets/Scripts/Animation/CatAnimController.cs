@@ -30,7 +30,7 @@ public class CatAnimController : MonoBehaviour {
 
    void Update()
    {
-      DemoInputs();
+      //DemoInputs();
       
       SetAnimVariables();
       Move();

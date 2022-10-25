@@ -962,14 +962,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7407956274900211696, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: shakePower
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 7407956274900211696, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: shakeDuration
-      value: 0.167
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
 --- !u!4 &1467711941 stripped

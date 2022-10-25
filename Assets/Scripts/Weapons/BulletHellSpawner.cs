@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletHellSpawner : MonoBehaviour {
+    [SerializeField] private GameObject prefab;
     [Header("Spawner")]
     [Range(1,100)]
     public int columns = 5;
@@ -96,7 +97,7 @@ public class BulletHellSpawner : MonoBehaviour {
     {
         if (spinSpeed == 0) return;
         spinTimer += Time.fixedDeltaTime;
-        transform.rotation *= Quaternion.Euler(0,0,spinTimer * spinSpeed);
+        transform.rotation = Quaternion.Euler(0,0,spinTimer * spinSpeed);
     }
 
     // Function called by other classes to update the spawner
@@ -175,8 +176,11 @@ public class BulletHellSpawner : MonoBehaviour {
 
             var text = system.textureSheetAnimation;
             text.enabled = true;
-            text.mode = ParticleSystemAnimationMode.Sprites;
-            text.AddSprite(sprite);
+            if (sprite != null)
+            {
+                text.mode = ParticleSystemAnimationMode.Sprites;
+                text.AddSprite(sprite);
+            }
 
             var coll = system.collision;
             coll.enabled = true;
@@ -215,11 +219,23 @@ public class BulletHellSpawner : MonoBehaviour {
             columnList[i].transform.rotation = transform.rotation;
             return columnList[i];
         }
-        
-        var go = new GameObject("Particle System");
-        var sys = go.AddComponent<ParticleSystem>();
-        columnList.Add(sys);
-        return sys;
+
+        if (prefab == null)
+        {        
+            var go = new GameObject("Particle System");
+            var sys = go.AddComponent<ParticleSystem>();
+            columnList.Add(sys);
+            return sys;
+        }
+        else
+        {
+            var go = Instantiate(prefab);
+            var sys = go.GetComponent<ParticleSystem>();
+            columnList.Add(sys);
+            return sys;
+        }
+
+
     }
 
     void DisableUnusedColumns(int i) {
