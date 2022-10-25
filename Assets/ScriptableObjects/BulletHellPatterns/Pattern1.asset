@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28971b95dd49b4affa437e299b9f8392, type: 3}
   m_Name: Pattern1
   m_EditorClassIdentifier: 
-  columns: 5
-  spread: 360
+  columns: 6
+  spread: 70
   spinSpeed: 0
   centerDist: 0
   fireRate: 1
-  speed: 1
+  speed: 15
   lifetime: 5
   size: 3
-  color: {r: 1, g: 1, b: 1, a: 0}
+  color: {r: 1, g: 1, b: 1, a: 0.54509807}
   sprite: {fileID: 21300000, guid: c914801947c2a414bb0582518b616428, type: 3}
   mtl: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
