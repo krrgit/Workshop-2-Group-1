@@ -962,14 +962,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7407956274900211696, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: shakePower
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 7407956274900211696, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: shakeDuration
-      value: 0.167
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
 --- !u!4 &1467711941 stripped
@@ -1116,10 +1108,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1467711941}
-    - target: {fileID: 4354346321935911102, guid: e3dc307f4e0f54a9083d4942f2ca6a17, type: 3}
-      propertyPath: panDist
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4354346321935911103, guid: e3dc307f4e0f54a9083d4942f2ca6a17, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1164,41 +1152,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4354346322047489042, guid: e3dc307f4e0f54a9083d4942f2ca6a17, type: 3}
-      propertyPath: orthographic size
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4354346322047489042, guid: e3dc307f4e0f54a9083d4942f2ca6a17, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4354346322047489042, guid: e3dc307f4e0f54a9083d4942f2ca6a17, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4354346322047489042, guid: e3dc307f4e0f54a9083d4942f2ca6a17, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3dc307f4e0f54a9083d4942f2ca6a17, type: 3}
---- !u!1 &1795511742 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4354346322047489040, guid: e3dc307f4e0f54a9083d4942f2ca6a17, type: 3}
-  m_PrefabInstance: {fileID: 1795511741}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1795511743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1795511742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5300c424000e4e79b6f391a3605ca1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1888690477
 GameObject:
   m_ObjectHideFlags: 0
