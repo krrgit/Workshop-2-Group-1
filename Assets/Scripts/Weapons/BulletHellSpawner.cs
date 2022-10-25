@@ -10,7 +10,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletHellSpawner : MonoBehaviour {
-    [SerializeField] private GameObject prefab;
     [Header("Spawner")]
     [Range(1,100)]
     public int columns = 5;
@@ -28,6 +27,13 @@ public class BulletHellSpawner : MonoBehaviour {
     public Color color;
     public Sprite sprite;
     public Material mtl;
+
+    [Header("Texture Sheet")] 
+    [SerializeField] private bool useTextureSheet;
+    [SerializeField] private int tilesX = 1;
+    [SerializeField] private int tilesY = 1;
+    [SerializeField] private int cycles = 30;
+
 
     private List<ParticleSystem> columnList = new List<ParticleSystem>();
     
@@ -176,11 +182,20 @@ public class BulletHellSpawner : MonoBehaviour {
 
             var text = system.textureSheetAnimation;
             text.enabled = true;
-            if (sprite != null)
+            
+            if (useTextureSheet)
+            {
+                text.mode = ParticleSystemAnimationMode.Grid;
+                text.numTilesX = tilesX;
+                text.numTilesX = tilesY;
+                text.cycleCount = cycles;
+            }
+            else
             {
                 text.mode = ParticleSystemAnimationMode.Sprites;
                 text.AddSprite(sprite);
             }
+            
 
             var coll = system.collision;
             coll.enabled = true;
@@ -220,22 +235,10 @@ public class BulletHellSpawner : MonoBehaviour {
             return columnList[i];
         }
 
-        if (prefab == null)
-        {        
-            var go = new GameObject("Particle System");
-            var sys = go.AddComponent<ParticleSystem>();
-            columnList.Add(sys);
-            return sys;
-        }
-        else
-        {
-            var go = Instantiate(prefab);
-            var sys = go.GetComponent<ParticleSystem>();
-            columnList.Add(sys);
-            return sys;
-        }
-
-
+        var go = new GameObject("Particle System");
+        var sys = go.AddComponent<ParticleSystem>();
+        columnList.Add(sys);
+        return sys;
     }
 
     void DisableUnusedColumns(int i) {
@@ -256,6 +259,10 @@ public class BulletHellSpawner : MonoBehaviour {
             emitParams.startColor = color;
             emitParams.startSize = size;
             emitParams.startLifetime = lifetime;
+
+            var text = system.textureSheetAnimation;
+            text.numTilesX = tilesX;
+            text.numTilesY = tilesY;
 
             system.Emit(emitParams, 10);
             

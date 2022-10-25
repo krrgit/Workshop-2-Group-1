@@ -7,16 +7,28 @@ using UnityEngine;
 public class CatAttackController : MonoBehaviour {
     [SerializeField] private Animator anim;
     [SerializeField] private CatAnimEvents animEvents;
+    [Header("Stomp Pattern")]
     [SerializeField] private BulletHellSpawner stompSpawner;
-    [SerializeField] private BulletHellSpawner staffSpawner;
     [SerializeField] private bool useStomp;
+    [Header("Staff Pattern")]
+    [SerializeField] private BulletHellSpawner staffSpawner;
+    [SerializeField] StaffParticleAnimator staffFX;
     [SerializeField] private Transform staffPoint;
     [SerializeField] private float staffAttkDur = 10;
 
-    [SerializeField] StaffParticleAnimator staffFX;
+    [Header("Butterfly Pattern")] 
+    [SerializeField] private BulletHellSpawner bfSpawner1;
+    [SerializeField] private BulletHellSpawner bfSpawner2;
+    [SerializeField] private BulletHellSpawner bfSpawner3;
+    [SerializeField] private Transform butterfly1;
+    [SerializeField] private Transform butterfly2;
+    [SerializeField] private Transform butterfly3;
 
     private int attackPattern;
 
+    private bool staffAttackActive;
+    private bool butterflyAttackActive;
+    
     private Vector3 localPos;
     
     private void OnEnable()
@@ -33,6 +45,9 @@ public class CatAttackController : MonoBehaviour {
     {
         stompSpawner.Initialize();   
         staffSpawner.Initialize();
+        bfSpawner1.Initialize();
+        bfSpawner2.Initialize();
+        bfSpawner3.Initialize();
     }
 
     private void Update()
@@ -40,6 +55,10 @@ public class CatAttackController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.P))
         {
             StaffCharge();
+        }
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            ButterflyAttack();
         }
     }
 
@@ -54,11 +73,13 @@ public class CatAttackController : MonoBehaviour {
 
     void StaffCharge()
     {
+        if (staffAttackActive) return;
         StartCoroutine(IStaffAttack());
     }
 
     IEnumerator IStaffAttack()
     {
+        staffAttackActive = true;
         // Charge
         staffFX.gameObject.SetActive(true);
         yield return new WaitForSeconds(5f);
@@ -77,5 +98,37 @@ public class CatAttackController : MonoBehaviour {
         }
         
         staffSpawner.ToggleEmit(false);
+        staffAttackActive = false;
+    }
+
+    void ButterflyAttack()
+    {
+        if (butterflyAttackActive) return;
+        
+        StartCoroutine(IButterflyAttack(7));
+    }
+
+    IEnumerator IButterflyAttack(float duration)
+    {
+        butterflyAttackActive = true;
+        bfSpawner1.ToggleEmit(true);
+        bfSpawner2.ToggleEmit(true);
+        bfSpawner3.ToggleEmit(true);
+
+        while (duration > 0)
+        {
+            bfSpawner1.transform.position = butterfly1.transform.position;
+            bfSpawner2.transform.position = butterfly2.transform.position;
+            bfSpawner3.transform.position = butterfly3.transform.position;
+            yield return new WaitForEndOfFrame();
+            duration -= Time.deltaTime;
+        }
+        
+        
+        bfSpawner1.ToggleEmit(false);
+        bfSpawner2.ToggleEmit(false);
+        bfSpawner3.ToggleEmit(false);
+
+        butterflyAttackActive = false;
     }
 }

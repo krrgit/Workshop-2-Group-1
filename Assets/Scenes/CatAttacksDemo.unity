@@ -269,7 +269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc564c9980d24497cba931b397c7d010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
   columns: 10
   spread: 360
   spinSpeed: 0
@@ -281,6 +280,10 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   sprite: {fileID: 21300000, guid: c914801947c2a414bb0582518b616428, type: 3}
   mtl: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  useTextureSheet: 0
+  tilesX: 0
+  tilesY: 0
+  cycles: 0
 --- !u!1 &187602883
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,6 +316,8 @@ Transform:
   - {fileID: 142663054}
   - {fileID: 1897290711}
   - {fileID: 335975597}
+  - {fileID: 1553583869}
+  - {fileID: 964012971}
   m_Father: {fileID: 1680403300}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -331,11 +336,17 @@ MonoBehaviour:
   anim: {fileID: 1355697893}
   animEvents: {fileID: 1355697897}
   stompSpawner: {fileID: 142663055}
-  staffSpawner: {fileID: 1897290712}
   useStomp: 0
+  staffSpawner: {fileID: 1897290712}
+  staffFX: {fileID: 1841456671}
   staffPoint: {fileID: 1389230912}
   staffAttkDur: 10
-  staffFX: {fileID: 1841456671}
+  bfSpawner1: {fileID: 335975598}
+  bfSpawner2: {fileID: 1553583870}
+  bfSpawner3: {fileID: 964012972}
+  butterfly1: {fileID: 1171529594}
+  butterfly2: {fileID: 1528928649}
+  butterfly3: {fileID: 212899898}
 --- !u!1 &212899897
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +451,7 @@ GameObject:
   - component: {fileID: 335975597}
   - component: {fileID: 335975598}
   m_Layer: 0
-  m_Name: Staff (1)
+  m_Name: Butterfly1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -454,7 +465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335975596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.06, y: -8.93, z: 0}
+  m_LocalPosition: {x: 4.42, y: -2.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -473,18 +484,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc564c9980d24497cba931b397c7d010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8923831238470396923, guid: 8f24b0c90d3d0428c891acf106b6d93d, type: 3}
-  columns: 15
+  columns: 10
   spread: 360
-  spinSpeed: 45
+  spinSpeed: 15
   centerDist: 0.5
-  fireRate: 0.2
-  speed: 3
+  fireRate: 0.25
+  speed: 6
   lifetime: 10
-  size: 0.75
+  size: 1
   color: {r: 1, g: 1, b: 1, a: 1}
   sprite: {fileID: 0}
   mtl: {fileID: 2100000, guid: 3028af76eb49d4e598692f76e6d74c44, type: 2}
+  useTextureSheet: 1
+  tilesX: 2
+  tilesY: 1
+  cycles: 45
 --- !u!114 &405297154 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4666101420775149769, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
@@ -907,6 +921,65 @@ Transform:
   m_Father: {fileID: 1355697896}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &964012970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 964012971}
+  - component: {fileID: 964012972}
+  m_Layer: 0
+  m_Name: Butterfly3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &964012971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964012970}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.22, y: 0.41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 187602884}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &964012972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964012970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc564c9980d24497cba931b397c7d010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columns: 10
+  spread: 360
+  spinSpeed: 15
+  centerDist: 0.5
+  fireRate: 0.25
+  speed: 6
+  lifetime: 10
+  size: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
+  sprite: {fileID: 0}
+  mtl: {fileID: 2100000, guid: 3028af76eb49d4e598692f76e6d74c44, type: 2}
+  useTextureSheet: 1
+  tilesX: 2
+  tilesY: 1
+  cycles: 45
 --- !u!1 &995601162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1873,6 +1946,65 @@ Transform:
   m_Father: {fileID: 1355697896}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1553583868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1553583869}
+  - component: {fileID: 1553583870}
+  m_Layer: 0
+  m_Name: Butterfly2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1553583869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553583868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.13, y: -4.98, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 187602884}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1553583870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553583868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc564c9980d24497cba931b397c7d010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columns: 10
+  spread: 360
+  spinSpeed: 15
+  centerDist: 0.5
+  fireRate: 0.25
+  speed: 6
+  lifetime: 10
+  size: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
+  sprite: {fileID: 0}
+  mtl: {fileID: 2100000, guid: 3028af76eb49d4e598692f76e6d74c44, type: 2}
+  useTextureSheet: 1
+  tilesX: 2
+  tilesY: 1
+  cycles: 45
 --- !u!1 &1659868047
 GameObject:
   m_ObjectHideFlags: 0
@@ -6898,7 +7030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc564c9980d24497cba931b397c7d010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
   columns: 16
   spread: 360
   spinSpeed: 10
@@ -6910,6 +7041,10 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   sprite: {fileID: 21300000, guid: c914801947c2a414bb0582518b616428, type: 3}
   mtl: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  useTextureSheet: 0
+  tilesX: 0
+  tilesY: 0
+  cycles: 0
 --- !u!1 &2027803472
 GameObject:
   m_ObjectHideFlags: 0

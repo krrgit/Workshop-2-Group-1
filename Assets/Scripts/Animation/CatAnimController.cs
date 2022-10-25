@@ -11,8 +11,9 @@ public class CatAnimController : MonoBehaviour {
    private bool turnCounter;
    private int moveForward;
    private int turnDir;
+
+   private bool isMoving;
    
-      
    public void Turn(float duration, int direction)
    {
       StartCoroutine(ITurn(duration, direction));
@@ -58,7 +59,7 @@ public class CatAnimController : MonoBehaviour {
    {
       anim.SetBool("turnClockwise", turnClockwise);
       anim.SetBool("turnCounter", turnCounter);
-      anim.SetBool("moveForward", Input.GetKey(KeyCode.W));
+      anim.SetBool("moveForward", moveForward == 1? true : false);
    }
 
    void Move()
@@ -92,19 +93,23 @@ public class CatAnimController : MonoBehaviour {
    IEnumerator ITurn(float duration, int direction)
    {
       turnDir = direction;
+      moveForward = 1;
       SetTurnValues(direction);
 
       yield return new WaitForSeconds(duration);
       
       turnDir = 0;
+      moveForward = isMoving ? moveForward : 0;
       SetTurnValues(0);
    }
    
    IEnumerator IMove(float duration)
    {
       moveForward = 1;
+      isMoving = true;
       yield return new WaitForSeconds(duration);
-      moveForward = 0;
+      isMoving = false;
+      moveForward = turnDir == 0 ? 0 : 1;
    }
 
 }
