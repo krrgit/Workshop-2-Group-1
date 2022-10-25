@@ -6,11 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="3e764ce2-389c-4139-8a2d-aa67e83b5162" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Boss with health bar.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Boss with health bar.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Debug/StartBulletHellSpawnerDemo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Debug/StartBulletHellSpawnerDemo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/attack patterns.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/attack patterns.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/BulletHellPatterns/Pattern1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/BulletHellPatterns/Pattern1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/firstPattern.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/firstPattern.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/BulletHellSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/BulletHellSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Weapons/BulletHellSpawnerSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Weapons/BulletHellSpawnerSO.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Pattern2.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/firstPattern.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -90,7 +90,7 @@
       <workItem from="1666374904224" duration="14282000" />
       <workItem from="1666485168477" duration="4661000" />
       <workItem from="1666659129996" duration="2279000" />
-      <workItem from="1666661506488" duration="7974000" />
+      <workItem from="1666661506488" duration="22899000" />
     </task>
     <servers />
   </component>

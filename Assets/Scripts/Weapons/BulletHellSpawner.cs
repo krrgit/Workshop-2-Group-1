@@ -37,9 +37,9 @@ public class BulletHellSpawner : MonoBehaviour {
     
     private ParticleSystem system;
     
-    public bool IsEmitting
+    public bool IsEmitting()
     {
-        get { return doEmit; }
+         return doEmit;
     }
 
     public void EmitOnce()
@@ -96,7 +96,7 @@ public class BulletHellSpawner : MonoBehaviour {
     {
         if (spinSpeed == 0) return;
         spinTimer += Time.fixedDeltaTime;
-        transform.rotation *= Quaternion.Euler(0,0,spinTimer * spinSpeed);
+        transform.rotation = Quaternion.Euler(0,0,spinTimer * spinSpeed);
     }
 
     // Function called by other classes to update the spawner
@@ -204,7 +204,7 @@ public class BulletHellSpawner : MonoBehaviour {
     }
     
     // Starts the emission of the particle systems.
-    void StartInvoke() {
+    public void StartInvoke() {
         InvokeRepeating("DoEmit", 0, fireRate);
         doEmit = true;
     }

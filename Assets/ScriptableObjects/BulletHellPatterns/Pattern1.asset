@@ -18,7 +18,7 @@ MonoBehaviour:
   centerDist: 0
   fireRate: 1
   speed: 15
-  lifetime: 5
+  lifetime: 60
   size: 3
   color: {r: 1, g: 1, b: 1, a: 0.54509807}
   sprite: {fileID: 21300000, guid: c914801947c2a414bb0582518b616428, type: 3}
