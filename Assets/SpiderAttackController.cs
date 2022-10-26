@@ -9,7 +9,6 @@ public class SpiderAttackController : MonoBehaviour
     [SerializeField] private BulletHellSpawner AttackTwo;
     [SerializeField] private BulletHellSpawner AttackThree;
     [SerializeField] private BulletHellSpawner AttackFour;
-    [SerializeField] private bool useWeb;
 
     private bool AttackThreeActive = true;
 
@@ -67,10 +66,8 @@ public class SpiderAttackController : MonoBehaviour
     
     IEnumerator IAttackOne(float duration)
     {
-        useWeb = true;
         AttackOne.ToggleEmit(true);
         yield return new WaitForSeconds(duration);
-        useWeb = false;
         AttackOne.ToggleEmit(false);
     }
 
