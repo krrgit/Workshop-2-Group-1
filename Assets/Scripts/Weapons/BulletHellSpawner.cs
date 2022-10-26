@@ -39,7 +39,6 @@ public class BulletHellSpawner : MonoBehaviour {
     
     private float angle; // angle between columns
     private float centerOffset; // angle offset so the center of spray is upwards
-    private float spinTimer;
     private bool doEmit = false; // bool to check if emit is ran once
     
     private ParticleSystem system;
@@ -102,8 +101,7 @@ public class BulletHellSpawner : MonoBehaviour {
     void SpinSpawner()
     {
         if (spinSpeed == 0) return;
-        spinTimer += Time.fixedDeltaTime;
-        transform.rotation = Quaternion.Euler(0,0,spinTimer * spinSpeed);
+        transform.rotation *= Quaternion.Euler(0,0,spinSpeed * Time.fixedDeltaTime);
     }
 
     // Function called by other classes to update the spawner
