@@ -7,11 +7,24 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
-    [SerializeField] private GameObject DeathCanvas;
+    [SerializeField] private GameObject deathCanvas;
     [SerializeField] private PlayerDeathAnimation playerDeathAnim;
+    [SerializeField] private EnemyHealth bossHealth;
+    [SerializeField] private GameObject screenFlash;
+    [SerializeField] private DoorLightAnimator doorLight;
     public static GameStateManager Instance;
 
     private bool enableRestart = false;
+
+    private void OnEnable()
+    {
+        bossHealth.enemyDeathDel += BossDeath;
+    }
+    
+    private void OnDisable()
+    {
+        bossHealth.enemyDeathDel -= BossDeath;
+    }
 
     void Awake()
     {
@@ -39,17 +52,22 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    public void Death()
+    public void PlayerDeath()
     {
         // Stop player movement
         // show death screen UI
         // press key to restart/reload scene
-        DeathCanvas.SetActive(true);
+        deathCanvas.SetActive(true);
         Destroy(PlayerMovement.Instance);
         playerDeathAnim.Play();
         CameraTarget.Instance.isEnabled = false;
-        
-        
+
         enableRestart = true;
+    }
+
+    public void BossDeath()
+    {
+        screenFlash.SetActive(true);
+        doorLight.PlayOpenAnim();
     }
 }
