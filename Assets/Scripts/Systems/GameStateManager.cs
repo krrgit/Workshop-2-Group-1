@@ -5,27 +5,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class GameStateManager : MonoBehaviour {
-    [SerializeField] private HubSpawnPointSO hubSO;
-    [SerializeField] private GameObject deathCanvas;
+public class GameStateManager : MonoBehaviour
+{
+    [SerializeField] private GameObject DeathCanvas;
     [SerializeField] private PlayerDeathAnimation playerDeathAnim;
-    [SerializeField] private EnemyHealth bossHealth;
-    [SerializeField] private GameObject screenFlash;
-    [SerializeField] private DoorLightAnimator doorLight;
-    [SerializeField] private GameObject exit;
     public static GameStateManager Instance;
 
     private bool enableRestart = false;
-
-    private void OnEnable()
-    {
-        bossHealth.enemyDeathDel += BossDeath;
-    }
-    
-    private void OnDisable()
-    {
-        bossHealth.enemyDeathDel -= BossDeath;
-    }
 
     void Awake()
     {
@@ -53,31 +39,17 @@ public class GameStateManager : MonoBehaviour {
         }
     }
 
-    public void PlayerDeath()
+    public void Death()
     {
         // Stop player movement
         // show death screen UI
         // press key to restart/reload scene
-        deathCanvas.SetActive(true);
+        DeathCanvas.SetActive(true);
         Destroy(PlayerMovement.Instance);
         playerDeathAnim.Play();
         CameraTarget.Instance.isEnabled = false;
-
+        
+        
         enableRestart = true;
-    }
-
-    public void BossDeath()
-    {
-        screenFlash.SetActive(true);
-        doorLight.PlayOpenAnim();
-        hubSO.spawn = HubSpawnPoint.SpiderHouse;
-        StartCoroutine(WaitForExitPopup());
-
-    }
-
-    IEnumerator WaitForExitPopup()
-    {
-        yield return new WaitForSeconds(7);
-        exit.SetActive(true);
     }
 }
