@@ -340,7 +340,7 @@ PrefabInstance:
       objectReference: {fileID: 957978372}
     - target: {fileID: 6793477893716413999, guid: a3ee9653a4f1445e492d9e2cdb696731, type: 3}
       propertyPath: fallSpeed
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6793477893716413999, guid: a3ee9653a4f1445e492d9e2cdb696731, type: 3}
       propertyPath: healthBar
