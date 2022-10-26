@@ -1640,6 +1640,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7676334933445270369, guid: 29a3494da74ee4db88d7299d95ca3938, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7676334933445270371, guid: 29a3494da74ee4db88d7299d95ca3938, type: 3}
       propertyPath: DeathCanvas
       value: 
@@ -7047,12 +7051,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   columns: 16
   spread: 360
-  spinSpeed: 10
+  spinSpeed: 7
   centerDist: 0.5
-  fireRate: 0.175
-  speed: 3
+  fireRate: 0.1
+  speed: 25
   lifetime: 10
-  size: 0.75
+  size: 2
   color: {r: 1, g: 1, b: 1, a: 1}
   sprite: {fileID: 21300000, guid: c914801947c2a414bb0582518b616428, type: 3}
   mtl: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
