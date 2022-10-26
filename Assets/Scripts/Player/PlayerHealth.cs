@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
         } else if (health <= 0)
         {
             health = 0f;
-            GameStateManager.Instance.PlayerDeath();
+            GameStateManager.Instance.Death();
         }
         print("Health: " + health);
     }
