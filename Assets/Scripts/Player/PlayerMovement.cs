@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
 
     public static PlayerMovement Instance;
     Vector2 movement;
+    private Vector3 direction;
+
+    Vector3 pointerPos;
+
     // Vector2 mousePos;
     
     void Awake()
@@ -30,17 +34,25 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetPointerInput();
+        
+        direction = pointerPos - transform.position;
+
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
         //following mouse position
         // mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
+        // animator.SetFloat("Horizontal", movement.x);
+        // animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-
-
+        if(movement.magnitude > 0)
+        {
+        animator.SetFloat("Horizontal", direction.x);
+        animator.SetFloat("Vertical", direction.y);
+        }
+        
     }
 
     private void FixedUpdate()
@@ -53,4 +65,13 @@ public class PlayerMovement : MonoBehaviour
 
         // rb.rotation = angle;
     }
+
+    void GetPointerInput()
+    {
+        pointerPos = Input.mousePosition;
+        pointerPos.z = Camera.main.nearClipPlane;
+        pointerPos = Camera.main.ScreenToWorldPoint(pointerPos);
+    } 
+
+
 }
