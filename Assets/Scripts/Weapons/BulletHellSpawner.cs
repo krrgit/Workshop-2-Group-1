@@ -28,13 +28,6 @@ public class BulletHellSpawner : MonoBehaviour {
     public Sprite sprite;
     public Material mtl;
 
-    [Header("Texture Sheet")] 
-    [SerializeField] private bool useTextureSheet;
-    [SerializeField] private int tilesX = 1;
-    [SerializeField] private int tilesY = 1;
-    [SerializeField] private int cycles = 30;
-
-
     private List<ParticleSystem> columnList = new List<ParticleSystem>();
     
     private float angle; // angle between columns
@@ -103,7 +96,7 @@ public class BulletHellSpawner : MonoBehaviour {
     {
         if (spinSpeed == 0) return;
         spinTimer += Time.fixedDeltaTime;
-        transform.rotation = Quaternion.Euler(0,0,spinTimer * spinSpeed);
+        transform.rotation *= Quaternion.Euler(0,0,spinTimer * spinSpeed);
     }
 
     // Function called by other classes to update the spawner
@@ -182,20 +175,8 @@ public class BulletHellSpawner : MonoBehaviour {
 
             var text = system.textureSheetAnimation;
             text.enabled = true;
-            
-            if (useTextureSheet)
-            {
-                text.mode = ParticleSystemAnimationMode.Grid;
-                text.numTilesX = tilesX;
-                text.numTilesX = tilesY;
-                text.cycleCount = cycles;
-            }
-            else
-            {
-                text.mode = ParticleSystemAnimationMode.Sprites;
-                text.AddSprite(sprite);
-            }
-            
+            text.mode = ParticleSystemAnimationMode.Sprites;
+            text.AddSprite(sprite);
 
             var coll = system.collision;
             coll.enabled = true;
@@ -234,7 +215,7 @@ public class BulletHellSpawner : MonoBehaviour {
             columnList[i].transform.rotation = transform.rotation;
             return columnList[i];
         }
-
+        
         var go = new GameObject("Particle System");
         var sys = go.AddComponent<ParticleSystem>();
         columnList.Add(sys);
@@ -259,10 +240,6 @@ public class BulletHellSpawner : MonoBehaviour {
             emitParams.startColor = color;
             emitParams.startSize = size;
             emitParams.startLifetime = lifetime;
-
-            var text = system.textureSheetAnimation;
-            text.numTilesX = tilesX;
-            text.numTilesY = tilesY;
 
             system.Emit(emitParams, 10);
             
