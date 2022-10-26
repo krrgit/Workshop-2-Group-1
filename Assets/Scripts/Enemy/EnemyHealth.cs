@@ -8,6 +8,8 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
 
     public EnemyHealthBar healthBar;
+
+    private bool calledDeathDel;
     
     public delegate void EnemyDeath();
     public EnemyDeath enemyDeathDel;
@@ -30,15 +32,19 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        
+        healthBar.SetEnemyHealth(currentHealth);
+        SoundManager.Instance.PlayEnemyHit();
 
         if (currentHealth <= 0)
         {
             currentHealth = 0;
-            enemyDeathDel();
+            if (!calledDeathDel)
+            {
+                enemyDeathDel();
+                calledDeathDel = true;
+            }
         }
-        
-        healthBar.SetEnemyHealth(currentHealth);
-        SoundManager.Instance.PlayEnemyHit();
     }
 
     void DebugDealDamage()
