@@ -5,13 +5,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class GameStateManager : MonoBehaviour
-{
+public class GameStateManager : MonoBehaviour {
+    [SerializeField] private HubSpawnPointSO hubSO;
     [SerializeField] private GameObject deathCanvas;
     [SerializeField] private PlayerDeathAnimation playerDeathAnim;
     [SerializeField] private EnemyHealth bossHealth;
     [SerializeField] private GameObject screenFlash;
     [SerializeField] private DoorLightAnimator doorLight;
+    [SerializeField] private GameObject exit;
     public static GameStateManager Instance;
 
     private bool enableRestart = false;
@@ -69,5 +70,14 @@ public class GameStateManager : MonoBehaviour
     {
         screenFlash.SetActive(true);
         doorLight.PlayOpenAnim();
+        hubSO.spawn = HubSpawnPoint.SpiderHouse;
+        StartCoroutine(WaitForExitPopup());
+
+    }
+
+    IEnumerator WaitForExitPopup()
+    {
+        yield return new WaitForSeconds(7);
+        exit.SetActive(true);
     }
 }
