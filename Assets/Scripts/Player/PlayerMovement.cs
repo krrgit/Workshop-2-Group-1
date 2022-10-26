@@ -8,13 +8,13 @@ public class PlayerMovement : MonoBehaviour
 
 
     public Rigidbody2D rb;
-    // public Camera cam;
+    public Camera cam;
     public Animator animator;
 
 
     public static PlayerMovement Instance;
     Vector2 movement;
-    // Vector2 mousePos;
+    Vector2 mousePos;
     
     void Awake()
     {
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
 
         //following mouse position
-        // mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
@@ -48,9 +48,9 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
         
         //following mouse position
-        // Vector2 lookDir = mousePos - rb.position;
-        // float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
+        Vector2 lookDir = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
 
-        // rb.rotation = angle;
+        rb.rotation = angle;
     }
 }
