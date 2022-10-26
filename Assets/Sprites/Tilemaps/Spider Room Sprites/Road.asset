@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: Spider Room Wall
+  m_Name: Road
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: 0}
   m_DefaultGameObject: {fileID: 0}
@@ -18,7 +18,7 @@ MonoBehaviour:
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
-    - {fileID: -749797520, guid: 53eaa7662fed6b24194e0c67f163973c, type: 3}
+    - {fileID: 1396667165, guid: 93ad11500cfa5eb40a877a7000f93439, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -35,7 +35,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 1
     m_Sprites:
-    - {fileID: -1551614374, guid: 53eaa7662fed6b24194e0c67f163973c, type: 3}
+    - {fileID: 857909522, guid: 93ad11500cfa5eb40a877a7000f93439, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -52,7 +52,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 2
     m_Sprites:
-    - {fileID: -587793563, guid: 53eaa7662fed6b24194e0c67f163973c, type: 3}
+    - {fileID: 104804136, guid: 93ad11500cfa5eb40a877a7000f93439, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -69,7 +69,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 3
     m_Sprites:
-    - {fileID: 1691340667, guid: 53eaa7662fed6b24194e0c67f163973c, type: 3}
+    - {fileID: 222720060, guid: 93ad11500cfa5eb40a877a7000f93439, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -86,7 +86,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 4
     m_Sprites:
-    - {fileID: 597245651, guid: 53eaa7662fed6b24194e0c67f163973c, type: 3}
+    - {fileID: -1688957172, guid: 93ad11500cfa5eb40a877a7000f93439, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -103,7 +103,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 5
     m_Sprites:
-    - {fileID: 850941016, guid: 53eaa7662fed6b24194e0c67f163973c, type: 3}
+    - {fileID: 1702638221, guid: 93ad11500cfa5eb40a877a7000f93439, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -120,7 +120,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 6
     m_Sprites:
-    - {fileID: 204854675, guid: 53eaa7662fed6b24194e0c67f163973c, type: 3}
+    - {fileID: 751200566, guid: 93ad11500cfa5eb40a877a7000f93439, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -137,7 +137,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 7
     m_Sprites:
-    - {fileID: 989696424, guid: 53eaa7662fed6b24194e0c67f163973c, type: 3}
+    - {fileID: 856367174, guid: 93ad11500cfa5eb40a877a7000f93439, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
@@ -154,7 +154,7 @@ MonoBehaviour:
     m_RuleTransform: 0
   - m_Id: 8
     m_Sprites:
-    - {fileID: -1969502118, guid: 53eaa7662fed6b24194e0c67f163973c, type: 3}
+    - {fileID: 480694381, guid: 93ad11500cfa5eb40a877a7000f93439, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
