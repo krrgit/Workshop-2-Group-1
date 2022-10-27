@@ -1361,6 +1361,22 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1467711935}
+    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
+      propertyPath: dashTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
+      propertyPath: baseSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
+      propertyPath: dashPower
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6685800163107628291, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
       propertyPath: m_RootOrder
       value: 2
