@@ -6,40 +6,70 @@ public class CatAnimController : MonoBehaviour {
    [SerializeField] private Animator anim;
    [SerializeField] private float moveSpeed = 1;
    [SerializeField] private float turnSpeed = 1;
+   [SerializeField] private float pointRange = 5;
 
    private bool turnClockwise;
    private bool turnCounter;
    private int moveForward;
-   private int turnDir;
+   private int turnDir; // 1 = clockwise; -1 = counter
 
    private bool isMoving;
    private bool isTurning;
-   
-   public void Turn(float duration, int direction)
+
+   public bool TurnActive
    {
-      if (isTurning) return;
+      get { return isTurning; }
+   }
+
+   public bool MoveActive
+   {
+      get { return isMoving; }
+   }
+   
+   public float Turn(float duration, int direction)
+   {
+      if (isTurning) return 0;
       StartCoroutine(ITurn(duration, direction));
-   }
 
-   public void TurnToDir(Vector2 dir)
-   {
-      if (isTurning) return;
-
-      var duration = ComputeTurnTime(Vector2.Angle(dir, -transform.up));
-      int direction = Vector3.Project(dir, -transform.up).x > 0 ? 1 : -1;
-      
-      StartCoroutine(ITurn(duration,direction));
+      return duration;
    }
    
-   public void Walk(float duration)
+
+   public void TurnToFacePoint(Vector2 point)
+   {
+      if (isTurning) return ;
+      
+      //int direction = Vector3.Project(point - (Vector2)transform.position, -transform.up).x > 0 ? 1 : -1;
+      float right = Vector3.Project(-transform.right,point - (Vector2)transform.position).magnitude;
+      float left = Vector3.Project(transform.right,point - (Vector2)transform.position).magnitude;
+      int direction = right > left ? -1 : 1;
+      
+      StartCoroutine(ITurnToPoint(point, direction));
+   }
+   
+   public float Walk(float duration)
+   {
+      if (isMoving) return 0;
+      StartCoroutine(IMove(duration));
+
+      return duration;
+   }
+   
+   public void WalkToPoint(Vector2 point)
    {
       if (isMoving) return;
-      StartCoroutine(IMove(duration));
+      StartCoroutine(IMoveToPoint(point));
+
    }
 
    public float ComputeTurnTime(float angle)
    {
       return angle / turnSpeed;
+   }
+
+   public float ComputeWalkTime(float distance)
+   {
+      return distance / moveSpeed;
    }
 
    void Update()
@@ -68,6 +98,16 @@ public class CatAnimController : MonoBehaviour {
       turnDir = (Input.GetKey(KeyCode.A) ? -1 : 0) + (Input.GetKey(KeyCode.D) ? 1 : 0);
    }
 
+   float VectorAlignment(Vector2 point)
+   {
+      return Vector3.Project(-transform.up, point - (Vector2)transform.position).magnitude;
+   }
+
+   float PointDistance(Vector2 point)
+   {
+      return ((Vector2)transform.position - point).magnitude;
+   }
+
    void SetAnimVariables()
    {
       anim.SetBool("turnClockwise", turnClockwise);
@@ -89,12 +129,12 @@ public class CatAnimController : MonoBehaviour {
    {
       if (direction == 1)
       {
-         turnClockwise = true;
-         turnCounter = false;
+         turnClockwise = false;
+         turnCounter = true;
       } else if (direction == -1)
       {
-         turnCounter = true;
-         turnClockwise = false;
+         turnCounter = false;
+         turnClockwise = true;
       }
       else
       {
@@ -117,12 +157,45 @@ public class CatAnimController : MonoBehaviour {
       SetTurnValues(0);
       isTurning = false;
    }
+
+   IEnumerator ITurnToPoint(Vector2 point, int direction)
+   {
+      
+      isTurning = true;
+      turnDir = direction;
+      moveForward = 1;
+      SetTurnValues(direction);
+
+      while (VectorAlignment(point) < 0.99f)
+      {
+         yield return new WaitForEndOfFrame();
+      }
+
+      turnDir = 0;
+      moveForward = isMoving ? moveForward : 0;
+      SetTurnValues(0);
+      isTurning = false;
+   }
    
    IEnumerator IMove(float duration)
    {
       moveForward = 1;
       isMoving = true;
       yield return new WaitForSeconds(duration);
+      isMoving = false;
+      moveForward = turnDir == 0 ? 0 : 1;
+   }
+
+   IEnumerator IMoveToPoint(Vector2 point)
+   {
+      moveForward = 1;
+      isMoving = true;
+
+      while (PointDistance(point) > pointRange)
+      {
+         yield return new WaitForEndOfFrame();
+      }
+      
       isMoving = false;
       moveForward = turnDir == 0 ? 0 : 1;
    }
