@@ -6,11 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="3ed95f3c-1c08-4f51-abc6-e822e8b57bec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Temp/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Temp/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CatAttacksDemo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CatAttacksDemo.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animation/CatAnimController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/CatAnimController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAttackController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Cat/Animations/CatBoss_Parts.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Cat/Animations/CatBoss_Parts.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +49,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.11f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -79,7 +80,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3e764ce2-389c-4139-8a2d-aa67e83b5162" name="Changes" comment="" />
+      <changelist id="3ed95f3c-1c08-4f51-abc6-e822e8b57bec" name="Changes" comment="" />
       <created>1665982505288</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -97,6 +98,7 @@
       <workItem from="1666769715266" duration="4187000" />
       <workItem from="1666804809922" duration="1697000" />
       <workItem from="1666829012903" duration="1300000" />
+      <workItem from="1666891585445" duration="7092000" />
     </task>
     <servers />
   </component>

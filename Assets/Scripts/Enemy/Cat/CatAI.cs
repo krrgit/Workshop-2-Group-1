@@ -13,9 +13,12 @@ public class CatAI : MonoBehaviour {
     [SerializeField] private CatAnimController anim;
     [SerializeField] private CatAttackController attack;
 
-    [SerializeField] private Transform[] walkPath;
+    [SerializeField] private Transform[] walkPaths;
     [SerializeField] private Transform idlePoint;
+    [SerializeField] private int currPath;
     [SerializeField] private int curWalkPoint = 0;
+    private int[] pathTurnDir = { 1, -1 };
+    
 
     private float moveTimer;
 
@@ -36,7 +39,14 @@ public class CatAI : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        WalkAround();
+        if (phase == 1)
+        {
+            WalkAround();
+        } else if (phase == 2)
+        {
+            
+        }
+        
 
         TeleportCooldownTick();
     }
@@ -57,50 +67,74 @@ public class CatAI : MonoBehaviour {
             CycleWalkPoint();
         }
         
-        alignment = Vector3.Project(-transform.up, walkPath[curWalkPoint].position - transform.position);
+        alignment = Vector3.Project(-transform.up, walkPaths[currPath].GetChild(curWalkPoint).position - transform.position);
         if (alignment.magnitude < 0.99f)
         {
-            anim.TurnToFacePoint(walkPath[curWalkPoint].position);
+            // Turn
+            anim.TurnToFacePoint(walkPaths[currPath].GetChild(curWalkPoint).position,pathTurnDir[currPath]);
             moveDecision = MoveDecision.Turn;
             print("Turn");
-        } else if (Random.Range(0,2) == 1 && tpCooldown <= 0)
+        } else if (TeleportCheck())
         {
+            // Teleport
+            RandomPath();
             RandomWalkPoint();
-            anim.TeleportToPoint(walkPath[curWalkPoint]);
+            anim.TeleportToPoint(walkPaths[currPath].GetChild(curWalkPoint));
             CycleWalkPoint();
             moveDecision = MoveDecision.Teleport;
-            tpCooldown = 4;
+            tpCooldown = 2;
             print("Teleport");
         }else if (Random.Range(0,4) == 2 && tpCooldown <= 0)
         {
-            
+            // Idle Test
             //anim.TeleportToPoint(idlePoint);
             //moveDecision = MoveDecision.Idle;
             //print("Teleport to Center");
         }
         else
         {
-            anim.WalkToPoint(walkPath[curWalkPoint].position);
+            // Walk to Point
+            anim.WalkToPoint(walkPaths[currPath].GetChild(curWalkPoint).position);
             moveDecision = MoveDecision.Walk;
             print("Walk");
         }
     }
 
+    bool TeleportCheck()
+    {
+        return (!attack.IsAttacking && Random.Range(0, 2) == 1 && tpCooldown <= 0);
+    }
+
+    bool StationaryAttackCheck()
+    {
+        return (moveDecision == MoveDecision.Walk && tpCooldown <= 0 && Random.Range(0,3) == 0);
+    }
+
+    void RandomPath()
+    {
+        currPath = Random.Range(0, walkPaths.Length);
+    }
+
     void RandomWalkPoint()
     {
-        int r = Random.Range(0, 4);
-        while (r != curWalkPoint)
+        int r = Random.Range(0, walkPaths[currPath].childCount);
+        while (r != GetNextWalkPoint())
         {
-            r = Random.Range(0, 4);
+            r = Random.Range(0, walkPaths[currPath].childCount);
         }
 
         curWalkPoint = r;
     }
 
+    int GetNextWalkPoint()
+    {
+        return curWalkPoint+1 >= walkPaths[currPath].childCount ? 0 : curWalkPoint;
+    }
+
     void CycleWalkPoint()
     {
         ++curWalkPoint;
-        curWalkPoint = curWalkPoint >= walkPath.Length ? 0 : curWalkPoint;
+        curWalkPoint = curWalkPoint >= walkPaths[currPath].childCount ? 0 : curWalkPoint;
     }
 
     bool NextMoveCheck()

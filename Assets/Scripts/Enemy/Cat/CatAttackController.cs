@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 
@@ -10,11 +11,18 @@ public class CatAttackController : MonoBehaviour {
     [Header("Stomp Pattern")]
     [SerializeField] private BulletHellSpawner stompSpawner;
     [SerializeField] private bool useStomp;
-    [Header("Staff Pattern")]
+
+    [Header("Staff Pattern")] 
     [SerializeField] private BulletHellSpawner staffSpawner;
+    [SerializeField] private StaffParticleAnimator miniStaffFX;
+    [SerializeField] private int staffLoops = 3;
+    [SerializeField] private float staffShootTime = 0.4f;
+    [SerializeField] private float staffWaitTime = 0.5f;
+    [Header("Charge Pattern")]
+    [SerializeField] private BulletHellSpawner chargeSpawner;
     [SerializeField] StaffParticleAnimator staffFX;
     [SerializeField] private Transform staffPoint;
-    [SerializeField] private float staffAttkDur = 10;
+    [SerializeField] private float chargeAtkDur = 10;
 
     [Header("Butterfly Pattern")] 
     [SerializeField] private BulletHellSpawner bfSpawner1;
@@ -26,14 +34,21 @@ public class CatAttackController : MonoBehaviour {
 
     private int attackPattern;
 
-    private bool staffAttackActive;
-    private bool butterflyAttackActive;
+    bool staffAtkActive;
+    private bool chargeAtkActive;
+    private bool butterflyAtkActive;
     
     private Vector3 localPos;
 
+
+    public bool IsAttacking
+    {
+        get { return butterflyAtkActive || chargeAtkActive || staffAtkActive;}
+    }
+
     public float StaffAtkTotalDur
     {
-        get { return 5 + staffAttkDur; }
+        get { return 5 + chargeAtkDur; }
     }
     
     public void DoStompAttack(float duration)
@@ -43,7 +58,12 @@ public class CatAttackController : MonoBehaviour {
 
     public void DoStaffAttack()
     {
-        StaffCharge();
+        StartCoroutine(IStaffAttack());
+    }
+
+    public void DoChargeAttack()
+    {
+        ChargeAttack();
     }
 
     public void DoButterflyAttack()
@@ -65,6 +85,7 @@ public class CatAttackController : MonoBehaviour {
     {
         stompSpawner.Initialize();   
         staffSpawner.Initialize();
+        chargeSpawner.Initialize();
         bfSpawner1.Initialize();
         bfSpawner2.Initialize();
         bfSpawner3.Initialize();
@@ -74,11 +95,15 @@ public class CatAttackController : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            StaffCharge();
+            ChargeAttack();
         }
         if (Input.GetKeyDown(KeyCode.O))
         {
             ButterflyAttack();
+        }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            DoStaffAttack();
         }
     }
 
@@ -91,15 +116,15 @@ public class CatAttackController : MonoBehaviour {
         CameraShake.Instance.Shake(0.2f,0.05f);
     }
 
-    void StaffCharge()
+    void ChargeAttack()
     {
-        if (staffAttackActive) return;
-        StartCoroutine(IStaffAttack());
+        if (chargeAtkActive) return;
+        StartCoroutine(IChargeAttack());
     }
     
     void ButterflyAttack()
     {
-        if (butterflyAttackActive) return;
+        if (butterflyAtkActive) return;
         StartCoroutine(IButterflyAttack(7));
     }
 
@@ -111,9 +136,9 @@ public class CatAttackController : MonoBehaviour {
         useStomp = false;
     }
 
-    IEnumerator IStaffAttack()
+    IEnumerator IChargeAttack()
     {
-        staffAttackActive = true;
+        chargeAtkActive = true;
         // Charge
         staffFX.gameObject.SetActive(true);
         yield return new WaitForSeconds(5f);
@@ -121,23 +146,23 @@ public class CatAttackController : MonoBehaviour {
         
         
         // Attack
-        staffSpawner.ToggleEmit(true);
-        float timer = staffAttkDur;
-        CameraShake.Instance.Shake(staffAttkDur, 0.1f);
+        chargeSpawner.ToggleEmit(true);
+        float timer = chargeAtkDur;
+        CameraShake.Instance.Shake(chargeAtkDur, 0.1f);
         while (timer > 0)
         {
-            staffSpawner.transform.position = staffPoint.position;
+            chargeSpawner.transform.position = staffPoint.position;
             timer -= Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
         
-        staffSpawner.ToggleEmit(false);
-        staffAttackActive = false;
+        chargeSpawner.ToggleEmit(false);
+        chargeAtkActive = false;
     }
     
     IEnumerator IButterflyAttack(float duration)
     {
-        butterflyAttackActive = true;
+        butterflyAtkActive = true;
         bfSpawner1.ToggleEmit(true);
         bfSpawner2.ToggleEmit(true);
         bfSpawner3.ToggleEmit(true);
@@ -147,6 +172,7 @@ public class CatAttackController : MonoBehaviour {
             bfSpawner1.transform.position = butterfly1.transform.position;
             bfSpawner2.transform.position = butterfly2.transform.position;
             bfSpawner3.transform.position = butterfly3.transform.position;
+
             yield return new WaitForEndOfFrame();
             duration -= Time.deltaTime;
         }
@@ -156,6 +182,36 @@ public class CatAttackController : MonoBehaviour {
         bfSpawner2.ToggleEmit(false);
         bfSpawner3.ToggleEmit(false);
 
-        butterflyAttackActive = false;
+        butterflyAtkActive = false;
+    }
+
+    IEnumerator IStaffAttack()
+    {
+        staffAtkActive = true;
+        
+        miniStaffFX.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        miniStaffFX.gameObject.SetActive(false);
+        
+        int count = 0;
+        float shootTime = staffShootTime;
+        while (count < staffLoops)
+        {
+            
+            staffSpawner.ToggleEmit(true);
+            CameraShake.Instance.Shake(staffShootTime, 0.01f);
+            while (shootTime > 0)
+            {
+                staffSpawner.transform.position = staffPoint.transform.position;
+                yield return new WaitForEndOfFrame();
+                shootTime -= Time.deltaTime;
+            }
+            staffSpawner.ToggleEmit(false);
+            
+            ++count;
+            shootTime = staffShootTime;
+            yield return new WaitForSeconds(staffWaitTime);
+        }
+        staffAtkActive = false;
     }
 }

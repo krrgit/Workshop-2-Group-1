@@ -23,6 +23,13 @@ public class PlayerMovement : MonoBehaviour
     Vector3 pointerPos;
 
     // Vector2 mousePos;
+
+    private Vector3 predictedPosition;
+
+    public Vector3 PredictedPosition(float secondsInAdvance)
+    {
+        return transform.position + (Vector3)(movement * moveSpeed * secondsInAdvance);
+    }
     
     void Awake()
     {
@@ -99,6 +106,4 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed = baseSpeed;
         isDashing = false;
     }
-
-
 }

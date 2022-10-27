@@ -474,7 +474,7 @@ MonoBehaviour:
   baseSpeed: 7
   rb: {fileID: 6685800163107628289}
   animator: {fileID: 1467711935}
-  dashPower: 5
+  dashPower: 3
   dashTime: 0.1
 --- !u!50 &6685800163107628289
 Rigidbody2D:

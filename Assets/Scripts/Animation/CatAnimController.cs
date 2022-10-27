@@ -43,16 +43,16 @@ public class CatAnimController : MonoBehaviour {
       get { return isIdling; }
    }
    
-   public void TurnToFacePoint(Vector2 point)
+   public void TurnToFacePoint(Vector2 point, int dir)
    {
       if (isTurning) return ;
       
       //int direction = Vector3.Project(point - (Vector2)transform.position, -transform.up).x > 0 ? 1 : -1;
-      float right = Vector3.Project(-transform.right,point - (Vector2)transform.position).magnitude;
-      float left = Vector3.Project(transform.right,point - (Vector2)transform.position).magnitude;
-      int direction = right > left ? -1 : 1;
+      //float right = Vector3.Project(-transform.right,point - (Vector2)transform.position).magnitude;
+      //float left = Vector3.Project(transform.right,point - (Vector2)transform.position).magnitude;
+      //int direction = right > left ? -1 : 1;
       
-      StartCoroutine(ITurnToPoint(point, direction));
+      StartCoroutine(ITurnToPoint(point, dir));
    }
    
    public void WalkToPoint(Vector2 point)
