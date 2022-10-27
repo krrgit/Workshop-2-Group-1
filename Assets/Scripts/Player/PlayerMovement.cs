@@ -5,12 +5,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-
+    public float baseSpeed;
 
     public Rigidbody2D rb;
     // public Camera cam;
     public Animator animator;
 
+    public float dashPower;
+    public float dashTime;
+
+    bool isDashing = false;
 
     public static PlayerMovement Instance;
     Vector2 movement;
@@ -31,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        moveSpeed = baseSpeed;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -47,10 +55,19 @@ public class PlayerMovement : MonoBehaviour
         // animator.SetFloat("Horizontal", movement.x);
         // animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
-        if(movement.magnitude > 0)
+        
+        if(movement.magnitude >= 0)
         {
         animator.SetFloat("Horizontal", direction.x);
         animator.SetFloat("Vertical", direction.y);
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            if (!isDashing)
+            {
+                StartCoroutine(Dash());
+            }
         }
         
     }
@@ -72,6 +89,16 @@ public class PlayerMovement : MonoBehaviour
         pointerPos.z = Camera.main.nearClipPlane;
         pointerPos = Camera.main.ScreenToWorldPoint(pointerPos);
     } 
+
+    IEnumerator Dash()
+    {
+        isDashing = true;
+        moveSpeed *= dashPower;
+
+        yield return new WaitForSeconds(dashTime);
+        moveSpeed = baseSpeed;
+        isDashing = false;
+    }
 
 
 }
