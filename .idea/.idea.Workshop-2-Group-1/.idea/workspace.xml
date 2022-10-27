@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3ed95f3c-1c08-4f51-abc6-e822e8b57bec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Temp/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Temp/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CatAttacksDemo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CatAttacksDemo.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Animation/CatAnimController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Animation/CatAnimController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAttackController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Cat/Animations/CatBoss_Parts.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Cat/Animations/CatBoss_Parts.controller" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

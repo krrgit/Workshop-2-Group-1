@@ -6,6 +6,7 @@ public enum MoveDecision {
     Idle,
     Walk,
     Turn,
+    Teleport
 }
 
 public class CatAI : MonoBehaviour {
@@ -13,6 +14,7 @@ public class CatAI : MonoBehaviour {
     [SerializeField] private CatAttackController attack;
 
     [SerializeField] private Transform[] walkPath;
+    [SerializeField] private Transform idlePoint;
     [SerializeField] private int curWalkPoint = 0;
 
     private float moveTimer;
@@ -20,6 +22,10 @@ public class CatAI : MonoBehaviour {
     private MoveDecision moveDecision;
 
     private Vector2 alignment;
+
+    private float tpCooldown;
+
+    private int phase = 1;
     
     // Start is called before the first frame update
     void Start()
@@ -32,12 +38,14 @@ public class CatAI : MonoBehaviour {
     {
         WalkAround();
 
-        MoveTimerTick();
+        TeleportCooldownTick();
     }
 
-    void MoveTimerTick()
+    void TeleportCooldownTick()
     {
-        moveTimer -= Time.deltaTime;
+        if (tpCooldown <= 0) return;
+
+        tpCooldown -= Time.deltaTime;
     }
 
     void WalkAround()
@@ -55,6 +63,20 @@ public class CatAI : MonoBehaviour {
             anim.TurnToFacePoint(walkPath[curWalkPoint].position);
             moveDecision = MoveDecision.Turn;
             print("Turn");
+        } else if (Random.Range(0,2) == 1 && tpCooldown <= 0)
+        {
+            RandomWalkPoint();
+            anim.TeleportToPoint(walkPath[curWalkPoint]);
+            CycleWalkPoint();
+            moveDecision = MoveDecision.Teleport;
+            tpCooldown = 4;
+            print("Teleport");
+        }else if (Random.Range(0,4) == 2 && tpCooldown <= 0)
+        {
+            
+            //anim.TeleportToPoint(idlePoint);
+            //moveDecision = MoveDecision.Idle;
+            //print("Teleport to Center");
         }
         else
         {
@@ -62,6 +84,17 @@ public class CatAI : MonoBehaviour {
             moveDecision = MoveDecision.Walk;
             print("Walk");
         }
+    }
+
+    void RandomWalkPoint()
+    {
+        int r = Random.Range(0, 4);
+        while (r != curWalkPoint)
+        {
+            r = Random.Range(0, 4);
+        }
+
+        curWalkPoint = r;
     }
 
     void CycleWalkPoint()
@@ -78,6 +111,11 @@ public class CatAI : MonoBehaviour {
         }
 
         if (moveDecision == MoveDecision.Walk && anim.MoveActive)
+        {
+            return false;
+        }
+
+        if (moveDecision == MoveDecision.Teleport && anim.TeleportActive)
         {
             return false;
         }

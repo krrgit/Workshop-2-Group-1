@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class CatAnimController : MonoBehaviour {
    [SerializeField] private Animator anim;
+   [SerializeField] private SpriteRenderer sr;
+   [SerializeField] private Collider2D coll;
    [SerializeField] private float moveSpeed = 1;
    [SerializeField] private float turnSpeed = 1;
    [SerializeField] private float pointRange = 5;
+   [SerializeField] private float teleportSpeed = 3;
 
    private bool turnClockwise;
    private bool turnCounter;
@@ -15,6 +19,14 @@ public class CatAnimController : MonoBehaviour {
 
    private bool isMoving;
    private bool isTurning;
+   private bool isTeleporting;
+   private bool isIdling;
+   private Vector2 idlePointDist;
+
+   public bool TeleportActive
+   {
+      get { return isTeleporting; }
+   }
 
    public bool TurnActive
    {
@@ -25,16 +37,12 @@ public class CatAnimController : MonoBehaviour {
    {
       get { return isMoving; }
    }
-   
-   public float Turn(float duration, int direction)
-   {
-      if (isTurning) return 0;
-      StartCoroutine(ITurn(duration, direction));
 
-      return duration;
+   public bool IdlingActive
+   {
+      get { return isIdling; }
    }
    
-
    public void TurnToFacePoint(Vector2 point)
    {
       if (isTurning) return ;
@@ -47,14 +55,6 @@ public class CatAnimController : MonoBehaviour {
       StartCoroutine(ITurnToPoint(point, direction));
    }
    
-   public float Walk(float duration)
-   {
-      if (isMoving) return 0;
-      StartCoroutine(IMove(duration));
-
-      return duration;
-   }
-   
    public void WalkToPoint(Vector2 point)
    {
       if (isMoving) return;
@@ -62,12 +62,17 @@ public class CatAnimController : MonoBehaviour {
 
    }
 
-   public float ComputeTurnTime(float angle)
+   public void TeleportToPoint(Transform point)
+   {
+      StartCoroutine(ITeleportToPoint(point));
+   }
+
+   float ComputeTurnTime(float angle)
    {
       return angle / turnSpeed;
    }
 
-   public float ComputeWalkTime(float distance)
+   float ComputeWalkTime(float distance)
    {
       return distance / moveSpeed;
    }
@@ -199,5 +204,48 @@ public class CatAnimController : MonoBehaviour {
       isMoving = false;
       moveForward = turnDir == 0 ? 0 : 1;
    }
+
+   IEnumerator ITeleportToPoint(Transform point)
+   {
+      coll.enabled = false;
+      isTeleporting = true;
+      //Fade Out
+      Color color = sr.color;
+      while (color.a > 0)
+      {
+         color.a -= Time.deltaTime * teleportSpeed;
+         sr.color = color;
+         yield return new WaitForEndOfFrame();
+      }
+
+      color.a = 0;
+      sr.color = color;
+      transform.position = point.position;
+      transform.rotation = point.rotation;
+
+
+      // Fade In
+      while (color.a < 1)
+      {
+         color.a += Time.deltaTime * teleportSpeed;
+         sr.color = color;
+         yield return new WaitForEndOfFrame();
+      }
+
+      color.a = 1;
+      sr.color = color;
+      coll.enabled = true;
+      isTeleporting = false;
+   }
+
+   IEnumerator Idling(float duration)
+   {
+      isIdling = true;
+      yield return new WaitForSeconds(duration);
+      isIdling = false;
+
+   }
+      
+   
 
 }

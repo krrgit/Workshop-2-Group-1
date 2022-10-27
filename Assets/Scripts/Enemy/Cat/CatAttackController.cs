@@ -31,6 +31,11 @@ public class CatAttackController : MonoBehaviour {
     
     private Vector3 localPos;
 
+    public float StaffAtkTotalDur
+    {
+        get { return 5 + staffAttkDur; }
+    }
+    
     public void DoStompAttack(float duration)
     {
         StartCoroutine(IStompAttack(duration));
