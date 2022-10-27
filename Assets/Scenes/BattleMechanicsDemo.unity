@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 682781168, guid: a3ee9653a4f1445e492d9e2cdb696731, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 682781169, guid: a3ee9653a4f1445e492d9e2cdb696731, type: 3}
       propertyPath: mtl
       value: 
@@ -145,6 +149,10 @@ PrefabInstance:
     - target: {fileID: 998980605, guid: a3ee9653a4f1445e492d9e2cdb696731, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 998980605, guid: a3ee9653a4f1445e492d9e2cdb696731, type: 3}
+      propertyPath: stoppingDistance
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1977419659, guid: a3ee9653a4f1445e492d9e2cdb696731, type: 3}
       propertyPath: camShakeDur
@@ -625,6 +633,65 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &401828005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 401828006}
+  - component: {fileID: 401828007}
+  m_Layer: 0
+  m_Name: Spider Attack 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &401828006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401828005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816222999}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &401828007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401828005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc564c9980d24497cba931b397c7d010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columns: 1
+  spread: 0
+  spinSpeed: -180
+  centerDist: 0
+  fireRate: 0.1
+  speed: 15
+  lifetime: 5
+  size: 5
+  color: {r: 1, g: 1, b: 1, a: 1}
+  sprite: {fileID: -890238267, guid: 88a6e823bb499fa42b0f0a5a861711ab, type: 3}
+  mtl: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  useTextureSheet: 0
+  tilesX: 1
+  tilesY: 1
+  cycles: 30
 --- !u!1 &527926708
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +835,65 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 740164234, guid: a3ee9653a4f1445e492d9e2cdb696731, type: 3}
   m_PrefabInstance: {fileID: 43156114}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &949760360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 949760361}
+  - component: {fileID: 949760362}
+  m_Layer: 0
+  m_Name: Spider Attack 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &949760361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949760360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816222999}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &949760362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949760360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc564c9980d24497cba931b397c7d010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columns: 5
+  spread: 90
+  spinSpeed: 100
+  centerDist: 0
+  fireRate: 0.5
+  speed: 15
+  lifetime: 5
+  size: 3
+  color: {r: 1, g: 1, b: 1, a: 1}
+  sprite: {fileID: -890238267, guid: 88a6e823bb499fa42b0f0a5a861711ab, type: 3}
+  mtl: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  useTextureSheet: 0
+  tilesX: 1
+  tilesY: 1
+  cycles: 30
 --- !u!4 &957978368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5877937587524733389, guid: a3ee9653a4f1445e492d9e2cdb696731, type: 3}
@@ -1005,6 +1131,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 2
   width: 3
+--- !u!1 &1225418884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1225418885}
+  - component: {fileID: 1225418886}
+  m_Layer: 0
+  m_Name: Spider Ultimate Attack 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1225418885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225418884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816222999}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1225418886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225418884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc564c9980d24497cba931b397c7d010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columns: 40
+  spread: 360
+  spinSpeed: 180
+  centerDist: 0
+  fireRate: 0.1
+  speed: 30
+  lifetime: 5
+  size: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
+  sprite: {fileID: -890238267, guid: 88a6e823bb499fa42b0f0a5a861711ab, type: 3}
+  mtl: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  useTextureSheet: 0
+  tilesX: 1
+  tilesY: 1
+  cycles: 30
 --- !u!1 &1263515796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,6 +1274,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1369805383 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5877937586582157778, guid: a3ee9653a4f1445e492d9e2cdb696731, type: 3}
+  m_PrefabInstance: {fileID: 43156114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1370933144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1370933145}
+  - component: {fileID: 1370933146}
+  m_Layer: 0
+  m_Name: Spider Attack 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1370933145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370933144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1816222999}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1370933146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370933144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc564c9980d24497cba931b397c7d010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columns: 10
+  spread: 180
+  spinSpeed: 180
+  centerDist: 0
+  fireRate: 0.2
+  speed: 15
+  lifetime: 10
+  size: 1
+  color: {r: 1, g: 1, b: 1, a: 1}
+  sprite: {fileID: -890238267, guid: 88a6e823bb499fa42b0f0a5a861711ab, type: 3}
+  mtl: {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  useTextureSheet: 0
+  tilesX: 1
+  tilesY: 1
+  cycles: 30
 --- !u!1001 &1467711933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1388,8 +1637,64 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4354346322047489042, guid: e3dc307f4e0f54a9083d4942f2ca6a17, type: 3}
+      propertyPath: orthographic size
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3dc307f4e0f54a9083d4942f2ca6a17, type: 3}
+--- !u!1 &1816222998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1816222999}
+  - component: {fileID: 1816223000}
+  m_Layer: 0
+  m_Name: AttackPatterns
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1816222999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816222998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1370933145}
+  - {fileID: 949760361}
+  - {fileID: 401828006}
+  - {fileID: 1225418885}
+  m_Father: {fileID: 1369805383}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1816223000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816222998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6832d41e66578c64ab5abd1fbf9956f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackOne: {fileID: 1370933146}
+  AttackTwo: {fileID: 949760362}
+  AttackThree: {fileID: 401828007}
+  AttackFour: {fileID: 1225418886}
 --- !u!1 &1865350285
 GameObject:
   m_ObjectHideFlags: 0
