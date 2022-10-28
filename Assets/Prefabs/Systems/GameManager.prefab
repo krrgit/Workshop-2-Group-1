@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7676334933445270368
 Transform:
   m_ObjectHideFlags: 0
@@ -44,5 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0f78cd8d2f5d4e0fbed9c0b8c33c38a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeathCanvas: {fileID: 0}
+  hubSO: {fileID: 11400000, guid: 8444f587ddd28495580e441d386f9380, type: 2}
+  deathCanvas: {fileID: 7676334933445270369}
   playerDeathAnim: {fileID: 0}
+  bossHealth: {fileID: 0}
+  screenFlash: {fileID: 0}
+  doorLight: {fileID: 0}
+  exit: {fileID: 0}

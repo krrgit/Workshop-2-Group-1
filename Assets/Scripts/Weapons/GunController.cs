@@ -21,7 +21,7 @@ public class GunController : MonoBehaviour {
 
     private WeaponState state;
 
-    private DisplayAmmo displayAmmo;
+    [SerializeField] private DisplayAmmo displayAmmo;
 
     public WeaponState State
     {
@@ -33,8 +33,7 @@ public class GunController : MonoBehaviour {
         ammo = w.maxAmmo;
         spawner.WeaponInit(w);
         wAnim.SetSprites(w.wpnReady,w.wpnEmpty,w.wpnReload);
-
-        displayAmmo = GameObject.Find("GameUICanvas").GetComponent<DisplayAmmo>();
+        
     }
 
     // Update is called once per frame
@@ -121,7 +120,7 @@ public class GunController : MonoBehaviour {
     {
         state = WeaponState.Cooldown;
         --ammo;
-        displayAmmo.updateAmmo(ammo);
+        if (displayAmmo) displayAmmo.updateAmmo(ammo);
         cooldown = w.fireRate;
         wAnim.UpdateState(state);
         wAnim.PlayRecoil(w.fireRate * 0.5f, w.fireRate * 0.4f, ammo == 0);

@@ -100,6 +100,7 @@ public class PlayerMovement : MonoBehaviour
         moveSpeed = baseSpeed;
         isDashing = false;
 
+        yield return new WaitForSeconds(0.1f);
         if(!isInvincible)
         {
             triggerCollider.enabled = true;
