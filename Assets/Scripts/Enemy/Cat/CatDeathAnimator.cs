@@ -8,7 +8,6 @@ public class CatDeathAnimator : MonoBehaviour {
     [SerializeField] private Collider2D coll;
     [SerializeField] private Collider2D fogWallCollider;
     [SerializeField] private ParticleSystem fogWall;
-    [SerializeField] private GameObject exit;
     [SerializeField] private GameObject ui;
 
     public void Play()

@@ -12,8 +12,9 @@ public class GameStateManager : MonoBehaviour {
     [SerializeField] private EnemyHealth bossHealth;
     [SerializeField] private GameObject screenFlash;
     [SerializeField] private DoorLightAnimator doorLight;
-    [SerializeField] private GameObject exit;
+    [SerializeField] private LoadNextScene exit;
     [SerializeField] private HubSpawnPoint hubSpawnPoint;
+    [SerializeField] private int endSceneIndex = 4;
     public static GameStateManager Instance;
 
     private bool enableRestart = false;
@@ -72,6 +73,13 @@ public class GameStateManager : MonoBehaviour {
         screenFlash.SetActive(true);
         if (doorLight) doorLight.PlayOpenAnim();
         hubSO.spawn = hubSpawnPoint;
+        ++hubSO.bossesDefeated;
+
+        if (hubSO.bossesDefeated >= 2)
+        {
+            exit.nextScene = endSceneIndex;
+        }
+
         StartCoroutine(WaitForExitPopup());
 
     }
@@ -79,6 +87,6 @@ public class GameStateManager : MonoBehaviour {
     IEnumerator WaitForExitPopup()
     {
         yield return new WaitForSeconds(7);
-        if (exit) exit.SetActive(true);
+        if (exit) exit.gameObject.SetActive(true);
     }
 }

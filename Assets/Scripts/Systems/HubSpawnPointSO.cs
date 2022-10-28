@@ -10,4 +10,5 @@ public enum HubSpawnPoint {
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/HubSpawnPoint", order = 1)]
 public class HubSpawnPointSO : ScriptableObject {
     public HubSpawnPoint spawn;
+    public int bossesDefeated;
 }

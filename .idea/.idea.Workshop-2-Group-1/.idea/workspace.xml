@@ -6,9 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="3e764ce2-389c-4139-8a2d-aa67e83b5162" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CameraTarget.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CameraTarget.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/CoreObjects.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/CoreObjects.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/GameUICanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/GameUICanvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Scenes/Cat Boss Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Scenes/Cat Boss Room.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/DisplayHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/DisplayHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Scenes/Spider Boss Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Scenes/Spider Boss Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Scenes/StartMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Scenes/StartMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatDeathAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatDeathAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/GameStateManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/GameStateManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/HubSpawnPointSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/HubSpawnPointSO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Systems/LoadNextScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Systems/LoadNextScene.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Boss Music/Cat Boss Music End.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Boss Music/Cat Boss Music Loop.mp3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sounds/Boss Music/Cat Boss Music Start.mp3.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +30,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraShake.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/StartCatFight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/HubSpawnPointSO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/InitializeGameValues.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/ec/3e51d190/Void.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d3e00d5a49334439a489cc0a51d26115157c00/99/bc1706b4/Vector2.cs" root0="SKIP_HIGHLIGHTING" />

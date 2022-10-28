@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 
 public class LoadNextScene : MonoBehaviour {
-    [SerializeField] private int nextScene;
+    public int nextScene;
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player")
