@@ -17,6 +17,7 @@ public class EnemyFollow : MonoBehaviour
         if (target != null)
         {
             float step = speed * Time.deltaTime;
+            
             if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, target.position, step);
@@ -29,7 +30,10 @@ public class EnemyFollow : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             target = other.transform;
+            
             attack.RunAI = true;
+            SoundManager.Instance.PlaySpiderWalk();
+            
         }
     }
 

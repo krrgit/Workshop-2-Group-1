@@ -51,7 +51,7 @@ public class SpiderAttackController : MonoBehaviour
         AttackThree.ToggleEmit(false);
         AttackFour.ToggleEmit(false);
         
-        AttackOne.DestroyAllParticles();
+        AttackOne.DestroyAllParticles(); 
         AttackTwo.DestroyAllParticles();
         AttackThree.DestroyAllParticles();
         AttackFour.DestroyAllParticles();
@@ -66,6 +66,7 @@ public class SpiderAttackController : MonoBehaviour
 
     IEnumerator IDoAttackOne(float duration)
     {
+            SoundManager.Instance.PlaySpiderShoot();
             AttackOne.ToggleEmit(true);
             yield return new WaitForSeconds(duration);
             AttackOne.ToggleEmit(false);
@@ -73,6 +74,7 @@ public class SpiderAttackController : MonoBehaviour
 
     IEnumerator IDoAttackTwo(float duration)
     {
+        SoundManager.Instance.PlaySpiderShoot();
         AttackTwo.ToggleEmit(true);
         yield return new WaitForSeconds(duration);
         AttackTwo.ToggleEmit(false);
@@ -82,6 +84,7 @@ public class SpiderAttackController : MonoBehaviour
     IEnumerator IDoAttackThree(float duration)
     {
         
+        SoundManager.Instance.PlaySpiderShoot();
         AttackThree.ToggleEmit(true);
         yield return new WaitForSeconds(duration);
         AttackThree.ToggleEmit(false);
@@ -91,6 +94,7 @@ public class SpiderAttackController : MonoBehaviour
     IEnumerator IDoAttackFour(float duration)
     {
        
+        SoundManager.Instance.PlaySpiderShoot();
         AttackFour.ToggleEmit(true);
         yield return new WaitForSeconds(duration);
         AttackFour.ToggleEmit(false);

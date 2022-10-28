@@ -27,7 +27,6 @@ public class SpiderAIController : MonoBehaviour
         randomNum = Random.Range(1, 5);
         Debug.Log(randomNum);
         RandomAttacksGenerator(PatternActive);
-        SoundManager.Instance.PlaySpiderShoot();
         timer -= Time.deltaTime;
     }
 
@@ -48,6 +47,7 @@ public class SpiderAIController : MonoBehaviour
         attack.StopAll();
         deathAnim.DisableAttacks();
         deathAnim.StartAnim();
+        
         
 
     }

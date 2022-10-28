@@ -86,6 +86,7 @@ public class SpiderDeathAnimator : MonoBehaviour {
         }
         Instantiate(system, transform.position, Quaternion.identity);
         CameraShake.Instance.Shake(13, 0.015f);
+        SoundManager.Instance.PlaySpiderDeath();
     }
     
     // This function disables other animators that would interfere with this one
