@@ -17,7 +17,9 @@ public class SoundManager : MonoBehaviour {
     [SerializeField] private AudioSource catCharge2;
     [SerializeField] private AudioSource catChargeLoop;
     [SerializeField] private AudioSource catStaffAtk;
-
+    [SerializeField] private AudioSource SpiderShoot;
+    [SerializeField] private AudioSource SpiderDeath;
+    [SerializeField] private AudioSource SpiderWalk;
     public static SoundManager Instance;
 
     void Awake()
@@ -109,6 +111,20 @@ public class SoundManager : MonoBehaviour {
     {
         playerDash.Play();
     }
+        public void PlaySpiderShoot()
+    {
+        SpiderShoot.Play();
+    }
 
+    public void PlaySpiderDeath()
+    {
+        SpiderDeath.Play();
+    }
 
+    public void PlaySpiderWalk()
+    {
+        SpiderWalk.Play();
+    }
+    
+    
 }

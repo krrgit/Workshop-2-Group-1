@@ -11,6 +11,7 @@ public class SpiderAIController : MonoBehaviour
     [SerializeField] private SpiderDeathAnimator deathAnim;
     [SerializeField] private EnemyHealth health;
     
+    
     public bool PatternActive = false;
     
     public int randomNum = 0;
@@ -46,6 +47,7 @@ public class SpiderAIController : MonoBehaviour
         attack.StopAll();
         deathAnim.DisableAttacks();
         deathAnim.StartAnim();
+        
         
 
     }
