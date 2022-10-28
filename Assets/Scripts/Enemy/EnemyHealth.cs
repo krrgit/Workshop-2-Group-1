@@ -43,6 +43,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 enemyDeathDel();
                 calledDeathDel = true;
+                SoundManager.Instance.PlayBossDeath();
             }
         }
     }

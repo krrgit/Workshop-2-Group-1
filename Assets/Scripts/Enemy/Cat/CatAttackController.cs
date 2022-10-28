@@ -51,12 +51,12 @@ public class CatAttackController : MonoBehaviour {
 
     public float StaffAtkTotalDur
     {
-        get { return 5 + chargeAtkDur + 5; }
+        get { return 5 + chargeAtkDur + 3.5f; }
     }
 
     public float ButterFlyAtkTotalDur
     {
-        get { return 1.5f + butterflyAtkDur + 5; }
+        get { return 1.5f + butterflyAtkDur + 3.5f; }
     }
     
     public void DoStompAttack(float duration)
@@ -146,6 +146,7 @@ public class CatAttackController : MonoBehaviour {
         stompSpawner.EmitOnce();
         
         CameraShake.Instance.Shake(0.2f,0.05f);
+        SoundManager.Instance.PlayCatStomp();
     }
 
     void ChargeAttack(float delay)
@@ -171,12 +172,15 @@ public class CatAttackController : MonoBehaviour {
     IEnumerator IChargeAttack(float delay)
     {
         yield return new WaitForSeconds(delay);
+        SoundManager.Instance.PlayCatCharge();
         chargeAtkActive = true;
         // Charge
         staffFX.gameObject.SetActive(true);
         yield return new WaitForSeconds(5f);
         staffFX.gameObject.SetActive(false);
         
+        SoundManager.Instance.PlayCatCharge2();
+        SoundManager.Instance.PlayChargeLoop(chargeAtkDur);
         
         // Attack
         chargeSpawner.ToggleEmit(true);
@@ -198,6 +202,8 @@ public class CatAttackController : MonoBehaviour {
         yield return new WaitForSeconds(delay);
         butterflyAtkActive = true;
         butterflyFX.SetActive(true);
+        
+        SoundManager.Instance.PlayCatButterfly();
         yield return new WaitForSeconds(1.5f);
         
         bfSpawner1.ToggleEmit(true);
@@ -233,6 +239,8 @@ public class CatAttackController : MonoBehaviour {
         staffSpawner.transform.position = staffPoint.transform.position;
         int count = 0;
         float shootTime = staffShootTime;
+
+        SoundManager.Instance.PlayCatStaffAtk();
         
         // Attack
         while (count < staffLoops)
@@ -241,6 +249,7 @@ public class CatAttackController : MonoBehaviour {
             staffSpawner.ToggleEmit(true);
             pointAtPlayer.Point();
             CameraShake.Instance.Shake(staffShootTime, 0.01f);
+            SoundManager.Instance.PlayCatStaffAtk();
             while (shootTime > 0)
             {
                 

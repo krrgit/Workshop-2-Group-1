@@ -15,6 +15,8 @@ public class CatDeathAnimator : MonoBehaviour {
         deathFX.transform.position = sr.transform.position;
         deathFX.SetActive(true);
         ui.SetActive(false);
+        
+        SoundManager.Instance.PlayCatButterfly();
 
         StartCoroutine(Fade());
     }

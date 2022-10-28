@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
+    [SerializeField] private int invincibleLayer = 12;
     public float moveSpeed = 5f;
     public float baseSpeed;
     
@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     
-
     public static PlayerMovement Instance;
     Vector2 movement;
     private Vector3 direction;
@@ -35,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
     public SpriteRenderer mySprite;
 
+    private int playerLayer;
+    
     void Awake()
     {
         // This only allows one instance of PlayerHealth to exist in any scene
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         moveSpeed = baseSpeed;
+        playerLayer = gameObject.layer;
     }
     
     // Update is called once per frame
@@ -82,8 +84,6 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         } 
-
-            
         
     }
 
@@ -101,7 +101,9 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Dash()
     {
-        triggerCollider.enabled = false;
+        SoundManager.Instance.PlayDash();
+        //triggerCollider.enabled = false;
+        gameObject.layer = invincibleLayer;
 
         isDashing = true;
         moveSpeed *= dashPower;
@@ -113,7 +115,8 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         if(!isInvincible)
         {
-            triggerCollider.enabled = true;
+            gameObject.layer = playerLayer;
+            //triggerCollider.enabled = true;
         }
     }
 
@@ -122,7 +125,8 @@ public class PlayerMovement : MonoBehaviour
         isInvincible = true;
 
         int temp = 0;
-        triggerCollider.enabled = false;
+        //triggerCollider.enabled = false;
+        gameObject.layer = invincibleLayer;
 
         while(temp < numberOfFlashes)
         {
@@ -134,7 +138,11 @@ public class PlayerMovement : MonoBehaviour
         }
         mySprite.color = regularColor;
 
-        triggerCollider.enabled = true;
+        //triggerCollider.enabled = true;
+        if (!isDashing)
+        {
+            gameObject.layer = playerLayer;
+        }
 
         isInvincible = false;
     }
