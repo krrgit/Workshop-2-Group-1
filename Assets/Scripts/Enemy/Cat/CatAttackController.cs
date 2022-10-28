@@ -78,6 +78,30 @@ public class CatAttackController : MonoBehaviour {
     {
         ButterflyAttack(delay);
     }
+
+    public void StopAll()
+    {
+        stompSpawner.ToggleEmit(false);  
+        staffSpawner.ToggleEmit(false);
+        chargeSpawner.ToggleEmit(false);
+        bfSpawner1.ToggleEmit(false);
+        bfSpawner2.ToggleEmit(false);
+        bfSpawner3.ToggleEmit(false);
+        
+        stompSpawner.DestroyAllParticles();
+        staffSpawner.DestroyAllParticles();
+        chargeSpawner.DestroyAllParticles();
+        bfSpawner1.DestroyAllParticles();
+        bfSpawner2.DestroyAllParticles();
+        bfSpawner3.DestroyAllParticles();
+
+        staffSpawner.gameObject.SetActive(false);
+        stompSpawner.gameObject.SetActive(false);
+        chargeSpawner.gameObject.SetActive(false);
+        bfSpawner1.gameObject.SetActive(false);
+        bfSpawner2.gameObject.SetActive(false);
+        bfSpawner3.gameObject.SetActive(false);
+    }
     
     private void OnEnable()
     {
