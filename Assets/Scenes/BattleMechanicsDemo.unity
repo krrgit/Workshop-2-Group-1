@@ -1175,9 +1175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc564c9980d24497cba931b397c7d010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 40
+  columns: 25
   spread: 360
-  spinSpeed: 180
+  spinSpeed: 0
   centerDist: 0
   fireRate: 0.1
   speed: 30
