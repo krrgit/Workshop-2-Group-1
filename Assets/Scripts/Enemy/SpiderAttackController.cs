@@ -26,7 +26,7 @@ public class SpiderAttackController : MonoBehaviour
         StartCoroutine(IDoAttackThree(duration));
     }
 
-    public void DoAttackFour(float duration)
+    public void DoAttackFour(float duration)    
     {
         StartCoroutine(IDoAttackFour(duration));
     }
