@@ -11,14 +11,19 @@ public class SpiderAttackController : MonoBehaviour
     [SerializeField] private BulletHellSpawner AttackThree;
     [SerializeField] private BulletHellSpawner AttackFour;
 
+
+    private bool AttackActive;
+
     public void DoAttackOne(float duration)
     {
         StartCoroutine(IDoAttackOne(duration));
+        
     }
 
     public void DoAttackTwo(float duration)
     {
         StartCoroutine(IDoAttackTwo(duration));
+        
     }
 
     public void DoAttackThree(float duration)
@@ -26,7 +31,7 @@ public class SpiderAttackController : MonoBehaviour
         StartCoroutine(IDoAttackThree(duration));
     }
 
-    public void DoAttackFour(float duration)    
+    public void DoAttackFour(float duration)
     {
         StartCoroutine(IDoAttackFour(duration));
     }
@@ -38,35 +43,14 @@ public class SpiderAttackController : MonoBehaviour
         AttackThree.Initialize();
         AttackFour.Initialize();
     }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            DoAttackOne(3);
-        }
-
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            DoAttackTwo(3);
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            DoAttackThree(3);
-        }
-
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            DoAttackFour(3);
-        }
-    }
+    
+    
 
     IEnumerator IDoAttackOne(float duration)
     {
-        AttackOne.ToggleEmit(true);
-        yield return new WaitForSeconds(duration);
-        AttackOne.ToggleEmit(false);
+            AttackOne.ToggleEmit(true);
+            yield return new WaitForSeconds(duration);
+            AttackOne.ToggleEmit(false);
     }
 
     IEnumerator IDoAttackTwo(float duration)
@@ -74,19 +58,24 @@ public class SpiderAttackController : MonoBehaviour
         AttackTwo.ToggleEmit(true);
         yield return new WaitForSeconds(duration);
         AttackTwo.ToggleEmit(false);
+       
     }
 
     IEnumerator IDoAttackThree(float duration)
     {
+        
         AttackThree.ToggleEmit(true);
         yield return new WaitForSeconds(duration);
         AttackThree.ToggleEmit(false);
+       
     }
 
     IEnumerator IDoAttackFour(float duration)
     {
+       
         AttackFour.ToggleEmit(true);
         yield return new WaitForSeconds(duration);
         AttackFour.ToggleEmit(false);
+       
     }
 }
