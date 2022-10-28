@@ -23,8 +23,16 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 pointerPos;
 
-    // Vector2 mousePos;
+    public Color flashColor;
+    public Color regularColor;
+    public float flashDuration;
+    public int numberOfFlashes;
+    public Collider2D triggerCollider;
     
+    bool isInvincible;
+
+    public SpriteRenderer mySprite;
+
     void Awake()
     {
         // This only allows one instance of PlayerHealth to exist in any scene
@@ -40,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     {
         moveSpeed = baseSpeed;
     }
+    
     // Update is called once per frame
     void Update()
     {
@@ -50,11 +59,6 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        //following mouse position
-        // mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
-        // animator.SetFloat("Horizontal", movement.x);
-        // animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
         
         if(movement.magnitude >= 0)
@@ -63,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("Vertical", direction.y);
         }
 
+        //Left shift to dash
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (!isDashing)
@@ -76,12 +81,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-        
-        //following mouse position
-        // Vector2 lookDir = mousePos - rb.position;
-        // float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-
-        // rb.rotation = angle;
     }
 
     void GetPointerInput()
@@ -93,13 +92,47 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Dash()
     {
+        triggerCollider.enabled = false;
+
         isDashing = true;
         moveSpeed *= dashPower;
 
         yield return new WaitForSeconds(dashTime);
         moveSpeed = baseSpeed;
         isDashing = false;
+
+        if(!isInvincible)
+        {
+            triggerCollider.enabled = true;
+        }
     }
 
+    private IEnumerator FlashCo()
+    {
+        isInvincible = true;
 
+        int temp = 0;
+        triggerCollider.enabled = false;
+
+        while(temp < numberOfFlashes)
+        {
+            mySprite.color = flashColor;
+            yield return new WaitForSeconds(flashDuration);
+            mySprite.color = regularColor;
+            yield return new WaitForSeconds(flashDuration);
+            temp++;
+        }
+        mySprite.color = regularColor;
+
+        triggerCollider.enabled = true;
+
+        isInvincible = false;
+    }
+    
+    public void startInvincibility()
+    {
+        if(isInvincible) return;
+        
+        StartCoroutine(FlashCo());
+    }
 }
