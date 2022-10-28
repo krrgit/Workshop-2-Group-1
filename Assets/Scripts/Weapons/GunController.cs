@@ -21,6 +21,8 @@ public class GunController : MonoBehaviour {
 
     private WeaponState state;
 
+    private DisplayAmmo displayAmmo;
+
     public WeaponState State
     {
         get { return state; }
@@ -31,6 +33,8 @@ public class GunController : MonoBehaviour {
         ammo = w.maxAmmo;
         spawner.WeaponInit(w);
         wAnim.SetSprites(w.wpnReady,w.wpnEmpty,w.wpnReload);
+
+        displayAmmo = GameObject.Find("GameUICanvas").GetComponent<DisplayAmmo>();
     }
 
     // Update is called once per frame
@@ -117,6 +121,7 @@ public class GunController : MonoBehaviour {
     {
         state = WeaponState.Cooldown;
         --ammo;
+        displayAmmo.updateAmmo(ammo);
         cooldown = w.fireRate;
         wAnim.UpdateState(state);
         wAnim.PlayRecoil(w.fireRate * 0.5f, w.fireRate * 0.4f, ammo == 0);
@@ -148,6 +153,7 @@ public class GunController : MonoBehaviour {
         isReloading = true;
         yield return new WaitForSeconds(w.reloadDur);
         ammo = w.maxAmmo;
+        displayAmmo.updateAmmo(ammo);
         isReloading = false;
         state = WeaponState.Ready;
         wAnim.UpdateState(state);
