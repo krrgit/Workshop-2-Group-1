@@ -20,6 +20,7 @@ public class CatAI : MonoBehaviour {
     [SerializeField] private Transform idlePoint;
     [SerializeField] private int currPath;
     [SerializeField] private int curWalkPoint = 0;
+    [SerializeField] private float staffAtkCooldown = 10;
     private int[] pathTurnDir = { 1, -1 };
     
 
@@ -35,6 +36,8 @@ public class CatAI : MonoBehaviour {
 
     private float staffAttackTimer;
 
+    private bool hailMary;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,26 +51,27 @@ public class CatAI : MonoBehaviour {
         {
             WalkAround();
             TryStaffAttack();
-        } else if (phase == 2)
-        {
-            
         }
 
         StaffAttackTimerTick();
         MoveTimerTick();
         TeleportCooldownTick();
         
+        HailMaryCheck();
     }
     
-    // If somehow the cat still goes out of bounds
+    // If somehow the cat still goes out of bounds do idle attack
     void HailMaryCheck()
     {
+        if (hailMary) return;
         if (transform.position.magnitude > 25)
         {
             anim.StopAllCoroutines();
+            anim.StopAll();
             anim.TeleportToPoint(idlePoint);
             moveDecision = MoveDecision.IdleAttack;
             RandomIdleAttack();
+            hailMary = true;
         }
     }
 
@@ -98,14 +102,16 @@ public class CatAI : MonoBehaviour {
             (moveDecision == MoveDecision.Turn && anim.TurnActive))
         {
             attack.DoStaffAttack();
-            staffAttackTimer = 5;
+            staffAttackTimer = staffAtkCooldown;
         }
     }
 
     void WalkAround()
     {
         if (!NextMoveCheck()) return;
-
+        
+        hailMary = false;
+        
         if (moveDecision == MoveDecision.Walk)
         {
             CycleWalkPoint();
@@ -243,12 +249,16 @@ public class CatAI : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Wall")
+        // Collide with wall
+        if (col.gameObject.layer == 12)
         {
+            print("Cat collid with wall");
             anim.StopAllCoroutines();
+            anim.StopAll();
             anim.TeleportToPoint(idlePoint);
             moveDecision = MoveDecision.IdleAttack;
             RandomIdleAttack();
         }
+        
     }
 }

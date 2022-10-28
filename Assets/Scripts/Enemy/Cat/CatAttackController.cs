@@ -51,12 +51,12 @@ public class CatAttackController : MonoBehaviour {
 
     public float StaffAtkTotalDur
     {
-        get { return 5 + chargeAtkDur + 1; }
+        get { return 5 + chargeAtkDur + 5; }
     }
 
     public float ButterFlyAtkTotalDur
     {
-        get { return 1.5f + butterflyAtkDur + 1; }
+        get { return 1.5f + butterflyAtkDur + 5; }
     }
     
     public void DoStompAttack(float duration)

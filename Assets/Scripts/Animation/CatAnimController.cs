@@ -77,6 +77,13 @@ public class CatAnimController : MonoBehaviour {
       return distance / moveSpeed;
    }
 
+   public void StopAll()
+   {
+      isMoving = false;
+      moveForward = 0;
+      turnDir = 0;
+   }
+
    void Update()
    {
       //DemoInputs();
