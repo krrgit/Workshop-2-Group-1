@@ -9,6 +9,8 @@ public class EnemyFollow : MonoBehaviour
     [SerializeField] private Transform target; //target is player
     public float stoppingDistance;
 
+    [SerializeField] private SpiderAIController attack;
+
     //follows player
     private void Update()
     {
@@ -27,6 +29,7 @@ public class EnemyFollow : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             target = other.transform;
+            attack.RunAI = true;
         }
     }
 
@@ -36,7 +39,8 @@ public class EnemyFollow : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             target = null;
-           
+            
+
         }
     }
 }
