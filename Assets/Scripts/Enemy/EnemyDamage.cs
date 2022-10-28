@@ -12,5 +12,6 @@ public class EnemyDamage : MonoBehaviour {
     {
         hsAnim.PlayAnimation(coll);
         health.TakeDamage(1);
+        SoundManager.Instance.PlayEnemyHit();
     }
 }

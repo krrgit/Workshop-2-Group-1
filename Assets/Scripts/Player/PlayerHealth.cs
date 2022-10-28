@@ -7,7 +7,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public int health = 10;
     [SerializeField] public int maxHealth = 10;
     [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private DisplayHealth healthUI;
 
     public static PlayerHealth Instance;
 
