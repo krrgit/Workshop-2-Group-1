@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public enum WeaponState {
     Ready,
@@ -40,14 +41,40 @@ public class GunController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        DebugControlTest();
+        Controls();
 
         CooldownTick();
         AutoAmmoTick();
         StopAutoFireCheck();
     }
 
+    void Controls()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (w.isAutomatic) {
+                AutoFire();
+            }
+            else {
+                Fire();   
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            StopAutoFire();
+        }
+        
+        if (Input.GetKeyDown(KeyCode.E)) {
+            Reload();
+        }
+        
+        
+    }
+
     void DebugControlTest() {
+        
+        
         if (Input.GetKeyDown(KeyCode.E)) {
             if (w.isAutomatic) {
                 AutoFire();
