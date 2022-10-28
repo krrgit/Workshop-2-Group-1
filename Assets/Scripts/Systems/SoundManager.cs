@@ -12,7 +12,6 @@ public class SoundManager : MonoBehaviour {
     [SerializeField] private AudioSource catButterfly;
     [SerializeField] private AudioSource catChargeAtk;
     [SerializeField] private AudioSource catStomp;
-    [SerializeField] private AudioSource spiderDeath;
     [SerializeField] private AudioSource bossDeath;
     [SerializeField] private AudioSource catCharge2;
     [SerializeField] private AudioSource catChargeLoop;
@@ -76,12 +75,7 @@ public class SoundManager : MonoBehaviour {
     {
         catButterfly.Play();
     }
-
-    public void PlaySpiderDeath()
-    {
-        spiderDeath.Play();
-    }
-
+    
     public void PlayShoot()
     {
         shoot.Play();

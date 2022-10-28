@@ -13,8 +13,6 @@ public class WeaponAnimator : MonoBehaviour {
     [Header("Camera Shake Values")] 
     [SerializeField] private float shakeDuration;
     [SerializeField] private float shakePower;
-    [SerializeField] GameObject reloadPrompt;
-
     public delegate void ReloadDelegate(float duration, float delay);
     public ReloadDelegate reloadDel;
 

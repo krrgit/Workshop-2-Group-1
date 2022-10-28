@@ -16,6 +16,8 @@ public class GameStateManager : MonoBehaviour {
     [SerializeField] private HubSpawnPoint hubSpawnPoint;
     [SerializeField] private int endSceneIndex = 4;
     [SerializeField] private GameObject music;
+    [SerializeField] private Collider2D fogWallCollider;
+    [SerializeField] private ParticleSystem fogWall;
     public static GameStateManager Instance;
 
     private bool enableRestart = false;
@@ -84,6 +86,10 @@ public class GameStateManager : MonoBehaviour {
         if (music) music.SetActive(false);
 
         StartCoroutine(WaitForExitPopup());
+        
+        fogWallCollider.enabled = false;
+        var main = fogWall.main;
+        main.loop = false;
 
     }
 
@@ -92,4 +98,5 @@ public class GameStateManager : MonoBehaviour {
         yield return new WaitForSeconds(7);
         if (exit) exit.gameObject.SetActive(true);
     }
+    
 }

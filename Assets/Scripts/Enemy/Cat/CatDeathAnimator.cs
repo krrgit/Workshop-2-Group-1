@@ -6,8 +6,7 @@ public class CatDeathAnimator : MonoBehaviour {
     [SerializeField] private GameObject deathFX;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Collider2D coll;
-    [SerializeField] private Collider2D fogWallCollider;
-    [SerializeField] private ParticleSystem fogWall;
+
     [SerializeField] private GameObject ui;
 
     public void Play()
@@ -38,10 +37,5 @@ public class CatDeathAnimator : MonoBehaviour {
 
         color.a = 0;
         sr.color = color;
-
-        coll.enabled = false;
-        fogWallCollider.enabled = false;
-        var main = fogWall.main;
-        main.loop = false;
     }
 }

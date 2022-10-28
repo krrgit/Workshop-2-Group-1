@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1419f698bee3f4379a94b167ab526f64, type: 3}
   m_Name: SpawnPointSO
   m_EditorClassIdentifier: 
-  spawn: 2
+  spawn: 1
   bossesDefeated: 0

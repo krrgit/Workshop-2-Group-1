@@ -68,8 +68,6 @@ public class GunController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.E)) {
             Reload();
         }
-        
-        
     }
 
     void DebugControlTest() {
@@ -167,6 +165,10 @@ public class GunController : MonoBehaviour {
         if (isEmitting) {
             CancelInvoke();
             isEmitting = false;
+        }
+
+        if (ammo == 0)
+        {
             reloadPrompt.SetActive(true);
         }
     }
@@ -187,5 +189,6 @@ public class GunController : MonoBehaviour {
         isReloading = false;
         state = WeaponState.Ready;
         wAnim.UpdateState(state);
+        reloadPrompt.SetActive(false);
     }
 }

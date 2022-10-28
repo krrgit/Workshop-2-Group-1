@@ -194,7 +194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5725913182819756814
 Transform:
   m_ObjectHideFlags: 0
@@ -556,11 +556,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invincibleLayer: 12
-  moveSpeed: 5
-  baseSpeed: 5
+  moveSpeed: 6
+  baseSpeed: 6
   dashPower: 2.5
   dashTime: 0.15
-  cooldownTime: 0
+  cooldownTime: 0.1
   rb: {fileID: 6685800163107628289}
   animator: {fileID: 2824593625073925736}
   flashColor: {r: 1, g: 0, b: 0, a: 0.6862745}
