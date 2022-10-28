@@ -6,9 +6,10 @@ public class PointAtPlayer : MonoBehaviour
 {
     // Update is called once per frame
     [SerializeField] private PlayerMovement pm;
-    
-    void Update()
+
+    public void Point()
     {
-        transform.up = pm.PredictedPosition(0.4f) - transform.position;
+        transform.up = pm.transform.position - transform.position;
     }
+    
 }

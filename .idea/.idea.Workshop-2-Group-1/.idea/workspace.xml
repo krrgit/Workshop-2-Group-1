@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ed95f3c-1c08-4f51-abc6-e822e8b57bec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Temp/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Temp/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleMechanicsDemo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleMechanicsDemo.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/CatAttacksDemo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CatAttacksDemo.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAttackController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/PointAtPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/PointAtPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,6 +99,7 @@
       <workItem from="1666804809922" duration="1697000" />
       <workItem from="1666829012903" duration="1300000" />
       <workItem from="1666891585445" duration="7092000" />
+      <workItem from="1666924786521" duration="6699000" />
     </task>
     <servers />
   </component>

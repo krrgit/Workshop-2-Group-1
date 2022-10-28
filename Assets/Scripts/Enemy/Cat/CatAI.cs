@@ -6,7 +6,8 @@ public enum MoveDecision {
     Idle,
     Walk,
     Turn,
-    Teleport
+    Teleport,
+    IdleAttack
 }
 
 public class CatAI : MonoBehaviour {
@@ -29,7 +30,9 @@ public class CatAI : MonoBehaviour {
     private float tpCooldown;
 
     private int phase = 1;
-    
+
+    private float staffAttackTimer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,13 +45,27 @@ public class CatAI : MonoBehaviour {
         if (phase == 1)
         {
             WalkAround();
+            TryStaffAttack();
         } else if (phase == 2)
         {
             
         }
-        
 
+        StaffAttackTimerTick();
+        MoveTimerTick();
         TeleportCooldownTick();
+    }
+
+    void StaffAttackTimerTick()
+    {
+        if (staffAttackTimer <= 0) return;
+        staffAttackTimer -= Time.deltaTime;
+    }
+
+    void MoveTimerTick()
+    {
+        if (moveTimer <= 0) return;
+        moveTimer -= Time.deltaTime;
     }
 
     void TeleportCooldownTick()
@@ -56,6 +73,18 @@ public class CatAI : MonoBehaviour {
         if (tpCooldown <= 0) return;
 
         tpCooldown -= Time.deltaTime;
+    }
+
+    void TryStaffAttack()
+    {
+        if (attack.IsAttacking) return;
+
+        if ((moveDecision == MoveDecision.Walk && anim.MoveActive) ||
+            (moveDecision == MoveDecision.Turn && anim.TurnActive))
+        {
+            attack.DoStaffAttack();
+            staffAttackTimer = 5;
+        }
     }
 
     void WalkAround()
@@ -73,30 +102,45 @@ public class CatAI : MonoBehaviour {
             // Turn
             anim.TurnToFacePoint(walkPaths[currPath].GetChild(curWalkPoint).position,pathTurnDir[currPath]);
             moveDecision = MoveDecision.Turn;
-            print("Turn");
-        } else if (TeleportCheck())
-        {
+        } else if (TeleportCheck()) {
             // Teleport
             RandomPath();
             RandomWalkPoint();
             anim.TeleportToPoint(walkPaths[currPath].GetChild(curWalkPoint));
             CycleWalkPoint();
             moveDecision = MoveDecision.Teleport;
-            tpCooldown = 2;
-            print("Teleport");
-        }else if (Random.Range(0,4) == 2 && tpCooldown <= 0)
+            tpCooldown = 1;
+        }else if (Random.Range(0,10) < 6 && tpCooldown <= 0)
         {
-            // Idle Test
-            //anim.TeleportToPoint(idlePoint);
-            //moveDecision = MoveDecision.Idle;
-            //print("Teleport to Center");
+            // Idle Attack
+            anim.TeleportToPoint(idlePoint);
+            moveDecision = MoveDecision.IdleAttack;
+            RandomIdleAttack();
         }
         else
         {
             // Walk to Point
             anim.WalkToPoint(walkPaths[currPath].GetChild(curWalkPoint).position);
             moveDecision = MoveDecision.Walk;
-            print("Walk");
+        }
+    }
+
+    void RandomIdleAttack()
+    {
+        int r = Random.Range(0, 2);
+        switch (r)
+        {
+            case 0:
+                attack.DoChargeAttack(2f/3f);
+                moveTimer = attack.StaffAtkTotalDur;
+                break;
+            case 1:
+                attack.DoButterflyAttack(2f/3f);
+                moveTimer = attack.ButterFlyAtkTotalDur;
+
+                break;
+            default:
+                break;
         }
     }
 
@@ -150,6 +194,11 @@ public class CatAI : MonoBehaviour {
         }
 
         if (moveDecision == MoveDecision.Teleport && anim.TeleportActive)
+        {
+            return false;
+        }
+
+        if (moveDecision == MoveDecision.IdleAttack && moveTimer > 0)
         {
             return false;
         }
