@@ -158,10 +158,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 10
   baseSpeed: 10
-  rb: {fileID: 728691328}
-  animator: {fileID: 728691332}
   dashPower: 5
   dashTime: 0.1
+  cooldownTime: 1.5
+  rb: {fileID: 728691328}
+  animator: {fileID: 728691332}
   flashColor: {r: 0.9811321, g: 0.02468249, b: 0.02468249, a: 0.5647059}
   regularColor: {r: 1, g: 1, b: 1, a: 0}
   flashDuration: 0.07

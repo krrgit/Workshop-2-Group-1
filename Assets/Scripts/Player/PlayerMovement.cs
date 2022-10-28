@@ -6,15 +6,18 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float baseSpeed;
-
+    
+    bool isDashing = false;
+    public float dashPower;
+    public float dashTime;
+    public float cooldownTime;
+    private float nextDashTime = 0;
+    
     public Rigidbody2D rb;
     // public Camera cam;
     public Animator animator;
 
-    public float dashPower;
-    public float dashTime;
-
-    bool isDashing = false;
+    
 
     public static PlayerMovement Instance;
     Vector2 movement;
@@ -67,13 +70,20 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Left shift to dash
+        
         if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
+        {            
             if (!isDashing)
             {
+                if (Time.time > nextDashTime)
+                {
                 StartCoroutine(Dash());
+                nextDashTime = Time.time + cooldownTime;
+                }
             }
-        }
+        } 
+
+            
         
     }
 
