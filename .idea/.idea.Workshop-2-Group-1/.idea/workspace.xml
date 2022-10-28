@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ed95f3c-1c08-4f51-abc6-e822e8b57bec" name="Changes" comment="">
+    <list default="true" id="3e764ce2-389c-4139-8a2d-aa67e83b5162" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Workshop-2-Group-1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BattleMechanicsDemo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/BattleMechanicsDemo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CatAttacksDemo.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CatAttacksDemo.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/CatAttackController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/PointAtPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Cat/PointAtPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/SpiderAttackController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/SpiderAttackController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +16,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animation/SpiderDeathAnimator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/CameraShake.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/HubSpawnPointSO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Systems/SoundManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/ec/3e51d190/Void.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/d3e00d5a49334439a489cc0a51d26115157c00/99/bc1706b4/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -49,7 +41,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.11f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -80,7 +72,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3ed95f3c-1c08-4f51-abc6-e822e8b57bec" name="Changes" comment="" />
+      <changelist id="3e764ce2-389c-4139-8a2d-aa67e83b5162" name="Changes" comment="" />
       <created>1665982505288</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -98,8 +90,7 @@
       <workItem from="1666769715266" duration="4187000" />
       <workItem from="1666804809922" duration="1697000" />
       <workItem from="1666829012903" duration="1300000" />
-      <workItem from="1666891585445" duration="7092000" />
-      <workItem from="1666924786521" duration="6699000" />
+      <workItem from="1666909320603" duration="2976000" />
     </task>
     <servers />
   </component>
