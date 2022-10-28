@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public enum MoveDecision {
     Idle,
@@ -54,6 +56,19 @@ public class CatAI : MonoBehaviour {
         StaffAttackTimerTick();
         MoveTimerTick();
         TeleportCooldownTick();
+        
+    }
+    
+    // If somehow the cat still goes out of bounds
+    void HailMaryCheck()
+    {
+        if (transform.position.magnitude > 25)
+        {
+            anim.StopAllCoroutines();
+            anim.TeleportToPoint(idlePoint);
+            moveDecision = MoveDecision.IdleAttack;
+            RandomIdleAttack();
+        }
     }
 
     void StaffAttackTimerTick()
@@ -105,12 +120,12 @@ public class CatAI : MonoBehaviour {
         } else if (TeleportCheck()) {
             // Teleport
             RandomPath();
-            RandomWalkPoint();
-            anim.TeleportToPoint(walkPaths[currPath].GetChild(curWalkPoint));
+            //RandomWalkPoint();
+            anim.TeleportToPoint(GetPointFarthestFromPlayer());
             CycleWalkPoint();
             moveDecision = MoveDecision.Teleport;
             tpCooldown = 1;
-        }else if (Random.Range(0,10) < 6 && tpCooldown <= 0)
+        }else if (Random.Range(0,10) < 4 && tpCooldown <= 0)
         {
             // Idle Attack
             anim.TeleportToPoint(idlePoint);
@@ -159,6 +174,25 @@ public class CatAI : MonoBehaviour {
         currPath = Random.Range(0, walkPaths.Length);
     }
 
+    Transform GetPointFarthestFromPlayer()
+    {
+        Transform point = walkPaths[currPath].GetChild(0);
+
+        float dist;
+        float dist1;
+        for (int i = 1; i < walkPaths[currPath].childCount; ++i)
+        {
+            dist = Vector2.Distance(PlayerHealth.Instance.transform.position, point.position);
+            dist1 = Vector2.Distance(PlayerHealth.Instance.transform.position, walkPaths[currPath].GetChild(i).position);
+            if (dist1 > dist)
+            {
+                point = walkPaths[currPath].GetChild(i);
+            }
+        }
+
+        return point;
+    }
+
     void RandomWalkPoint()
     {
         int r = Random.Range(0, walkPaths[currPath].childCount);
@@ -205,7 +239,16 @@ public class CatAI : MonoBehaviour {
         
          return true;
     }
-    
-    
-    
+
+
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Wall")
+        {
+            anim.StopAllCoroutines();
+            anim.TeleportToPoint(idlePoint);
+            moveDecision = MoveDecision.IdleAttack;
+            RandomIdleAttack();
+        }
+    }
 }

@@ -476,10 +476,10 @@ MonoBehaviour:
   animator: {fileID: 1467711935}
   dashPower: 2.5
   dashTime: 0.15
-  flashColor: {r: 1, g: 1, b: 1, a: 0}
+  flashColor: {r: 1, g: 0, b: 0, a: 0.60784316}
   regularColor: {r: 1, g: 1, b: 1, a: 1}
-  flashDuration: 0
-  numberOfFlashes: 0
+  flashDuration: 0.07
+  numberOfFlashes: 4
   triggerCollider: {fileID: 1467711952}
   mySprite: {fileID: 6685800162897663350}
 --- !u!50 &6685800163107628289
@@ -517,7 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 6
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 6685800163107628288}
 --- !u!114 &4666101420775149769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,7 +553,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6685800163107628295}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
