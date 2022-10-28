@@ -13,6 +13,7 @@ public enum MoveDecision {
 }
 
 public class CatAI : MonoBehaviour {
+    public bool runAI = false;
     [SerializeField] private CatAnimController anim;
     [SerializeField] private CatAttackController attack;
 
@@ -37,12 +38,7 @@ public class CatAI : MonoBehaviour {
     private float staffAttackTimer;
 
     private bool hailMary;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -64,7 +60,7 @@ public class CatAI : MonoBehaviour {
     void HailMaryCheck()
     {
         if (hailMary) return;
-        if (transform.position.magnitude > 25)
+        if (transform.localPosition.x > 28 || transform.localPosition.x < -25 || transform.localPosition.y > 12 || transform.localPosition.y < -12)
         {
             anim.StopAllCoroutines();
             anim.StopAll();
@@ -72,6 +68,7 @@ public class CatAI : MonoBehaviour {
             moveDecision = MoveDecision.IdleAttack;
             RandomIdleAttack();
             hailMary = true;
+            print("Hail Mary");
         }
     }
 

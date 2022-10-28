@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
-{
+public class MainMenu : MonoBehaviour {
+    [SerializeField] private int HubSceneIndex = 1;
     public void Quit()
     {
         Application.Quit();
@@ -13,6 +13,6 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         // Load Hub Scene
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(HubSceneIndex);
     }
 }
