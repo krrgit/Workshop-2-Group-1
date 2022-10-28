@@ -249,8 +249,10 @@ public class BulletHellSpawner : MonoBehaviour {
     }
 
     void DoEmit() {
-        foreach (Transform child in transform) {
-            system = child.GetComponent<ParticleSystem>();
+
+        for (int i = 0; i < columns; ++i)
+        {
+            system = columnList[i];
             // Any parameters we assign in emitParams will override the current system's when we call Emit.
             // Here we will override the start color and size.
             var emitParams = new ParticleSystem.EmitParams();
@@ -263,8 +265,22 @@ public class BulletHellSpawner : MonoBehaviour {
             text.numTilesY = tilesY;
 
             system.Emit(emitParams, 10);
-            
-            
         }
+        
+        //foreach (Transform child in transform) {
+            //system = child.GetComponent<ParticleSystem>();
+            // Any parameters we assign in emitParams will override the current system's when we call Emit.
+            // Here we will override the start color and size.
+            //var emitParams = new ParticleSystem.EmitParams();
+            //emitParams.startColor = color;
+            //emitParams.startSize = size;
+            //emitParams.startLifetime = lifetime;
+
+            //var text = system.textureSheetAnimation;
+            //text.numTilesX = tilesX;
+            //text.numTilesY = tilesY;
+
+            //system.Emit(emitParams, 10);
+        //}
     }
 }

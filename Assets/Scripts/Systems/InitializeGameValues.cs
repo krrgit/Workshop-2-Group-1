@@ -7,6 +7,7 @@ public class InitializeGameValues : MonoBehaviour {
 
     void Start()
     {
+        so.spawn = HubSpawnPoint.Home;
         so.bossesDefeated = 0;
     }
 

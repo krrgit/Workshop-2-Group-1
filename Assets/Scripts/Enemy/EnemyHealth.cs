@@ -22,11 +22,6 @@ public class EnemyHealth : MonoBehaviour
         healthBar.SetEnemyMaxHealth(maxHealth);
     }
 
-    //how much damage they take(see player script)
-    void Update()
-    {
-        DebugDealDamage();
-    }
 
    //attacks deplete health
     public void TakeDamage(int damage)
@@ -45,14 +40,6 @@ public class EnemyHealth : MonoBehaviour
                 calledDeathDel = true;
                 SoundManager.Instance.PlayBossDeath();
             }
-        }
-    }
-
-    void DebugDealDamage()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
         }
     }
 }
