@@ -43,6 +43,24 @@ public class SpiderAttackController : MonoBehaviour
         AttackThree.Initialize();
         AttackFour.Initialize();
     }
+
+    public void StopAll()
+    {
+        AttackOne.ToggleEmit(false);
+        AttackTwo.ToggleEmit(false);
+        AttackThree.ToggleEmit(false);
+        AttackFour.ToggleEmit(false);
+        
+        AttackOne.DestroyAllParticles();
+        AttackTwo.DestroyAllParticles();
+        AttackThree.DestroyAllParticles();
+        AttackFour.DestroyAllParticles();
+        
+        AttackOne.gameObject.SetActive(false);
+        AttackTwo.gameObject.SetActive(false);
+        AttackThree.gameObject.SetActive(false);
+        AttackFour.gameObject.SetActive(false);
+    }
     
     
 

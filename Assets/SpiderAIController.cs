@@ -1,15 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Build;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpiderAIController : MonoBehaviour
 {
     [SerializeField] private SpiderAttackController attack;
+    [SerializeField] private SpiderDeathAnimator deathAnim;
+    [SerializeField] private EnemyHealth health;
+    
     public bool PatternActive = false;
+    
     public int randomNum = 0;
-    private float timer = 0;
+    
     public bool RunAI = false;
+    
+    private float timer = 0;
+    
     
     void Update()
     {
@@ -18,6 +27,25 @@ public class SpiderAIController : MonoBehaviour
         Debug.Log(randomNum);
         RandomAttacksGenerator(PatternActive);
         timer -= Time.deltaTime;
+    }
+
+    private void OnEnable()
+    {
+        health.enemyDeathDel += Death;
+    }
+
+    private void OnDisable()
+    {
+        health.enemyDeathDel -= Death;
+    }
+
+    void Death()
+    {
+        RunAI = false;
+        attack.StopAllCoroutines();
+        attack.StopAll();
+        deathAnim.StartAnim();
+
     }
 
     public void RandomAttacksGenerator(bool PatternActive)
