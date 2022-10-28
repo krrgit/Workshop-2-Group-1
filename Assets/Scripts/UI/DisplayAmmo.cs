@@ -9,7 +9,7 @@ public class DisplayAmmo : MonoBehaviour
 
     public void updateAmmo(int count)
     {
-        ammoText.text = count + "/" + "\u221E";
+        ammoText.text = count + "/" ;
 
     }
 }

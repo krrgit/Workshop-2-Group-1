@@ -14,6 +14,7 @@ public class GunController : MonoBehaviour {
     public WeaponSO w;
     public WeaponAnimator wAnim;
     public int ammo;
+    public GameObject reloadPrompt;
 
     private bool isReloading;
     private float cooldown; // for semi auto firing
@@ -98,6 +99,7 @@ public class GunController : MonoBehaviour {
         if (ammo == 0)
         {
             state = WeaponState.Empty;
+            reloadPrompt.SetActive(true);
             wAnim.UpdateState(state);
         }
     }
@@ -138,6 +140,7 @@ public class GunController : MonoBehaviour {
         if (isEmitting) {
             CancelInvoke();
             isEmitting = false;
+            reloadPrompt.SetActive(true);
         }
     }
 
@@ -150,6 +153,7 @@ public class GunController : MonoBehaviour {
     IEnumerator IReload()
     {
         isReloading = true;
+        reloadPrompt.SetActive(false);
         yield return new WaitForSeconds(w.reloadDur);
         ammo = w.maxAmmo;
         displayAmmo.updateAmmo(ammo);
