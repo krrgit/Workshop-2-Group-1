@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3891fb8a2641d402c824423d72de8116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: HubScene
+  nextScene: 0
 --- !u!1 &304425051
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +797,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4219864381215186488, guid: 48d0241f3f090464ea91ab6be0aff5a9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5.7799683
+      value: 5.779907
       objectReference: {fileID: 0}
     - target: {fileID: 4219864381215186488, guid: 48d0241f3f090464ea91ab6be0aff5a9, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2196,6 +2196,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1865350286, guid: ef26b04f870e34690abe9b202c882190, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2143657508999496255, guid: ef26b04f870e34690abe9b202c882190, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.36
@@ -2299,6 +2303,14 @@ PrefabInstance:
     - target: {fileID: 2143657510555066783, guid: ef26b04f870e34690abe9b202c882190, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973826280994441934, guid: ef26b04f870e34690abe9b202c882190, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2973826280994441935, guid: ef26b04f870e34690abe9b202c882190, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef26b04f870e34690abe9b202c882190, type: 3}
