@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     bool isDashing = false;
 
     public static PlayerMovement Instance;
-    
     Vector2 movement;
     private Vector3 direction;
 
