@@ -1361,74 +1361,6 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1467711935}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: dashTime
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: mySprite
-      value: 
-      objectReference: {fileID: 1467711936}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: baseSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: dashPower
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: flashColor.a
-      value: 0.6862745
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: flashColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: flashColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: flashColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: flashDuration
-      value: 0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: regularColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: regularColor.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: regularColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: regularColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: numberOfFlashes
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: triggerCollider
-      value: 
-      objectReference: {fileID: 1810952135}
-    - target: {fileID: 6685800163107628290, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-      propertyPath: playerMovement
-      value: 
-      objectReference: {fileID: 1810952139}
     - target: {fileID: 6685800163107628291, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1512,11 +1444,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &1467711936 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6685800162897663350, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-  m_PrefabInstance: {fileID: 1467711933}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1467711941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6685800163107628291, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
@@ -1716,22 +1643,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3dc307f4e0f54a9083d4942f2ca6a17, type: 3}
---- !u!58 &1810952135 stripped
-CircleCollider2D:
-  m_CorrespondingSourceObject: {fileID: 1467711952, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-  m_PrefabInstance: {fileID: 1467711933}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1810952139 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6685800163107628288, guid: 3bb0f883801e840358bbc5590e1bf0df, type: 3}
-  m_PrefabInstance: {fileID: 1467711933}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a948628f7cad3464ba86546114b9c171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1816222998
 GameObject:
   m_ObjectHideFlags: 0

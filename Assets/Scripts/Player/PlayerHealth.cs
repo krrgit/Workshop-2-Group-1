@@ -6,10 +6,8 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private float health = 0f;
     [SerializeField] private float maxHealth = 100f;
-    [SerializeField] private PlayerMovement playerMovement;
 
     public static PlayerHealth Instance;
-
 
     void Awake()
     {
@@ -50,8 +48,6 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealth(change);
         
         SoundManager.Instance.PlayPlayerHit();
-
-        playerMovement.startInvincibility();
     }
 
 }

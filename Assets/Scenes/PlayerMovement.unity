@@ -230,12 +230,6 @@ MonoBehaviour:
   animator: {fileID: 728691332}
   dashPower: 5
   dashTime: 0.1
-  flashColor: {r: 0.9811321, g: 0.02468249, b: 0.02468249, a: 0.5647059}
-  regularColor: {r: 1, g: 1, b: 1, a: 0}
-  flashDuration: 0.07
-  numberOfFlashes: 4
-  triggerCollider: {fileID: 728691329}
-  mySprite: {fileID: 728691330}
 --- !u!50 &728691328
 Rigidbody2D:
   serializedVersion: 4
