@@ -39,12 +39,14 @@ public class SpiderAIController : MonoBehaviour
         health.enemyDeathDel -= Death;
     }
 
-    void Death()
+    public void Death()
     {
         RunAI = false;
         attack.StopAllCoroutines();
         attack.StopAll();
+        deathAnim.DisableAttacks();
         deathAnim.StartAnim();
+        
 
     }
 
