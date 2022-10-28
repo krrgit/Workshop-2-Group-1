@@ -6,18 +6,21 @@ using UnityEngine;
 public class SpiderAIController : MonoBehaviour
 {
     [SerializeField] private SpiderAttackController attack;
-    private bool PatternActive = false;
+    public bool PatternActive = false;
     public int randomNum = 0;
     private float timer = 0;
+    public bool RunAI = false;
+    
     void Update()
     {
+        if (!RunAI) return;
         randomNum = Random.Range(1, 5);
         Debug.Log(randomNum);
         RandomAttacksGenerator(PatternActive);
         timer -= Time.deltaTime;
     }
 
-    void RandomAttacksGenerator(bool PatternActive)
+    public void RandomAttacksGenerator(bool PatternActive)
     {
         if (timer > 0) return;
         for (int i = 0; i < randomNum; i++)
