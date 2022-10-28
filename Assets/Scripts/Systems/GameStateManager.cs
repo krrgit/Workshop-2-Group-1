@@ -13,6 +13,7 @@ public class GameStateManager : MonoBehaviour {
     [SerializeField] private GameObject screenFlash;
     [SerializeField] private DoorLightAnimator doorLight;
     [SerializeField] private GameObject exit;
+    [SerializeField] private HubSpawnPoint hubSpawnPoint;
     public static GameStateManager Instance;
 
     private bool enableRestart = false;
@@ -59,7 +60,7 @@ public class GameStateManager : MonoBehaviour {
         // show death screen UI
         // press key to restart/reload scene
         deathCanvas.SetActive(true);
-        Destroy(PlayerMovement.Instance);
+        PlayerMovement.Instance.enabled = false;
         playerDeathAnim.Play();
         CameraTarget.Instance.isEnabled = false;
 
@@ -69,8 +70,8 @@ public class GameStateManager : MonoBehaviour {
     public void BossDeath()
     {
         screenFlash.SetActive(true);
-        doorLight.PlayOpenAnim();
-        hubSO.spawn = HubSpawnPoint.SpiderHouse;
+        if (doorLight) doorLight.PlayOpenAnim();
+        hubSO.spawn = hubSpawnPoint;
         StartCoroutine(WaitForExitPopup());
 
     }
@@ -78,6 +79,6 @@ public class GameStateManager : MonoBehaviour {
     IEnumerator WaitForExitPopup()
     {
         yield return new WaitForSeconds(7);
-        exit.SetActive(true);
+        if (exit) exit.SetActive(true);
     }
 }
