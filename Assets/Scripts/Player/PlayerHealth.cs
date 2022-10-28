@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] public float health = 0f;
-    [SerializeField] public float maxHealth = 100f;
+    [SerializeField] public int health = 10;
+    [SerializeField] public int maxHealth = 10;
     [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private DisplayHealth healthUI;
 
     public static PlayerHealth Instance;
 
@@ -30,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
         
     }
 
-    public void UpdateHealth(float change)
+    public void UpdateHealth(int change)
     {
         health += change;
         
@@ -39,15 +40,17 @@ public class PlayerHealth : MonoBehaviour
             health = maxHealth;
         } else if (health <= 0)
         {
-            health = 0f;
+            health = 0;
             GameStateManager.Instance.PlayerDeath();
         }
+        
         print("Health: " + health);
     }
 
-    public void DealDamage(float change)
+    public void DealDamage(int change)
     {
         UpdateHealth(change);
+        
         
         SoundManager.Instance.PlayPlayerHit();
 
