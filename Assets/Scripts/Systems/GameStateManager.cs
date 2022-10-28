@@ -18,6 +18,7 @@ public class GameStateManager : MonoBehaviour {
     [SerializeField] private GameObject music;
     [SerializeField] private Collider2D fogWallCollider;
     [SerializeField] private ParticleSystem fogWall;
+    [SerializeField] private GameObject bag;
     public static GameStateManager Instance;
 
     private bool enableRestart = false;
@@ -90,6 +91,8 @@ public class GameStateManager : MonoBehaviour {
         fogWallCollider.enabled = false;
         var main = fogWall.main;
         main.loop = false;
+        
+        bag.SetActive(true);
 
     }
 
