@@ -6,10 +6,15 @@ public class CatDeathAnimator : MonoBehaviour {
     [SerializeField] private GameObject deathFX;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Collider2D coll;
+    [SerializeField] private Collider2D fogWallCollider;
+    [SerializeField] private ParticleSystem fogWall;
+    [SerializeField] private GameObject exit;
+
     public void Play()
     {
         deathFX.transform.position = sr.transform.position;
         deathFX.SetActive(true);
+        exit.SetActive(true);
 
         StartCoroutine(Fade());
     }
@@ -26,9 +31,15 @@ public class CatDeathAnimator : MonoBehaviour {
             sr.color = color;
             color.a -= rate;
             yield return new WaitForEndOfFrame();
+            duration -= Time.deltaTime;
         }
 
-        coll.enabled = false;
+        color.a = 0;
+        sr.color = color;
 
+        coll.enabled = false;
+        fogWallCollider.enabled = false;
+        var main = fogWall.main;
+        main.loop = false;
     }
 }
