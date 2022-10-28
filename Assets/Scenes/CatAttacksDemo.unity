@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 486920387}
   - component: {fileID: 486920386}
   - component: {fileID: 486920389}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 720693792}
   - component: {fileID: 720693791}
   - component: {fileID: 720693794}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Wall (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1121,7 +1121,7 @@ GameObject:
   - component: {fileID: 1220726150}
   - component: {fileID: 1220726149}
   - component: {fileID: 1220726152}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Wall (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,7 +1254,7 @@ GameObject:
   - component: {fileID: 1227970714}
   - component: {fileID: 1227970713}
   - component: {fileID: 1227970716}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Wall (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1924,5 +1924,13 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1407585765}
+    - target: {fileID: 7579546942522247317, guid: ddc29e6ea98af4a999cd97ad4449552b, type: 3}
+      propertyPath: runAI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7579546942522247317, guid: ddc29e6ea98af4a999cd97ad4449552b, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1355697902}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddc29e6ea98af4a999cd97ad4449552b, type: 3}
