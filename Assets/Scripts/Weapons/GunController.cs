@@ -185,7 +185,7 @@ public class GunController : MonoBehaviour {
         reloadPrompt.SetActive(false);
         yield return new WaitForSeconds(w.reloadDur);
         ammo = w.maxAmmo;
-        displayAmmo.updateAmmo(ammo);
+        if (displayAmmo) displayAmmo.updateAmmo(ammo);
         isReloading = false;
         state = WeaponState.Ready;
         wAnim.UpdateState(state);
