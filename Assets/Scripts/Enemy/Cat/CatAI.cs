@@ -16,6 +16,7 @@ public class CatAI : MonoBehaviour {
     public bool runAI = false;
     [SerializeField] private CatAnimController anim;
     [SerializeField] private CatAttackController attack;
+    [SerializeField] private CatDeathAnimator deathAnim;
     [SerializeField] private EnemyHealth health;
     [SerializeField] private Transform[] walkPaths;
     [SerializeField] private Transform idlePoint;
@@ -76,7 +77,7 @@ public class CatAI : MonoBehaviour {
         anim.StopAll();
         anim.StopAnimator();
         attack.StopAll();
-        
+        deathAnim.Play();
     }
     
     // If somehow the cat still goes out of bounds do idle attack
