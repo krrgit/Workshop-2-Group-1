@@ -15,11 +15,26 @@ public class DisplayHealth : MonoBehaviour
 
     public PlayerHealth playerHealth;
 
+    public void Awake()
+    {
+        hearts = new Image[playerHealth.maxHealth];
+        for (int i = 0; i < playerHealth.maxHealth; ++i)
+        {
+            var go = new GameObject();
+            go.transform.parent = transform;
+            hearts[i] = go.AddComponent<Image>();
+            hearts[i].rectTransform.localPosition = new Vector3(100 * i, 0, 0);
+            hearts[i].rectTransform.localScale = Vector3.one;
+            hearts[i].sprite = fullHeart;
+        }
+    }
+
     void Update()
     {
 
         health = playerHealth.health;
         maxHealth = playerHealth.maxHealth;
+        
         for(int i = 0; i < hearts.Length; i++)
         {
             if(i < health)
