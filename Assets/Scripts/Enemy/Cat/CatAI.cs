@@ -16,7 +16,7 @@ public class CatAI : MonoBehaviour {
     public bool runAI = false;
     [SerializeField] private CatAnimController anim;
     [SerializeField] private CatAttackController attack;
-
+    [SerializeField] private EnemyHealth health;
     [SerializeField] private Transform[] walkPaths;
     [SerializeField] private Transform idlePoint;
     [SerializeField] private int currPath;
@@ -38,11 +38,23 @@ public class CatAI : MonoBehaviour {
     private float staffAttackTimer;
 
     private bool hailMary;
-    
+
+    private void OnEnable()
+    {
+        health.enemyDeathDel += Death;
+    }
+
+    private void OnDisable()
+    {
+        health.enemyDeathDel -= Death;
+    }
+
 
     // Update is called once per frame
     void Update()
     {
+        if (!runAI) return;
+        
         if (phase == 1)
         {
             WalkAround();
@@ -54,6 +66,17 @@ public class CatAI : MonoBehaviour {
         TeleportCooldownTick();
         
         HailMaryCheck();
+    }
+
+    void Death()
+    {
+        runAI = false;
+        anim.StopAllCoroutines();
+        attack.StopAllCoroutines();
+        anim.StopAll();
+        anim.StopAnimator();
+        attack.StopAll();
+        
     }
     
     // If somehow the cat still goes out of bounds do idle attack
@@ -243,7 +266,6 @@ public class CatAI : MonoBehaviour {
          return true;
     }
 
-
     private void OnCollisionEnter2D(Collision2D col)
     {
         // Collide with wall
@@ -258,4 +280,6 @@ public class CatAI : MonoBehaviour {
         }
         
     }
+    
+    
 }

@@ -11,7 +11,7 @@ public class PlayerDeathAnimation : MonoBehaviour {
     
     public void Play()
     {
-        anim.StopPlayback();
+        anim.enabled = false;
         arms.gameObject.SetActive(false);
         weaponParent.enabled = false;
         sr.sprite = deadSprite;

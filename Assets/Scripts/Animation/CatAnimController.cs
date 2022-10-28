@@ -77,11 +77,18 @@ public class CatAnimController : MonoBehaviour {
       return distance / moveSpeed;
    }
 
+   public void StopAnimator()
+   {
+      anim.enabled = false;
+   }
+
    public void StopAll()
    {
       isMoving = false;
       moveForward = 0;
       turnDir = 0;
+      turnClockwise = false;
+      turnCounter = false;
    }
 
    void Update()

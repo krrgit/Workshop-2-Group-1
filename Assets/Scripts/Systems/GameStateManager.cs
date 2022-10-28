@@ -79,6 +79,6 @@ public class GameStateManager : MonoBehaviour {
     IEnumerator WaitForExitPopup()
     {
         yield return new WaitForSeconds(7);
-        exit.SetActive(true);
+        if (exit) exit.SetActive(true);
     }
 }
