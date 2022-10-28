@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Scenes/Cat Boss Room.unity
     guid: 51fd992b870b4514daff32dd9b7f1661
+  - enabled: 1
+    path: Assets/Scenes/Main Scenes/End Screen.unity
+    guid: 7f805d438df3e6f44b0d9ed1edc5b369
   m_configObjects: {}
