@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpiderDeathAnimator : MonoBehaviour {
 
     [SerializeField] private float fallSpeed = 2;
-    [SerializeField] private BulletHellSpawner spawner;
+    //[SerializeField] private BulletHellSpawner spawner;
     [Header("Controlled Components")]
     [SerializeField] private GameObject system;
     [SerializeField] private EnemyHealth health;
@@ -17,13 +17,17 @@ public class SpiderDeathAnimator : MonoBehaviour {
     [SerializeField] private EnemyFollow follow;
     [SerializeField] private SpiderLegManager legManager;
     [SerializeField] private SpiderIdleAnimator idleAnim;
+    [SerializeField] private BulletHellSpawner AttackOne;
+    [SerializeField] private BulletHellSpawner AttackTwo;
+    [SerializeField] private BulletHellSpawner AttackThree;
+    [SerializeField] private BulletHellSpawner AttackFour;
     
     private Vector2 shadowPos;
     private Vector2 fallDir;
 
     public bool startedAnim = false;
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         health.enemyDeathDel += StartAnim;
     }
@@ -31,6 +35,26 @@ public class SpiderDeathAnimator : MonoBehaviour {
     private void OnDisable()
     {
         health.enemyDeathDel -= StartAnim;
+    }*/
+
+    public void DisableAttacks()
+    {
+        AttackOne.ToggleEmit(false);
+        AttackOne.DestroyAllParticles();
+        AttackOne.gameObject.SetActive(false);
+        
+        AttackTwo.ToggleEmit(false);
+        AttackTwo.DestroyAllParticles();
+        AttackTwo.gameObject.SetActive(false);
+        
+        AttackThree.ToggleEmit(false);
+        AttackThree.DestroyAllParticles();
+        AttackThree.gameObject.SetActive(false);
+       
+        AttackFour.ToggleEmit(false);
+        AttackFour.DestroyAllParticles();
+        AttackFour.gameObject.SetActive(false);
+                    
     }
 
     // Update is called once per frame
@@ -43,7 +67,7 @@ public class SpiderDeathAnimator : MonoBehaviour {
     {
         if (startedAnim) return;
         DisableOtherAnimators();
-        StopAttacks();
+        //StopAttacks();
         healthBar.gameObject.SetActive(false);
         startedAnim = true;
         StartCoroutine(Animation());
@@ -73,10 +97,10 @@ public class SpiderDeathAnimator : MonoBehaviour {
         idleAnim.SetEnabled(false);
     }
 
-    void StopAttacks()
+    /*void StopAttacks()
     {
         spawner.ToggleEmit(false);
         spawner.DestroyAllParticles();
         spawner.gameObject.SetActive(false);
-    }
+    }*/
 }
